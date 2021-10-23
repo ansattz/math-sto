@@ -1,0 +1,420 @@
+\section{Desenvolvendo as relações algébricas}
+\subsection{Par não ordenado}
+Dados dois conjuntos $x$ e $y$, vimos que o \textbf{axioma do par} nos garante a existência do conjunto
+$$\{x, y\}.$$
+Pelo \textbf{axioma da extensão}, temos
+$$\{x,y\} = \{y,x\}.$$
+Ou seja, a \underline{ordem dos objetos não é considerada.}\\
+Queremos definir agora um \textbf{par ordenado}, de tal modo que a ordem dos objetos seja levada em consideração, isto é, queremos que o par ordenado $\langle a ,b\rangle$ seja diferente do par ordenado $\langle b ,a\rangle$.
+\subsection{Par ordenado} 
+\begin{definition}
+  Dados dois conjuntos $a$ e $b$, definimos o par ordenado $\langle a ,b\rangle$ como o conjunto 
+  $$\{\{a\},\{a, b\}\}.$$
+\end{definition}
+\begin{mymdframed}{Observações}
+  Quando $a = b$:
+  $$\{\{a\},\{a, b\}\} = \{\{a\},\{a, a\}\} = \{\{a\},\{a\}\} = \{\{a\}\}.$$
+    A \textbf{existência do par ordenado} é garantida da seguinte forma:
+    Dados dois conjuntos $a$, $b$: 
+      \begin{itemize}      
+          \item Pelo \textbf{axioma do par}, existe $\{a, a\}$, que é igual a $\{a\}$ pelo \textbf{axioma da extensão}.
+          \item Pelo \textbf{axioma do par}, existe $\{a, b\}.$
+          \item Pelo \textbf{axioma do par} novamente, existe $\{\{a\},\{a, b\}\}.$      
+      \end{itemize}
+\end{mymdframed}
+\newpage
+\begin{theorem}
+  $\langle u ,v\rangle = \langle x ,y\rangle$ se, e somente se, $u = x$\ e\ $v = y$.
+\end{theorem}
+\begin{proof}
+  Da direita para a esquerda é trivial, ou seja, se substituir $u$ pelo $x$ e $v$ pelo $y$, teremos a mesma ordenação.
+
+  Agora, supomos que $\langle u ,v\rangle = \langle x ,y\rangle$\ ou\ $\{\{u\},\{u, v\}\} = \{\{x\},\{x, y\}\}.$\\
+  Pelo \textbf{axioma da extensão}, $\{u\} \in \{\{x\},\{x, y\}\}$\ e\ $\{u, v\} \in \{\{x\},\{x, y\}\}.$\\
+  Temos quatro possibilidades:
+  \begin{alignat*}{3}
+    &(a)& \quad \quad & \{u\} = \{x\}\\
+    &(b)& \quad \quad & \{u\} = \{x, y\}\\
+    &(c)& \quad \quad & \{u, v\} = \{x\}\\
+    &(d)& \quad \quad & \{u, v\} = \{x, y\}
+  \end{alignat*}
+\begin{enumerate}[i]
+  \item Se vale o caso \color{red}{\fonta{(b)}}\color{black}, então $u = x = y$. Assim, observando \color{yellow}{\fonta{(d)}}\color{black}, $v = y = x = u$\ e\ \color{yellow}{\fonta{(d)}}\color{black}\ e\ \color{purple}{\fonta{(c)}}\color{black}\ são equivalentes, e o teorema está desmontrado.
+  \item Se vale \color{purple}{\fonta{(c)}}\color{black}, temos o mesmo caso.
+  \item Se vale \color{brown}{\fonta{(a)}}\color{black}, temos $u = x$.  
+\end{enumerate}
+Assim, observando \color{yellow}{\fonta{(d)}}\color{black}, temos que
+$$\{u, v\} = \{u, y\}.$$
+Assim, pelo \textbf{axioma da extensão}, $y = u$\ ou \ $y = v$.\\
+No primeiro caso, caímos no \color{red}{\fonta{(b)}}\color{black}, que é válido.\\
+No segundo caso, temos o resultado solicitado $y = v.$
+\end{proof}  
+\begin{mymdframed}{Observação}
+  O teorema nos permite dizer que $x$ é a primeira coordenada e $y$ é a segunda coordenada do par ordenado $\langle x ,y\rangle$.
+\end{mymdframed}
+
+\subsection{Produto Cartesiano}
+\begin{definition}
+  Suponha que temos dois conjuntos $A$ e $B$, e que formamos pares ordenados $\langle x , y \rangle $ em que $x$ é um elemento de $A$ e $y$ é um elemento de $B$. O conjunto de todos os pares ordenados deste tipo é chamado de \textit{produto cartesiano} de $A$ e $B$:
+$$A \times B = \{\langle x, y \rangle : x \in A\ \&\ y \in B \}$$
+\end{definition}
+Agora, surge uma necessidade de demonstrar que nossa definição faz sentido, isto é, se $A$ e $B$ são conjuntos, então o produto cartesiano $A \times B$ é um conjunto. A redação deu sua validade requer uma estratégia, que será
+\begin{enumerate}
+  \item Demonstrar que os pares ordenados pertencem a um conjunto maior cuja existência já está garantida e
+  \item pelo \textbf{axioma da separação}, extraímos estes elementos deste conjunto maior.
+\end{enumerate}
+\begin{lemma}
+  Se $x \in A$\ e\ $y \in B$ então $\langle x, y \rangle \in \mathcal{P}\mathcal{P}(A \cup B).$
+\end{lemma}
+\begin{proof}
+  Se $x \in A$\ e\ $y \in B$, então $\{x\} \subset A \cup B$\ e\ $\{x, y\}\ \subset\ A \cup B$.\\
+  O insight sobre o \textbf{axioma das partes}: $\forall x \exists y \forall z (z \in y\ \leftrightarrow\ z \subset x)$, nos leva aos seguintes argumentos
+  $$\{x\} \in \mathcal{P}(A \cup B) \quad \textrm{e}\quad \{x, y\} \in \mathcal{P}(A \cup B).$$
+  Assim, $$\{\{x\},\{x, y\}\}\ \subset\ \mathcal{P}(A \cup B).$$
+  Pelo \textbf{axioma das partes} novamente, temos que $\{\{x\},\{x, y\}\}\ \footnote[3]{Definição do par ordenado, feito anteriormente.} \in\ \mathcal{P}\mathcal{P}(A \cup B).$
+\end{proof}
+\begin{corollary}
+  Para quaisquer conjuntos $A$ e $B$, existe o conjunto cujos elementos são exatamente os pares ordenados $\langle x, y \rangle$ em que $x \in A$\ e\ $y \in B$.
+\end{corollary}
+\begin{proof}
+  Pelo \textbf{axioma do par}, \textbf{axioma da união}\ e o\ \textbf{axioma da separação}, existe o conjunto
+  $$ A \times B = \{w \in \mathcal{P}\mathcal{P}(A \cup B): \exists x \exists y (x \in A)\ \&\ y \in B\ \&\ w = \langle x, y \rangle)\}$$
+  De fato, $A \times B$ satisfaz o teorema, pois todo par ordenado $\langle x, y \rangle$ que atende às especificações pertence a $\mathcal{P}\mathcal{P}(A \cup B)$, conforme o Lema anterior.
+\end{proof}
+
+\subsection{Relações}
+\begin{definition}
+  Uma relação é um conjunto de pares ordenados.
+\end{definition}
+\begin{definition}
+  Dizemos que $R$ é uma \textit{relação binária} entre $A$ e $B$ se $R$ é um subconjunto.
+\end{definition}
+$$(A \times B)\footnote[4]{Notação utilizada: $\langle x, y \rangle$\ ou\ $xRy$. No caso de $A = B$ e $R$ um subconjunto de $A \times A$, então dizemos simplesmente que $R$ é uma relação sobre $A$.}$$
+\begin{exmp}
+  Uma relação de ordem $<$ (menor) no conjunto $A = \{1,2,3\}$.\\
+  Queremos dizer que $<$ relaciona cada número aos números maiores:
+    \begin{alignat*}{3}
+      & 1 < 2\\
+      & 1 < 3\\
+      & 2 < 3
+    \end{alignat*}
+  Assim, $$<\quad =\quad \{\color{brown}{\langle 1, 2 \rangle, \langle 1, 3 \rangle, \langle 2, 3 \rangle}\normalcolor\}$$
+  $$A \times A = \{\langle 1, 1 \rangle,\color{brown}{\langle 1, 2 \rangle}\normalcolor,\color{brown}{\langle 1, 3 \rangle}\normalcolor, \langle 2, 1 \rangle, \langle 2, 2 \rangle,\color{brown}{\langle 2, 3 \rangle}\normalcolor, \langle 3, 1 \rangle, \langle 3, 2 \rangle, \langle 3, 3 \rangle\}$$
+\end{exmp}
+\begin{mymdframed}{Nota}
+  Como uma relação é uma coleção de \textit{tuplas ordenadas}, isto é, uma lista ordenada de n objetos, o estudo será dirigido para as relações mais sofisticadas. Em particular, temos \textbf{função}, \textbf{relação de equivalência} e \textbf{relação de ordem}.
+\end{mymdframed}
+
+\subsubsection{Domínio, Imagem e Campo}
+\begin{definition}
+  Seja $R$ uma relação.\\
+  Definimos o \textit{domínio} de $R$ ($\mathcal{D}_{R}$), a \textit{imagem} de $R$ ($\mathit{Img}_{R}$) e o \textit{campo} de $R$ ($\mathit{camp}_{R}$) de tal modo que:
+  \begin{alignat*}{3}
+    & x \in \mathcal{D}_{R}\ \ \ \leftrightarrow \exists y (\langle x, y \rangle) \in R)\\
+    & y \in \mathit{Img}_{R} \leftrightarrow \exists x (\langle x, y \rangle) \in R)\\
+    & \mathit{camp}_{R}\quad \ \ =\quad \mathcal{D}_{R}\ \cup\ \mathit{img}_{R}
+  \end{alignat*}
+\end{definition}
+Para justificar a definição, temos que garantir que dada uma relação $R$,
+  \begin{itemize}
+    \item existe o conjunto formado pelas primeiras coordenadas dos elementos de $R$ (lembrando que $R$ é um conjunto de pares ordenados) e
+    \item existe o conjunto das segundas coordenadas dos elementos de $R.$
+  \end{itemize}
+Para a justificação da definição precisaremos de uma estratégia que consiste em
+  \begin{enumerate}
+    \item Mostrar que as coordenadas de um par ordenado pertencem a um conjunto maior cuja existência é garantida e
+    \item Usar o \textbf{axioma da separação} para destacar os elementos desejados.
+  \end{enumerate}
+\begin{lemma}
+  Se $\langle x, y \rangle \in A$, então $x$ e $y$ pertencem a $\bigcup \bigcup A.$
+\end{lemma} 
+\begin{proof}
+  Declarar $\langle x, y \rangle \in A$ é, equivalentemente, declarar que $\{\{x\},\{x,y\}\}\ \in\ A$.\\
+  Com efeito, pelo \textbf{axioma da união}:
+  $$x \in \bigcup A\ \leftrightarrow\ \exists c\ (c \in A\ \&\ x \in c),$$
+  temos $\{x,y\}\ \in\ \bigcup A$ (é um elemento de um elemento de $A$).\\
+  Pelo axioma da união, novamente, segue então que $$x \in \bigcup \bigcup A$$
+  e também
+  $$y \in \bigcup \bigcup A,$$
+  pois são elementos de elementos de $\bigcup A.$
+\end{proof}
+Assim, podemos estabelecer os conjuntos \textit{domínio} e \textit{imagem} de uma relação $R$:
+\begin{alignat*}{3}
+  & \mathcal{D}_{R}& \ = \{x \in \bigcup \bigcup R:\ \exists y (\langle x, y \rangle \in R) \}\\
+  & \mathit{Img}_{R}& \ = \{y \in \bigcup \bigcup R:\ \exists x (\langle x, y \rangle \in R)\}
+\end{alignat*}
+
+\subsubsection{Função}
+Uma função $F$ é basicamente um conjunto de pares ordenados, isto é, uma relação, com uma propriedade em particular:
+\begin{stat}
+  Para cada $x \in \mathcal{D}_{F}$ existe um único $y$ tal que $\langle x, y \rangle \in F.$
+\end{stat}
+\begin{definition}
+  Dizemos que uma relação $F$ entre $A$ e $B$ é uma função de $A$ em $B$ se para todo $x \in A$ existe um único $y \in B$ tal que $\langle x, y \rangle \in F.$ 
+\end{definition}
+\begin{mymdframed}{Observação}
+  Quando nem todos os elementos de $A$ participam da função, dizemos que a função é uma \textit{função parcial} de $A$ em $B$. Caso contrário, dizemos que $F$ é uma \textit{função total} ou simplesmento uma função.
+\end{mymdframed}
+As definições de domínio e imagem para relações seguem o mesmo esquema para funções.
+\begin{alignat*}{3}
+  & \mathcal{D}_{F}& \ = \{x \in \bigcup \bigcup F:\ \exists y (\langle x, y \rangle \in F) \}\\
+  & \mathit{Img}_{F}& \ = \{y \in \bigcup \bigcup F:\ \exists x (\langle x, y \rangle \in F)\}
+\end{alignat*}
+Dada uma função, podemos "recuperar o domínio e a imagem". Dessa forma, se $F$ é uma (total) de $A$ em $B$, então:
+\begin{itemize}
+  \item O conjunto $A$ é o domínio de $F$
+  \item O conjunto $\{y \in B:\ \exists x \in A(xFy)\}$ é a imagem de $F.$
+\end{itemize}
+\newpage
+
+\begin{definition}[Contradomínio]
+  Se $F$ é uma função de $A$ em $B$, é declarado que $B$ é o \textit{contradomínio} da função $F$.  
+\end{definition}
+Todavia, devemos notar que esse conjunto não pode ser "recuperado" a partir da função:
+\begin{exmp}
+  $$F = \{\langle x, y \rangle \in \mathbb{R}^{2}:\ y = x^{2}\}$$
+  Aqui, $F$ pode ser uma função tanto $\mathbb{R}$ em $\mathbb{R}$, quanto de $\mathbb{R}$ em $\mathbb{R}_{+}$ (reais não negativos).
+\end{exmp}
+\begin{definition}[Natureza]
+  Uma função $F:\ A \longrightarrow B$ é
+\end{definition}
+\begin{itemize}
+  \item Injetora: se para todos $x, y \in A$ temos que se $x \neq y$, então $F(x) \neq F(y)$
+  \item Sobrejetora em relação a $B$: se para todo $y \in B$ existe $x \in A$ tal que $y = F(x)$
+  \item Bijetora: se ela é injetora e sobrejetora em relação a $B$
+\end{itemize}
+\begin{definition}[Composta]
+  Se $F$ e $G$ são funções, com $\mathit{Img}_{G} \subset \mathcal{D}_{F}$ então definimos a função composta de $F$ e $G$ da seguinte maneira:
+  $$ F \circ G = \{\langle x, y \rangle \in \mathcal{D}_{G} \times \mathit{Img}_{F}:\ \exists y (xGy\ \&\ yFz)\}.$$  
+\end{definition}
+
+\begin{center}
+  \begin{tikzpicture}
+    \tikzset{
+      elps/.style 2 args={draw,ellipse,minimum width=#1,minimum height=#2},
+      node distance=3cm,
+      font=\footnotesize,
+      >=latex,
+    }
+    \node(x)[elps={1.5cm}{1cm},label={below left:$A$}]{};
+    \node(y)[elps={2cm}{1.2cm},right=of x,label={below left:$B$}]{};
+    \node(z)[elps={1.5cm}{.9cm},below right=2cm of x,label={below left:$C$}]{};
+    \fill[gray!50]($(y.center)-(1pt,3pt)$)circle[x radius=.40cm,y radius=.3cm]coordinate(im);
+    \node at (im){$\mathit{Img}_{G}$};
+    \draw[->](x)to[bend right]node[above right]{$F\circ G$}(z);
+    \draw[->](y)to[bend left]node[right]{$F$}(z);
+    \draw[->](x)to[bend left=20]node[above]{$G$}(y);
+\end{tikzpicture}
+\end{center}
+\begin{definition}[Inversa]
+  Dada uma relação $R$, definimos a inversa de $R$, denotada por $R^{-1}$, o conjunto:
+  $$R^{-1} = \{\langle x, y \rangle: \langle y, x \rangle \in R\}.$$
+  Para toda relação $R$, existe sua inversa. No entanto, quando $F$ é uma função, então $F^{-1}$ também é uma função \textit{iff} $F$ é Injetora.
+\end{definition}
+
+\subsubsection{Relação de equivalência}
+\begin{definition}
+  Uma \textit{relação de equivalência} $R$ em algum conjunto $A$ é uma relação binária sobre $A$ que satisfaz três propriedades, para todos $x$, $y$ e $z \in A$:
+    \begin{itemize}
+      \item Propriedade Reflexiva - ($xRx$):\quad \quad \quad \quad \quad \quad \quad\ \ $\langle x, x \rangle \in R$
+      \item Propriedade Simétrica - ($xRy \leftrightarrow yRx$):\quad \quad \quad \quad $\langle x, y \rangle \in R\ \leftrightarrow\ \langle y, x \rangle \in R$
+      \item Propriedade Transitiva - ($xRy\ \&\ yRz \rightarrow xRz$):\quad $\langle x, y \rangle \in R\ \&\ \langle y, z \rangle \in R\ \rightarrow\ \langle x, z \rangle \in R$
+    \end{itemize}
+\end{definition}
+\begin{exmp}
+  Consideremos o conjunto $A = \{1,2,3,4, \dots , 12\}.$\\
+  Vamos dividi-lo em três subconjuntos:
+    \begin{alignat*}{3}
+      &A_{1} = \{1,2,3,4\},\\
+      &A_{2} = \{5,6,7,8\},\\
+      &A_{3} = \{9,10,11,12\}.
+    \end{alignat*}
+  Digamos agora que dois elementos estão numa relação $R$ se eles são elementos do mesmo subconjunto:
+  $xRy\ \leftrightarrow\ x$ e $y$ pertencem ao mesmo subconjunto, então
+  $$R = \{\langle 1,1 \rangle , \langle 1,2 \rangle , \dots , \langle 5,5 \rangle , \langle 5,6 \rangle , \dots , \langle 9,12 \rangle , \langle 12,9 \rangle \}.$$
+  Observe que a relação $R$ é uma \textbf{relação de equivalência}:
+  $$A_{1} = \{1,2,3,4\}, A_{2} = \{5,6,7,8\}, A_{3} = \{9,10,11,12\}$$
+    \begin{itemize}
+      \item Reflexividade: um elemento está no mesmo subconjunto de si mesmo
+      \item Simetria: $x$ está no mesmo subconjunto que $y$, então $y$ está no mesmo subconjunto de $x$
+      \item Transitividade: Se $x$ está no mesmo subconjunto de $y$ e $y$, por sua vez, está no mesmo subconjunto que $z$, então $x$ e $z$ estão no mesmo subconjunto.
+    \end{itemize}
+\end{exmp}
+
+
+\subsubsection{Classes de equivalência}\label{subsubsec: CEQ}
+  Vamos considerar novamente
+    \begin{alignat*}{3}
+      &A = \{1,2,3,4, \dots , 12\},\\
+      &A_{1} = \{1,2,3,4\},\\
+      &A_{2} = \{5,6,7,8\},\\
+      &A_{3} = \{9,10,11,12\}.
+    \end{alignat*}
+  Tomando um elemento $x \in A$, digamos, o $2$. Queremos listar todos os elementos que estão na relação com $x = 2$ com respeito a $R$:
+  $$xRy\ \leftrightarrow\ x e y\ \ \textrm{pertencem\ ao\ mesmo\ conjunto.}$$
+  Esses elementos são: $\{1,2,3,4\}.$ Mas note que este conjunto é exatamente o subconjunto $A_{1}$.
+  \begin{definition}
+    A classe de equivalência de $x$ módulo $R$ é
+    $$[x]_{R} = \{t: xRt\}.$$
+    Ou seja, é o conjunto de todos os elementos $t$ que estão na relação $R$ com $x$ ou de forma equivalente, todos os elementos $t$ tais que $\langle x, t \rangle \in R.$ Quando dois elementos pertencem à mesma classe de equivalência, diremos que eles são equivalentes.
+  \end{definition}
+  O conjunto $[x]_{R}$ está garantido pelo \textbf{axioma da separação}, pois $[x]_{R}\ \subseteq\ \mathit{Img}_{R}.$
+    \begin{exmp}
+      $xRy\ \leftrightarrow\ x$ e $y$ pertencem ao mesmo subconjunto.
+        \begin{alignat*}{3}
+          &A = \{1,2,3,4, \dots , 12\},\\
+          &A_{1} = \{1,2,3,4\},\\
+          &A_{2} = \{5,6,7,8\},\\
+          &A_{3} = \{9,10,11,12\}.
+        \end{alignat*}
+      Então
+        \begin{alignat*}{3}
+          &[1]_{R} = \{t: 1Rt\} = \{1,2,3,4\} = A_{1},\\
+          &[4]_{R} = \{1,2,3,4\} = A_{1},\\
+          &[5]_{R} = \{5,6,7,8\} = A_{2},\\
+          &[12]_{R} = \{9,10,11,12\} = [9]_{R} = A_{3}.
+        \end{alignat*}
+    \end{exmp}
+\begin{theorem}
+  Assuma que $R$ seja uma relação de equivalência sobre $A$ e $x$ e $y$ sejam elementos de $A$.
+  Então,
+  $$[x]_{R} = [y]_{R}\quad \textrm{\textit{iff}}\quad xRy.$$
+\end{theorem}
+\begin{proof}
+  Suponha que $[x]_{R} = [y]_{R}$. Sabemos que $y \in [y]_{R}$, pela propriedade reflexiva. Pela suposição de igualdade, $y \in [x]_{R}$, portanto, pela definição, $xRy$.
+  Suponha que $xRy$. Veja que se $t \in [y]_{R}$, então $yRt$. Pela transitividade, $xRy\ \&\ yRt\ \rightarrow\ xRt$.
+  Tendo que $[x]_{R} = \{t: xRt\}$ (definição), se $xRt$, então $t \in [x]_{R}$. Ou seja, mostramos que $[y]_{R}\ \subseteq\ [x]_{R}$.
+  Pela simetria, temos $yRx$ e em um processo análogo, podemos mostrar que $[x]_{R}\ \subseteq\ [y]_{R}$.\\
+  Portanto, $[x]_{R} = [y]_{R}$.
+\end{proof}
+\begin{mymdframed}{Nota}  
+  Dados $x,y,z \in A$, uma relação de equivalência $R$ em $A$ é uma relação binária sobre $A$ que satisfaz três propriedades adicionais, para todos $x, y$ e $z$. Ou seja, $R$ é igual a $A$ \textit{cartesiano} $A$ que vale as propriedades Reflexiva, Simétrica e Transitiva.\\
+  Uma classe de equivalência, por exemplo, a classe de equivalência de $x$ módulo $R$ é o conjunto de elementos $t$ tais que $x$ está na relação $R$ com $t$. Todos os elementos $t$ tais que $\langle x, t \rangle \in R$.\\
+  No exemplo acima, temos um comportamento que nos diz que $A = \bigcup\{[1], [5], [9]\}$, está relacionado com o próximo tópico.
+\end{mymdframed}
+
+\subsubsection{Partição}
+  \begin{definition}
+    Uma partição $\Pi$ de um conjunto $A$ é um conjunto formado por subconjuntos não vazios de $A$ que são \textit{disjuntos} e \textit{exaustivos}, isto é:
+      \begin{enumerate}[i.]
+        \item Não existem dois conjuntos em $\Pi$ que possuam elementos em comum (são dois a dois disjuntos).
+        \item Cada elemento de $A$ pertence a algum conjunto $\Pi$ (a união dos conjuntos da partição é igual ao próprio conjunto $A$).
+      \end{enumerate}
+  \end{definition}
+  \begin{theorem}
+    Seja $\Pi$ uma partição de um conjunto $A$. Define-se uma relação $R$ sobre $A$ da seguinte forma:
+    $$xRy\ \leftrightarrow\ \exists B\ \in\ \Pi (x \in B\ \&\ y \in B).$$
+    Então, $R$ é uma relação de equivalência sobre $A$.
+  \end{theorem}
+A relação $R$ diz que dois objetos estão na relação $xRy$ se eles pertencem ao mesmo subconjunto.\\
+O teorema diz que uma partição induz uma relação de equivalência sobre um conjunto. Então, definindo uma partição de um conjunto e estabelencendo uma relação nesse conjunto que vai validar a pertinência de dois elementos dentro de um subconjunto dessa partição, temos uma relação de equivalência.
+A demonstração segue diretamente das propriedades lógicas (Reflexiva, Simétrica e Transitiva).
+\begin{exmp}
+  Consideremos o conjunto $A = \{1,2,3,4,5,6,7,8\}.$\\
+  Seja $\Pi = \{\{1,2,3,4\},\{5,6,7,8\}\}.$\\
+  Note que não existem dois conjuntos de $\Pi$ com elementos iguais e todo elemento de $A$ pertence a algum conjunto de $\Pi$. Portanto, $\Pi$ é uma partição de $A$.
+  $$A = \{1,2,3,4,5,6,7,8\}.\quad \therefore \Pi_{A} = \{\{1,2,3,4\},\{5,6,7,8\}\}.$$
+  Definimos uma relação $R$ sobre $A$ da seguinte forma:
+  $$xRy\ \leftrightarrow\ \exists B\ \in\ \Pi (x \in B\ \&\ y \in B).$$
+  Neste caso:
+  $$R = \{\langle 1, 1 \rangle ,\langle 1, 2 \rangle , \dots \langle 4, 3 \rangle , \langle 4, 4 \rangle , \dots \langle 5, 5 \rangle , \langle 5, 6 \rangle , \langle 8, 7 \rangle , \langle 8, 8 \rangle \}$$
+    \begin{itemize}
+      \item $\forall x \in A(\langle x, x \rangle \in R)$
+      \item $\langle x, y \rangle \in R\ \leftrightarrow\ \langle y, x \rangle \in R$
+      \item $\langle x, y \rangle \in R\ \&\ \langle y, z \rangle \in R\ \rightarrow\ \langle x, z \rangle \in R$
+      \item Portanto, $R$ é uma \textbf{relação de equivalência}.
+    \end{itemize}    
+\end{exmp}
+\begin{theorem}
+  Seja $R$ uma relação de equivalência sobre $A$. Então, o conjunto
+  $$H = \{[x]_{R}: x \in A\}$$
+  de todas as \textbf{classes de equivalência}, é uma partição desse conjnto A.  
+\end{theorem}
+\begin{proof}
+  Para ser partição, H deve satisfazer:
+    \begin{enumerate}[i.]
+        \item Os conjuntos em $H$ são subconjuntos de $A$, não vazios e são dois a dois disjuntos.
+        \item Cada elemento pertencentes $A$ pertence a algum conjunto em $H$.
+    \end{enumerate}
+    Seja $x \in A$ qualquer. Então, $x \in [x]_{R}$, logo, as classes em $H$ são não vazias e mostramos que vale (i.). Como $R$ é uma relação binária em $A$, segue que as classes são subconjuntos de $A$.\\
+    Suponha que $z$ pertença a duas classes diferentes, digamos, $[x]_{R}$\ e\ $[y]_{R}$. Então,\ $xRz$\ e\ $yRz$\ (ou $zRy$, pela simetria). Pela transitividade teríamos $xRy$, e pelo Teorema.0.9, teríamos $[x]_{R} = [y]_{R}$, contrariando a suposição de que essas classes sejam diferentes.
+\end{proof}
+\begin{mymdframed}{Observações}
+  O Teorema 0.10 diz que uma partição induz uma relação de equivalência sobre um conjunto.\\
+  Já o Teorema 0.11 temos o inverso do Teorema 0.10, isto é, a relação de equivalência particiona o conjunto de certa forma que respeita a definição de partição.
+\end{mymdframed}
+
+\subsubsection{Conjunto Quociente}
+Se $R$ é uma relação de equivalência sobre um conjunto $A$, o conjunto $H = \{[x]_{R}: x \in A\}$ do teorema anterior passa a ser chamado de Conjunto Quociente:
+$$A \diagup R = \{[x]_{R}: x \in A\}$$
+\begin{definition}
+  Defini-se como conjunto quociente um conjunto de classes de equivalência onde cada classe de equivalência é um conjunto formado pelas segundas coordenadas de todos os pares ordenados em que o elemento $x$ é a primeira coordenada.
+\end{definition}
+Então, como é garantido pelas propriedades de relação de equivalência, que as classes de equivalência formam uma partição de um dado conjunto $A$, essa partição (ou conjunto das classes de equivalência) é o \textbf{Conjunto Quociente}, também chamado de \textbf{Espaço Quociente} de $A$ por $R$.
+\begin{mymdframed}{Observação}
+  A existência desse conjunto é garantida pelo \textbf{axioma da separação}, pois ele é subconjunto de $\mathcal{P}(\mathit{Img}_{R})$.
+\end{mymdframed}
+Quando $A$ tem alguma estrutura definida (como uma operação de grupo ou uma topologia) e a relação de equivalência $R$ é \underline{compatível} com esta estrutura, o conjunto quociente frequentemente herda uma estrutura semelhante de seu "conjunto pai".
+\newpage
+
+\subsection{Relação de complementaridade [Adicional]}
+\begin{definition}
+  Seja $R$ uma relação binária e tida como subconjunto de $A \times B$. A \textit{relação complementar} $\overline{R}$ é o conjunto complemento de $R$ em $A \times B$.
+  $$\overline{R} = (A \times B) \setminus R.$$  
+\end{definition}
+Existe uma conexão entre uma \textit{matriz lógica} (ou \textit{matriz Booleana}) com a relação de complementaridade.\\
+A visualização da complementaridade em uma relação binária R se torna mais didática com o desenvolvimento da Matriz Lógica.
+\subsubsection{Família Indexada}
+São coleções de objetos que prosseguem de uma associação a um índice de algum conjunto de índices. Uma \textit{família} de números reais, \textit{indexados} pelo conjunto de inteiros é uma coleção de números reais, onde uma determinada função seleciona, para cada inteiro, um número real.
+
+Família indexada é uma \underline{função} que possui um certo domínio $\mathit{I}$ e imagem $X$.
+
+Os elementos do conjunto $X$ são referidos como a família.
+
+O conjunto $\mathit{I}$ é referido como o \textit{índice} da família, sendo assim, $X$ é o \textit{conjunto indexado}.
+\begin{definition}
+  Considere $I$ e $X$ conjuntos e $x$ uma função sobrejetiva\footnote[6]{Uma família contém qualquer elemento exatamente uma vez, se e somente se a função correspondente for injetiva.} tal que
+    \begin{alignat*}{3}
+      x:\quad &\mathit{I} \longrightarrow X\\
+      &i\ \mapsto\ x_{i} = x(i)
+    \end{alignat*}
+estabelece uma \textit{família de elementos} em $X$, indexado por $\mathit{I}$, que é denotado por $(x_{i})_{i \in \mathit{I}}$ ou simplesmente $(x_{i})$, caso o conjunto de índices seja conhecido.
+\end{definition}
+\begin{mymdframed}{Nota}
+  Uma família indexada pode ser \textit{transformada} em um conjunto, quase que de forma natural. Para qqr família $(F_{i})_{i\in \mathit{I}}$ existe o conjunto de \textbf{todos} os elementos $\{F_{i} \mid i \in \mathit{I}\}$, todavia isso não carrega uma "restrição" sobre a contenção múltipla ou a estrutura dada pelo $I$. Logo, utilizando conjunto em vez de família, certas etapas necessária podem ser perdidas e haver uma má interpretação.
+
+  Considerando o conjunto $\mathcal{X} = \{x_{i}: i\in \mathit{I}\}$, ou seja, a imagem de $I$ sob $x$. Lembrando que o mapeamento $x$ não precisa ser \textit{injetivo}, pode haver $i,j \in I$ com $i \neq j$ de tal modo que $x_{i} = x_{j}$. Portanto, $ | \mathcal{X} |  \leq | \mathit{I} | $  
+\end{mymdframed}
+\subsubsection{Matriz lógica}
+\begin{definition}[Domínio Booleano]
+  Domínio booleano é um conjunto que possui apenas dois elementos cujos valores representam \textit{falso} e \textit{verdadeiro}.
+  $$\mathbb{B} = \{0,1\}$$
+\end{definition}
+\subsubsection*{Matriz Booleana}
+Também chamada de \textit{matriz binária} é uma matriz em que os termos $a_{ij}$ assumem valores do \textbf{domínio Booleano}.\\
+Essa matriz pode ser usada na representação de uma relação binária entre um par de conjuntos finitos.
+\begin{definition}
+  Se $R$ é uma \textbf{relação binária} entre os \textit{conjutos indexados} finitos $X$ e $Y$, i.e, $R \subseteq X \times Y$, então $R$ pode ser representado pela matriz lógica $M$ cujos índices de linha e coluna indexam os elementos de $X$ e $Y$, respectivamente, de modo que as entradas de $M$ são definidas por
+\begin{center}
+$M_{ij} = $
+$\begin{cases}
+1 & (x_{i}, y_{j}) \in R \\ 
+0 & (x_{i}, y_{j}) \notin R
+\end{cases}$
+\end{center}
+Os conjuntos $X$ e $Y$ são indexados com os números inteiros positivos de forma a designar os números de linha e coluna da matriz. Temos $i$ variando de 1 a cardinalidade de $X$ e $j$ variando de 1 a cardinalidade de $Y$.
+\end{definition}
+\begin{exmp}
+  A relação binária $R$ no conjunto $\{1,2,3,4\}$ é definida de forma que $xRy$ se mantenha se, e somente se $y \mid x$. Segue o conjunto de pares para os quais a relação $R$ é válida.
+  
+  $\{(1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4)\}$\\
+A representação como uma matriz lógica: \ 
+$\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix},$ 
+onde o valor do par ordenado representa um termo, que seu valor tem como o domínio Booleano, onde valida ou não a divisibilidade.
+\end{exmp}
+Na \textbf{relação de complementaridade} ($\overline{R} = (A \times B) \setminus R$) vista como uma matriz lógica, já que linhas representam elementos de $X$ e colunas elementos de $Y$, primeiro criamos a relação binária e depois mudamos todos os $1$s da matriz para $0$s, e $0$s para $1$s. Assim teremos a relação complementar.
