@@ -1,4 +1,4 @@
-\section{Desenvolvendo as relações algébricas}
+\section{Relações}
 \subsection{Par não ordenado}
 Dados dois conjuntos $x$ e $y$, vimos que o \textbf{axioma do par} nos garante a existência do conjunto
 $$\{x, y\}.$$
@@ -105,14 +105,14 @@ $$(A \times B)\footnote[4]{Notação utilizada: $\langle x, y \rangle$\ ou\ $xRy
   Como uma relação é uma coleção de \textit{tuplas ordenadas}, isto é, uma lista ordenada de n objetos, o estudo será dirigido para as relações mais sofisticadas. Em particular, temos \textbf{função}, \textbf{relação de equivalência} e \textbf{relação de ordem}.
 \end{mymdframed}
 
-\subsubsection{Domínio, Imagem e Campo}
+\subsubsection{Domínio, Contradomínio e Imagem}
 \begin{definition}
   Seja $R$ uma relação.\\
-  Definimos o \textit{domínio} de $R$ ($\mathcal{D}_{R}$), a \textit{imagem} de $R$ ($\mathit{Img}_{R}$) e o \textit{campo} de $R$ ($\mathit{camp}_{R}$) de tal modo que:
+  Definimos o \textit{domínio} de $R$ ($\mathcal{D}_{R}$), a \textit{imagem} de $R$ ($\mathit{Img}_{R}$) e o \textit{contradomínio} de $R$ ($\mathit{CD}_{R}$) de tal modo que:
   \begin{alignat*}{3}
     & x \in \mathcal{D}_{R}\ \ \ \leftrightarrow \exists y (\langle x, y \rangle) \in R)\\
     & y \in \mathit{Img}_{R} \leftrightarrow \exists x (\langle x, y \rangle) \in R)\\
-    & \mathit{camp}_{R}\quad \ \ =\quad \mathcal{D}_{R}\ \cup\ \mathit{img}_{R}
+    & \mathit{CD}_{R}\quad \ \ =\quad \mathcal{D}_{R}\ \cup\ \mathit{Img}_{R}
   \end{alignat*}
 \end{definition}
 Para justificar a definição, temos que garantir que dada uma relação $R$,
@@ -152,7 +152,7 @@ Uma função $F$ é basicamente um conjunto de pares ordenados, isto é, uma rel
 \begin{definition}
   Dizemos que uma relação $F$ entre $A$ e $B$ é uma função de $A$ em $B$ se para todo $x \in A$ existe um único $y \in B$ tal que $\langle x, y \rangle \in F.$ 
 \end{definition}
-\begin{mymdframed}{Observação}
+\begin{mymdframed}{Observação 1.}
   Quando nem todos os elementos de $A$ participam da função, dizemos que a função é uma \textit{função parcial} de $A$ em $B$. Caso contrário, dizemos que $F$ é uma \textit{função total} ou simplesmento uma função.
 \end{mymdframed}
 As definições de domínio e imagem para relações seguem o mesmo esquema para funções.
@@ -175,14 +175,8 @@ Todavia, devemos notar que esse conjunto não pode ser "recuperado" a partir da 
   $$F = \{\langle x, y \rangle \in \mathbb{R}^{2}:\ y = x^{2}\}$$
   Aqui, $F$ pode ser uma função tanto $\mathbb{R}$ em $\mathbb{R}$, quanto de $\mathbb{R}$ em $\mathbb{R}_{+}$ (reais não negativos).
 \end{exmp}
-\begin{definition}[Natureza]
-  Uma função $F:\ A \longrightarrow B$ é
-\end{definition}
-\begin{itemize}
-  \item Injetora: se para todos $x, y \in A$ temos que se $x \neq y$, então $F(x) \neq F(y)$
-  \item Sobrejetora em relação a $B$: se para todo $y \in B$ existe $x \in A$ tal que $y = F(x)$
-  \item Bijetora: se ela é injetora e sobrejetora em relação a $B$
-\end{itemize}
+Em resumo, o domínio deve sempre ser \emph{suficientemente pequeno para garantir que a regra da função irá funcionar em cada elemento do domínio}. Por outro lado, o contradomínio deve sempre ser grande o suficiente para conter todos os valores da função que ocorrem.
+
 \begin{definition}[Composta]
   Se $F$ e $G$ são funções, com $\mathit{Img}_{G} \subset \mathcal{D}_{F}$ então definimos a função composta de $F$ e $G$ da seguinte maneira:
   $$ F \circ G = \{\langle x, y \rangle \in \mathcal{D}_{G} \times \mathit{Img}_{F}:\ \exists y (xGy\ \&\ yFz)\}.$$  
@@ -206,6 +200,16 @@ Todavia, devemos notar que esse conjunto não pode ser "recuperado" a partir da 
     \draw[->](x)to[bend left=20]node[above]{$G$}(y);
 \end{tikzpicture}
 \end{center}
+
+\begin{definition}[Natureza]
+  Uma função $F:\ A \longrightarrow B$ é
+\end{definition}
+\begin{itemize}
+  \item Injetora: se para todos $x, y \in A$ temos que se $x \neq y$, então $F(x) \neq F(y)$
+  \item Sobrejetora em relação a $B$: se para todo $y \in B$ existe $x \in A$ tal que $y = F(x)$
+  \item Bijetora: se ela é injetora e sobrejetora em relação a $B$
+\end{itemize}
+
 \begin{definition}[Inversa]
   Dada uma relação $R$, definimos a inversa de $R$, denotada por $R^{-1}$, o conjunto:
   $$R^{-1} = \{\langle x, y \rangle: \langle y, x \rangle \in R\}.$$
