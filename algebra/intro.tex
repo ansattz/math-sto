@@ -1,24 +1,20 @@
 
-
-
-
-
 \section{Mapeamento}
 Vamos começar a entender o que é uma estrutura algébrica como introdução. Tome um conjunto $S$ e incorpore esse conjunto com uma estrutura algébrica assumindo que nós podemos combinar, de várias formas (geralmente em duas), os elementos desse conjunto $S$ para obter os elementos desse conjunto $S$. Isso que estamos fazendo aqui é combinar elementos do conjunto $S$, denominado de \textit{operações em $S$}. Uma coisa importante para saber agora é que o comportamento dessas operações em $S$ podem ser condicionadas impondo certos axiomas, alterando a natureza de $S$. Os axiomas definem a particularidade da estrutura em $S$. Se eu quiser pegar uma coleção de axiomas e testá-los na tentativa de definir novas estruturas seria algo possível. Repare nas palavras "testá-los" e "tentativa". Uma estrutura algébrica depende fortemente de \textbf{consistência} entre sua coleção de axiomas. Mesmo assim ainda não seria suficiente para evitar criar um sistema estranho. Daqui em diante trataremos os axiomas como regras que são validadas dentro de um sistema algébrico, não como verdades evidentes como é popularmente entendido.
 \subsection{Função Geral}
-Sendo $S$ um conjunto de todos os objetos em venda num mercado e $T$ ser o conjunto de todos os números reais. Definimos $f:S \to T$ como $f(s) = \textrm{preço de s}$. Isso é um exemplo de mapeamento de $S$ para $T$.
-Um exemplo de função: Sendo $S$ um conjunto não vazio e definindo $i:S \to S$ como $i(s) = s$ para qualquer $s \in S$. Chamamos essa função, onde temos $S$ para $S$, de função identidade.\newline
-Um mapeamento é uma função geral que associa um elemento de uma origem a um elemento \textbf{único} do destino. Chamaremos $f$ como um mapeamento de $S$ para $T$ por $f:S \to T$ e, para $t \in T$, $t = f(s)$; $t$ é \textit{imagem} de $s$ sob $f$.
+Sendo $X$ um conjunto de todos os objetos em venda num mercado e $Y$ ser o conjunto de todos os números reais. Definimos $f:X \to Y$ como $f(x) = \textrm{preço de x}$. Isso é um exemplo de mapeamento de $X$ para $Y$.
+Um exemplo de função: Sendo $X$ um conjunto não vazio e definindo $i:X \to X$ como $i(x) = x$ para qualquer $x \in X$. Chamamos essa função, onde temos $X$ para $X$, de função identidade.\newline
+Um mapeamento é uma função geral que associa um elemento de uma origem a um elemento \textbf{único} do destino. Chamaremos $f$ como um mapeamento de $X$ para $Y$ por $f:X \to Y$ e, para $y \in Y$, $y = f(x)$; $y$ é \textit{imagem} de $x$ sob $f$.
 Assim, uma função é um mapa de um domínio $D$ para um contradomínio $CD$ tal que cada elemento de $D$ tem pelo menos uma imagem em $CD$.
 
 \begin{definition}
-  Se $g:S \to T$ e $f:T \to U$, então a \emph{composição}, denotada por $f \circ g$, é o mapameanto $f \circ g: S \to U$ definido por $(f \circ g)(s) = f(g(s))$ para todo $s \in S$.
+  Se $g:X \to Y$ e $f:Y \to Z$, então a \emph{composição}, denotada por $f \circ g$, é o mapameanto $f \circ g: X \to Z$ definido por $(f \circ g)(x) = f(g(x))$ para todo $x \in X$.
 \end{definition}
 \begin{lemma}\label{comp-assoc}
-  Se $h:S \to T, g:T \to U$\ e\ $f:U \to V$, então $f\circ (g\circ h) = (f \circ g)\circ h.$
+  Se $h:X \to Y, g:Y \to Z$\ e\ $f:Z \to W$, então $f\circ (g\circ h) = (f \circ g)\circ h.$
   \begin{proof}
     Temos que verificar que se esses dois mapeamento são iguais eles devem fazer a mesma coisa para qualquer elemento.\\
-    $\forall s \in S, (f\circ(g\circ h))(s) = ((f \circ g)\circ h)(s).$ A aplicação da definição de composição segue $$(f\circ (g\circ h))(s)=f((g\circ h)(s))=f(g(h(s)))$$ $$((f\circ g)\circ h)(s)=(f\circ g)(h(s))=f(g(h(s))),$$ $$(f\circ (g \circ h))(s)=((f \circ g)\circ h)(s), \forall s \in S.$$
+    $\forall x \in X, (f\circ(g\circ h))(x) = ((f \circ g)\circ h)(x).$ A aplicação da definição de composição segue $$(f\circ (g\circ h))(x)=f((g\circ h)(x))=f(g(h(x)))$$ $$((f\circ g)\circ h)(x)=(f\circ g)(h(x))=f(g(h(x))),$$ $$(f\circ (g \circ h))(x)=((f \circ g)\circ h)(x), \forall x \in X.$$
     Consequentemente, por definição, $f \circ (g \circ h) = (f\circ g) \circ h.$
   \end{proof}
 \end{lemma}
