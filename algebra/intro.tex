@@ -157,7 +157,6 @@ Um mapeamento (a função $f$) $f: X \to Y$ precisa associar um unico valor da f
 \end{proof}
 A proprosição anterior mostra que cada injeção com domínio não vazio tem uma retração. Note que um injeção $f$ pode ter muitas retrações, por causa da escolha arbitrária do elemento $x_{0}$ na prova da existência da retração. Também, note que a função identidade $id_{\varnothing}$ no conjunto vazio possui sua própria retração.
 
-
 \begin{definition}[Função Sobrejetiva]
 	Uma função $f: X \to Y$ é dita ser sobrejetiva se o contradomínio e imagem coincidem: $Y = f(X)$.
 \end{definition}
@@ -787,16 +786,12 @@ A relação de isomorfismo entre semigrupos, monóides ou grupos $X$ e $Y$ é fr
     é um homomorfismo de semigrupo entre os respectivos grupos de unidades. Pela Proposição anterior isso significa que se trata de um homomorfismo de grupo.
   \end{proof}
 \end{theorem}
-
-
-
 Uma função $f:X\to Y$ entre conjuntos é totalmente descrita pelo seu gráfico, o subconjunto
 $$\{(x,f(x)\mid x \in X)\}$$ de $X\times Y$. Homomorfismos podem então serem reconhecidos pelos seus gráficos.
 
 \begin{stat}[O gráfico de um homomorfismo]
   Deixe $(X.\circ)$ e $(Y,*)$ serem semigrupos. Então uma função $f: X\to Y$ é um homomorfismo de semigrupo se e somente se o gráfico é um subsemigrupo do produto direto de semigrupo $X\times Y$.
 \end{stat}
-
 \begin{corollary}
   Deixe $(X,\circ, e)$ e $(Y,*,f)$ serem monóides. Então uma função $f: X \to Y$ é dita ser um homomorfismo de monóide se e somente se o gráfico ser um submonóide do produto direto de monóide $X\times Y$.
 \end{corollary}
@@ -804,7 +799,6 @@ $$\{(x,f(x)\mid x \in X)\}$$ de $X\times Y$. Homomorfismos podem então serem re
 \subsubsection{Subgrupo Normal}
 Deixe $f: X\to Y$ ser uma função. A imagem $f(X) = \{f(x) \mid x \in X\}$ é um subconjunto do contradomínio $Y$.
 Se $f$ é um homomorfismo de semigrupos, monóides ou de grupos, a imagem irá carregar a correspondente estrutura algebrica.
-
 \begin{stat}[Imagens de homomorfismos]
   Deixe $f: (X,*) \to (Y,*)$ ser um homomorfismo de semigrupo.
   \begin{enumerate}[(a)]
@@ -817,7 +811,6 @@ Agora considere um homomorfismo de grupo $f:X\to Y$ de um grupo $(X,*,e_{X})$ pa
 $$ x\ ker\ f\ x' \Leftrightarrow f(x)=f(x').$$
 A classe de equivalência $[e_{X}]_{ker\ f}$ do elemento identidade $e_{X}$ de $X$ é a imagem inversa $$f^{-1}\{f(e_{X})\}.$$
 Como $f: X\to Y$ é um homomorfismo de grupo, essa classe de equivalência pode ser expressa na forma $$[e_{X}]_{ker\ f}=f^{-1}\{e_{Y}\}$$ como a imagem inversa do elemento identidade $e_{Y}$ do grupo de contradomínio $Y$.
-
 \begin{stat}[Classe de kernel da identidade]
   Deixe $f: (X,*,e_{X}) \to (Y,*,e_{Y})$ ser um homomorfismo de grupo.
   \begin{enumerate}[(a)]
@@ -837,17 +830,26 @@ Como $f: X\to Y$ é um homomorfismo de grupo, essa classe de equivalência pode 
     \item Para um homomorfismo de grupo $f: X\to Y$ com domínio $X$, o subgrupo normal $f^{-1}\{e_{Y}\}$ de $X$ é chamado de grupo Ker $f$ de $f$.
   \end{enumerate}
 \end{definition}
-
 \begin{stat}[Subgrupos normais de grupos abelianos]
   Em um grupo abeliano $G$, todo subgrupo é normal.
 \end{stat}
-
 \begin{mymdframed}{Observação}
   Considere um homomorfismo de grupo $f: (G,\cdot,e_{X}) \to (Y,\cdot,e_{Y})$. De acordo com a definição anterior (b), a classe de equivalência $[e_{X}]_{ker\ f}$ do elemento identidade $e_{X}$ de $X$ sob a relação kernel $ker\ f$ é o grupo kernel $Ker\ f$. Sendo mais geral, cada classe de equivalência sob a relação kernel $ker\ f$ é uma coclasse do grupo kernel $Ker\ f$.
 \end{mymdframed}
-
 \begin{stat}[Classes kernel são coclasses]
   Deixe $f: X\to Y$ ser um homomorfismo de grupo, com a relação kernel $ker\ f$ e grupo kernel $N=Ker\ f$. Deixe $x$ ser um elemento de $X$. Então a classe de equivalência $[x]_{ker\ f}$ sob a relação kernel $ker\ f$ é a coclasse $Nx$.
+  \begin{proof}
+    Para provar a igualdade dos dois conjuntos $[x]_{ker\ f}$ e $Nx$ seguiremos mostrando que cada um está contido no outro.
+
+    Primeiramente, considere um elemento $y$ da classe de equivalência $[x]_{ker\ f}$, onde $f(x) = f(y)$.
+
+    Então, pela propriedade homomorfica de $f$, $$f(yx^{-1}) = f(y)f(x)^{-1} = e_{Y},$$ onde $yx^{-1}$ é algum membro $n$ de $N=f^{-1}\{e_{Y}\}$.\\
+    Como $xy^{-1} = n$, nós obtemos $y$ como o membro $nx$ da coclasse $Nx$.
+
+    Por outro lado, considere um membro $nx$ da coclasse $Nx$, com $n \in N$. Então $$f(nx)=f(n)f(x)=e_{Y}f(x)=f(x),$$ 
+    onde $nx\ (ker\ f) x$, e $nx \in [x]_{ker\ f}$ pela simetria (propriedade simétrica) de $ker\ f$.
+
+  \end{proof}
 \end{stat}
 
 
