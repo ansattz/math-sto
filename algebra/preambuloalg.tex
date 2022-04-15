@@ -53,9 +53,6 @@ frametitlealignment=\raggedright
 \begin{mdframed}[style=exampledefault]
 }{\end{mdframed}}
 
-
-
-
 \newtcolorbox{mybox}{colback=gray!25!white,colframe=gray!75!black}
 
 \setlength\parindent{0pt}
@@ -63,11 +60,15 @@ frametitlealignment=\raggedright
 \renewcommand\qedsymbol{$\blacksquare$}
 
 
-\theoremstyle{definition}
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theorem}{Teorema}
 \newtheorem{definition}{Definição}
 \newtheorem{exmp}{Exemplo}
 \newtheorem{stat}{Proposição}
-
-\newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
 \newtheorem{lemma}[theorem]{Lema}
