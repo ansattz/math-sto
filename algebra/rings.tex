@@ -1,0 +1,219 @@
+\section{Anéis}
+  Os conjuntos mais conhecidos - como os dos inteiros $\Z$, os reais $\R$ ou as matrizes $2 \times 2$ reais $\R^{2}_{2}$ - carregam uma estrutura de grupo aditiva e uma estrutura de semigrupo multiplicativo (ou estrutura de monoide multiplicativo). Essas duas estruturas se combinam para formar uma estrutura mais rica conhecida como os anéis.
+\subsection{Definição de anel}
+  Um anel é definido como um conjunto com duas operações, uma adição $x+y$ e uma multiplicação $x\cdot y$ (ou $xy$) de elementos $x$ e $y$ de $R$. A operação de multiplicação deve ser realizada primeiro. Dizemos que a multiplicação liga mais fortemente do que a adição.
+\begin{definition}
+  Suponha que um conjunto $R$ carrega uma estrutura de grupo aditiva comutativa $(R,+,0)$ e uma estrutura de semigrupo multiplicativa $(R,\cdot)$.
+  \begin{enumerate}[(a)]
+    \item A estrutura combinada $(R,+,\cdot)$ diz-se que satisfaz a \emph{lei distributiva a direita} se 
+      \begin{equation}\label{DISTDIRRING}
+        (x + y) \cdot r = x\cdot r + y \cdot r,\quad \quad \forall x,y,r \in R.
+      \end{equation}
+    \item A estrutura $(R,+,\cdot)$ diz-se que satisfaz a \emph{lei distributiva a esquerda} se 
+      \begin{equation}\label{DISTESQRING}
+        r\cdot (x + y) = r\cdot x + r \cdot y\quad \quad \forall x,y,r \in R.
+      \end{equation}
+    \item A estrutura $(R,+,\cdot)$ é dita ser um \emph{anel não unitário} se satifazer ambas as leis (esquerda e direita) distributivas.
+    \item Um anel $(R,+,\cdot)$ é dito ser um \emph{anel unitário} se formar um monoide $(R,\cdot , 1)$ sob a operação de multiplicação.
+    \item Um anel $(R,+,\cdot)$ é dito ser comutativo se o semigrupo $(R,\cdot)$ é comutativo.
+    \end{enumerate}
+\end{definition}
+\begin{mymdframed}{Observações}
+  \begin{itemize}
+    \item Note que a estrutura de grupo $(R,+,0)$ de um anel $(R,+,\cdot)$ é sempre comutativa. O problema da comutatividade em um anel (item (e) da definição) surge apenas em conexão com a estrutura de semigrupo $(R,\cdot)$. Para um anel comutativo $(R, +, \cdot)$, a lei distributiva a esquerda e a direita coincidem. Em um anel geral $(R,+,\cdot)$, para dizer que dois elementos $x$ e $y$ comutam significa que $x\cdot y = y \cdot x $.\\ 
+    O elemento identidade $0$ do grupo aditivo $(R, +, 0)$ de um anel $(R, +, \cdot)$ é conhecido como o \emph{zero} do anel $R$. Se $R$ é unitário, então o elemento identidade $1$ do monoide $(R,\cdot , 1)$ é conhecido como a \emph{identidade} ou \emph{um} do anel $R$. Anéis unitários são também descritos como \emph{anéis com um}, não unitários são \emph{anéis sem um}. Em um anel unitário $R$, os elementos invertíveis (unidades do monoide $(R,\cdot , 1)$) são chamados de \emph{unidades} do anel $R$. O grupo de unidades de um anel unitário $R$ é escrito como $R^{*}.$
+    \item De acordo com a definição (item c), todos os anéis são não unitários, independentemente de possuírem ou não um elemento identidade. Quando um anel $R$ do qual tem um elemento identidade é descrito como "não unitário" o elemento identidade está sendo desconsiderado.
+  \end{itemize}
+\end{mymdframed}
+
+% EXEMPLOS %
+\begin{exmp}[Inteiros]
+  Os inteiros formam um anel unitário comutativo $(\Z , + , \cdot)$ sob as operações triviais de adição e multiplicação. Note que a lei distributiva a direita $$(m + n)r = mr + nr$$ reduz-se para a regra da potência no grupo aditivo $(\Z, + , 0)$.
+\end{exmp}
+
+\begin{exmp}[Reais]
+  O conjunto $\R$ dos números reais forma um anel unitário comutativo $(\R, +, \cdot)$ sob as operações triviais de adição e multiplicação.
+\end{exmp}
+
+\begin{exmp}[Anéis zero]
+  Seja $(A, +, 0)$ um grupo abeliano. Defina uma nova multiplicação trivial no conjunto $A$ por $$ x \cdot_{0} y = 0, \quad \quad \forall x,y \in A.$$
+  Então $(A, +, \cdot_{0})$ é um anel não unitário comutativo conhecido como o \emph{anel zero} no grupo abeliano $(A,+,\cdot)$. Note que as leis distributivas são satisfeitas trivialmente, pois cada lado das equações \ref{DISTDIRRING} e \ref{DISTESQRING} em $A$ vão para zero.
+\end{exmp}
+O exemplo a seguir mostra que mesmo tendo uma estrutura de grupo aditiva e uma estrutura de semigrupo conectada por uma das leis distributivas não é o suficiente para garantir que a outra lei distributiva será válida (para surgir um anel).
+\begin{exmp}
+  Seja $(A,+,0)$ um grupo aditivo não trivial, com elemento $a$ diferente de zero.
+
+  Define-se a operação de semigrupo $$x\cdot y = y$$ em $A$. Note que a distributiva a esquerda é trivialmente válida, pois cada lado vai para $$x + y.$$ Por outro lado, a distributiva a direita vai para $$r = r + r,$$ da qual não é válida para $r=a$.
+\end{exmp}
+
+\begin{exmp}[O anel trivial]\label{ZERORING}
+  O anel zero no grupo abeliano trivial $\{0\}$ é unitário, com $0$ como o elemento identidade. Ele é conhecido como \emph{anel trivial.}
+\end{exmp}
+\begin{exmp}
+  Seja $d$ um inteiro positivo. Então o conjunto $\dfrac{\Z}{d\Z}$ ou $\dfrac{\Z}{d}$ dos inteiros módulo $d$ forma um anel unitário comutativo $(\dfrac{\Z}{d}, + , \cdot)$ sob as operações de adição modular e a multiplicação modular.\ref{ADITTOP} Usando $[a]_{mod\ d} + [b]_{mod\ d} = [a+b]_{mod\ d}$ e $[a]_{mod\ d} \cdot [b]_{mod\ d} = [a\cdot b]_{mod\ d}$, a lei distributiva para $\dfrac{\Z}{d}$ segue da lei distributiva para inteiros. Note que para $d=1$ o anel $\dfrac{\Z}{d}$ é o anel unitário zero de \ref{ZERORING}
+\end{exmp}
+
+
+\begin{exmp}[Anéis matrizes]
+  Para um anel não unitário $R$, deixe $R^{2}_{2}$ denotar o conjunto $2\times 2$ das matrizes
+  $$\begin{bmatrix}
+    r_{11} & r_{12}\\
+    r_{21} & r_{22}
+  \end{bmatrix}$$
+  com entradas $r_{ij}$ de $R$. Então $R^{2}_{2}$ forma um grupo comutativo aditivo sob a componente de adição, e um semigrupo não comutativo sob a operação trivial de multiplicação de matrizes. As leis distributivas também são válidas. Se o anel $R$ é unitário, então também o é o anel de matriz $R^{2}_{2}$ correspondente. Seu elemento de identidade é a matriz
+  $$I_{2} =\begin{bmatrix}
+    1 & 0\\
+    0 & 1
+  \end{bmatrix}$$ da qual as entradas são zero e a identidade do anel unitário $R$.
+
+\end{exmp}
+
+\begin{exmp}[Produto direto]
+  Seja $(R,+,\cdot)$ e $(S,+,\cdot)$ anéis não unitários. O grupo de produtos $(R\times S, +)$ e o semigrupo de produtos $(R\times S, \cdot)$ combinam para formar um anel $(R\times S, +, \cdot)$, o produto direto dos anéis $R$ e $S$.
+
+  Note que as leis distributivas no produto segue a estrutura das leis distributivas nos fatores $R$ e $S$. Se $R$ e $S$ são unitários, então $R\times S$ é unitário, com estrutura de elemento identidade $(1,1)$.
+\end{exmp}
+
+\begin{exmp}[Anéis de Funções]
+  Sejam $X$ um conjunto e $(S, +, \cdot)$ um anel. De acordo com a definição de estruturas de potência o conjunto $S^{X}$ de todas as funções $f: X \to S$ de $X$ para $S$ carrega uma estrutura de grupo aditiva componente $(S^{X},+, z)$ com a função constante zero $$z: X \to S;\ x\mapsto 0$$ e a estrutura de semigrupo componente $(S^{X}, \cdot)$. Agora, para funções $f,g,h: X\to S$, a lei distributiva a direita em $S$ implica
+  \begin{alignat*}{3}
+    & [(f+g)\cdot h](x)\ &=&\ [f(x)+g(x)] \cdot h(x)\\
+    & &=&\ f(x) \cdot h(x) + g(x) \cdot h(x)\ &=&\ [f\cdot h+g \cdot h](x)  
+  \end{alignat*}
+  para cada elemento $x$ de $X$. Assim a lei distributiva a direita $$(f+g) \cdot h = f\cdot h +g \cdot h$$ é válida em $(S^{X},+,\cdot)$. Por um argumento similar a lei distributiva a esquerda também é válida. O conjunto $S^{X}$ se torna um anel, a $X$-ésima potência do anel $S$, ou o anel de funções de $S$-valores no conjunto $X$. Se $S$ é unitário, então também é potência $S^{X}$. É o elemento identidade a função $u: X\to S;\ x\mapsto 1$ da qual toma um valor constante da identidade em $S$ a cada elemento $x$ de $X$. Por exemplo o conjunto $\R^{\R}$ das funções reais $f: \R \to \R$ forma um anel unitário.
+\end{exmp}
+
+\subsection{Distributividade em anéis}
+Vamos analisar um pouco a significância das leis de distributividade em um anel $(R, +, \cdot)$. 
+Para um elemento $r$ de $R$, considere a multiplicação a esquerda $$R \to R;\ x \mapsto r \cdot x$$ por $r$. A lei distributiva a esquerda (da definição de anel) garante que a função acima é um homomorfismo de semigrupo de $(R, +)$ para ele mesmo. Isto é, $\exists \phi; \phi: (R, +) \to (R, +);\ x \mapsto x$. Pela proposição de homomorfismos de semigrupo entre grupos, seguimos que a multiplicação a esquerda por $r$ é um homomorfismo de grupo de um grupo aditivo $(R,+,0)$ de $R$ para ele mesmo. Isto é, $\exists \varphi; \varphi: (R,+,0) \to (R,+,0);\ x \mapsto x$. Em outras palavras, a multiplicação perserva o zero e a negação: $$r \cdot 0 = 0\quad \quad \&\quad \quad r \cdot (-s) = -(rs)$$ para $s$ em $R$. Ainda, temos $$r \cdot (x-y) = r\cdot x - r \cdot y$$ para $x$ e $y$ em $R$.
+
+Similarmente, a multiplicação a direita $$R \to R;\ x \mapsto x \cdot s$$ por um elemento $s$ de $R$ é também um homomorfismo de grupo de $(R,+,0)$ para ele mesmo. Assim $$(-r) \cdot (-s) = r \cdot s$$ é válida para qualquer $r,s \in R$.
+
+Outra propriedade útil é a equação $$r \cdot 0 = 0 = 0 \cdot r,\quad \quad \forall r \in R.$$ De fato, $$0 + r \cdot 0 = r \cdot 0 = r \cdot (0 + 0) = r \cdot 0 + r \cdot 0,$$ as primeiras duas equações são válidas pelos axiomas de grupo, e a terceira pela lei distributiva a esquerda. A cancelação no grupo $(R,+,0)$ surge $0=r \cdot 0$. A outra equação é provada similarmente.
+
+Em um anel $(R,+,\cdot0)$ é útil usar a notação sigma. Seja $m$ um inteiro. Suponha que $x_{i}$ é um elemento de $R$, para inteiros $i=m, m+1 , m+2 , ...$. Pela indução em $n$, define-se $$\sum^{l}_{i=m} x_{i} = 0,\quad \quad \forall l < m$$ e $$\sum^{n+1}_{i=m} x_{i} = x_{n+1} + \sum^{n}_{i=m} x_{i}.$$ Assim, por exemplo, $$\sum^{5}_{i=1} x_{i} = x_{1} + x_{2} + x_{3} + x_{4} + x_{5}.$$ Usando a notação sigma nós formulamos uma extensão das leis distributivas, que pode ser provada por indução.
+
+\begin{stat}[Lei distributiva generalizada]
+  Seja $x_{i}$ e $y_{i}$ elementos de um anel $R$, para $i=1,2,3, ...$. Então $$\left(\sum^{m}_{i=1}x_{i}\right) \cdot \left(\sum^{n}_{j=1}y_{j}\right) = \sum^{m}_{i=1}\sum^{n}_{j=1}x_{i}y_{j},\quad \quad m,n \in \N.$$
+\end{stat}
+\begin{corollary}
+  Seja $x$ e $y$ elementos de um anel $(R,+,\cdot)$. Então para inteiros $m$ e $n$, $$(mx) \cdot (ny) = (mn)xy.$$
+  \begin{proof}
+    A prova se divide naturalmente em 4 casos:
+    \begin{itemize}
+      \item Para $m,n > 0$, coloque $x_{i} = x$ e $y_{j} = y$ na proposição anterior.
+      \item Para $m < 0$, $n > 0$, coloque $x_{i} = -x$ e $y_{j} = y$ na proposição anterior.
+      \item Para $m > 0$, $n < 0$, coloque $x_{i} = x$ e $y_{j} = y$ na proposição anterior.
+      \item Para $m,n < 0$, coloque $x_{i} = -x$ e $y_{j} = -y$ na proposição anterior.
+    \end{itemize}
+  \end{proof}
+\end{corollary}
+
+\subsection{Subanéis}
+Aqui iremos combinar conceitos de subsemigrupos, submonoides e subsemigrupos para o conceito de um subanel de um anel.
+\begin{definition}[ANÉIS UNITÁRIOS E NÃO UNITÁRIOS].
+  \begin{enumerate}[(a)]
+    \item Um subconjunto $S$ de um anel não unitário $(R, +, \cdot)$ é dito ser um subanel não unitário de $R$ se $S$ é um subgrupo de $(R,+,0)$ e um subsemigrupo de $(R,\cdot)$.
+    \item Um subconjunto $S$ de um anel unitário $(R, +, \cdot)$ é dito ser um \emph{subanel unitário} de $R$ se $S$ é um subgrupo de $(R,+,0)$ e um submonoide de $(R,\cdot , 1)$.
+  \end{enumerate}
+\end{definition}
+Isto é, para termos um subanel $S$ basta que $S$ seja fechado para a diferença e para o produto. 
+
+Com efeito:
+\begin{align*}
+  S \neq \varnothing\\
+  a-b \in S\\
+  a\cdot b \in S
+\end{align*}
+
+\begin{mymdframed}{Observações}
+  As vezes é deixa implícito se um subanel é declarado unitário ou não unitário.
+  \begin{itemize}
+    \item Em qualquer anel $R$, o subconjunto $R$ forma ele próprio um subanel, o \textbf{subanel impróprio}.
+    \item Sempre será um subanel não unitário.
+    \item Se $R$ é unitário, então terá um subanel unitário.
+    \item O anel $\{0\}$ e o próprio $R$ são triviais. 
+    \item O anel $\{0\}$ é um subanel não unitário para cada anel $R$.
+  \end{itemize}
+\end{mymdframed}
+
+\begin{exmp}
+  $\Z$ é um subanel de $\Q$ com unidade
+\end{exmp}
+\begin{exmp}
+  $2\Z$ é um subanel de $\Z$. Lembrando que $2\Z = \{2k \mid k \in \Z\}$ é o conjunto dos números pares. Neste caso, $2\Z$ é um anel sem unidade. Isto é, $1 \notin 2\Z$.
+\end{exmp}
+\begin{exmp}
+  $d\Z$ é um subanel de $\Z$. Claro que $d\Z = \{dk \mid k \in \Z\}$, $n$ inteiro e $n>1$, é o conjunto dos múltiplos de $n$. Assim, $n\Z$ também é um anel sem unidade ($1 \notin n\Z$).
+\end{exmp}
+\begin{exmp}
+  Como visto antes, cada subgrupo do grupo aditivo $(\Z, +, 0)$ dos inteiros é o conjunto $d\Z$ dos múltiplos de algum número natural $d$. Como a relação de divisibilidade é transitiva, cada subgrupo de $(\Z, +, 0)$ é também um subsemigrupo de $(\Z, \cdot)$, e então um subanel não unitário do anel unitário dos inteiros. De fato, como $1\Z = \Z$, o único subanel unitário de $\Z$ é o subanel impróprio.
+\end{exmp}
+
+\begin{exmp}[O anel Ri, Números Complexos, Inteiros Gaussianos]
+  Seja $R$ um anel unitário, e seja $R[i]$ o conjunto das matrizes $2\times 2$ da forma
+  \begin{equation}\label{PRODMATRIX}
+  \begin{bmatrix}
+    x & -y\\
+    y & x
+  \end{bmatrix}$$
+  para $x,y \in R$. Então $R[i]$ é um subanel unitário do anel $R^{2}_{2}$ de todas as matrizes $2\times 2$ sob $R$. Certamente a matriz identidade $I_{2}$ está em $R[i]$, e $R[i]$ é fechado sob a componente de subtração das matrizes. Agora
+  $$\begin{bmatrix}
+    x & -y\\
+    y & x
+  \end{bmatrix}
+  \begin{bmatrix}
+    u & -v\\
+    v & u
+  \end{bmatrix}=
+  \begin{bmatrix}
+    xu-yv & -xv-yu\\
+    yu+xv & -yv+xu
+  \end{bmatrix}=
+  \begin{bmatrix}
+    (xu-yv) & -(yu+xv)\\
+    (yu+xv) & (xu-yv)
+  \end{bmatrix}
+\end{equation}
+  de modo que $R[i]$ também é \textbf{fechado} sob a multiplicação. Se $R$ é comutativo, segue de \ref{PRODMATRIX} que $R[i]$ também é comutativo. Aqui nós temos dois casos especiais:
+  \begin{itemize}
+    \item O Anel $\R[i]$ é o anel $\C$ dos números complexos.
+    \item O Subanel $\Z[i]$ de $\R[i]$ é conhecido como o anel dos Inteiros Gaussianos.
+  \end{itemize}
+\end{exmp}
+\begin{exmp}
+  
+\end{exmp}
+\begin{exmp}
+  
+\end{exmp}
+\begin{exmp}
+  
+\end{exmp}
+\begin{exmp}
+  
+\end{exmp}
+\begin{exmp}
+  
+\end{exmp}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
