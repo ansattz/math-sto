@@ -266,7 +266,7 @@ Veremos isso na proposição seguinte.
   Deixe $J$ ser um subgrupo do grupo $(\Z,+,0)$ de inteiros sob a adição. Então existe um número natural $d$ tal que $J$ consiste do conjunto $d\Z$ de múltiplos inteiros de $d$.
 \end{theorem}
 
-\subsubsection{Coclasse (Cosets)}
+\subsubsection{Coclasse (ou Classes Lateriais, ou Cosets)}
 Um semigrupo $(G,*)$ carrega uma operação associativa de seus elementos. É muito útil extendermos essa operação para subconjuntos de $G$.
 
 Deixe $X$ ser um subconjunto de um semigrupo $(G,*)$. Se $g$ é um elemento de $G$, define-se $$ Xg = \{xg \mid x \in X\}\quad \textrm{e}\quad gX = \{gx \mid x \in X\}.$$
@@ -413,7 +413,7 @@ A equação (\ref{eq:1}) diz que podemos adicionar dois números reais $x$ e $y$
 A relação de isomorfismo entre semigrupos, Monoides ou grupos $X$ e $Y$ é frequentemente denotada por $$X\cong Y.$$ O contexto aqui é o isomorfismo de conjuntos, semigrupos, Monoides ou grupos.
 
 \begin{exmp}
-  Seja $\phi:(X, *, e) \to (Y, \star, f)$ um isomorfismo dos grupos $X$ e $Y$. Mostrque que $\phi$ transforma subgrupo em subgrupo.
+  Seja $\phi:(X, *, e) \to (Y, \star, f)$ um isomorfismo dos grupos $X$ e $Y$. Mostre que $\phi$ transforma subgrupo em subgrupo.
   \begin{proof}
     Sendo $\phi: X \to Y$ um isomorfismo, isto é, um homomorfismo sobrejetor, então $\phi(x*y) = \phi(x) \star \phi(y)$ e $\phi$ é uma bijeção.
 
@@ -534,7 +534,7 @@ Isto é, $N$ é normal em $X$ \textbf{iff} $xNx^{-1} \subseteq N$.
 \begin{mymdframed}{Observação}
   Considere um homomorfismo de grupo $f: (G,\cdot,e_{X}) \to (Y,\cdot,e_{Y})$. De acordo com a definição anterior (b), a classe de equivalência $[e_{X}]_{ker\ f}$ do elemento identidade $e_{X}$ de $X$ sob a relação núcleo $ker\ f$ é o grupo núcleo $Ker\ f$. Sendo mais geral, cada classe de equivalência sob a relação núcleo $ker\ f$ é uma coclasse do grupo núcleo $Ker\ f$.
 \end{mymdframed}
-\begin{stat}[Classes núcleo são coclasses]
+\begin{stat}[Classes de núcleo são coclasses]
   Deixe $f: X\to Y$ ser um homomorfismo de grupo, com a relação núcleo $ker\ f$ e grupo núcleo $N=Ker\ f$. Deixe $x$ ser um elemento de $X$. Então a classe de equivalência $[x]_{ker\ f}$ sob a relação núcleo $ker\ f$ é a coclasse $Nx$.
   \begin{proof}
     Para provar a igualdade dos dois conjuntos $[x]_{ker\ f}$ e $Nx$ seguiremos mostrando que cada um está contido no outro.
