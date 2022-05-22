@@ -1,1 +1,1 @@
-# math-sto
+# Study Projects
