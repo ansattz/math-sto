@@ -1,0 +1,20 @@
+\documentclass[a4paper,11pt]{article}
+   \input{preambulo_alg.tex}
+   \begin{document}
+      \input{titulo_alg.tex}
+      \begin{center}
+         \tableofcontents 
+      \end{center}
+      \clearpage
+
+      \input{intro.tex}
+      \input{group_theory.tex}
+      \input{rings.tex}
+      \pagebreak
+
+      \nocite{herstein}
+      \nocite{smith}
+      \nocite{garcia-lequain}
+      \addcontentsline{toc}{section}{\protect{\refname}}
+      \printbibliography
+   \end{document}

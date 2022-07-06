@@ -1,0 +1,73 @@
+% PACOTES BASE
+   \usepackage[portuguese]{babel}
+   \usepackage[utf8]{inputenc}
+   \usepackage[T1]{fontenc}
+   \usepackage{amsmath, amsfonts, mathtools, amsbsy, amssymb}
+   \usepackage{amsthm}
+
+
+% PACOTES ADICIONAIS
+   \usepackage{newpxtext,eulerpx} % font pessoal
+   \usepackage[margin=2cm]{geometry}
+   \usepackage[shortlabels]{enumitem}
+   \usepackage[hidelinks]{hyperref}
+   \usepackage{graphicx}
+   \usepackage{tcolorbox}
+   \usepackage[framemethod=default]{mdframed}
+   \usepackage{tikz}
+   \usepackage{csquotes}
+   \usetikzlibrary{matrix,arrows}
+   \usetikzlibrary{calc,positioning,shapes.geometric}
+   \usepackage[backend=bibtex,natbib=true,style=numeric,sorting=none]{biblatex}
+   \addbibresource{/refs/book_ref.bib}
+
+% COMANDOS ATALHOS
+   % conjuntos numéricos
+      \newcommand{\N}{\mathbb{N}}
+      \newcommand{\Z}{\mathbb{Z}}
+      \newcommand{\Q}{\mathbb{Q}}
+      \newcommand{\R}{\mathbb{R}}
+      \newcommand{\C}{\mathbb{C}}
+      \newcommand{\I}{\mathbb{I}}
+      \newcommand{\Nnz}{\mathbb{N}^*}
+      \newcommand{\Zm}{\mathbb{Z}_+}
+      \newcommand{\Rnz}{\mathbb{R}^*}
+
+   % outros atalhos
+      \newcommand{\LinhaR}{\rule{\linewidth}{0.5mm}}
+      \renewcommand{\thefootnote}{\roman{footnote}} % notas serão em algarismo romano
+      \newcommand{\subscript}[2]{$#1 _ #2$}
+      \newcommand{\Equivn}[1]{\underset{#1}{\equiv}}
+      \newcommand{\fonta}{\fontfamily{lmss}\selectfont }
+      \newcommand{\fontr}{\fontfamily{lmtt}\selectfont }
+      \newcommand{\highl}{\color{red}}
+
+\global\mdfdefinestyle{exampledefault}{%
+linecolor=lightgray,linewidth=1pt,%
+leftmargin=1cm,rightmargin=1cm,
+}
+\newenvironment{mymdframed}[1]{%
+\mdfsetup{%
+frametitle={\colorbox{white}{\,#1\,}},
+frametitleaboveskip=-\ht\strutbox,
+frametitlealignment=\raggedright
+}%
+\begin{mdframed}[style=exampledefault]
+}{\end{mdframed}}
+
+\newtcolorbox{mybox}{colback=gray!25!white,colframe=gray!75!black}
+
+\setlength\parindent{0pt}
+\setcounter {secnumdepth}{-1}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}
+\newtheorem{exmp}{Exemplo}
+\newtheorem{stat}{Proposição}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+
+\graphicspath{{./img/}}
