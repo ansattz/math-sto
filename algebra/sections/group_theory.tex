@@ -1,4 +1,5 @@
 \section{Grupos e monoides}
+   Tomando um conjunto $S$ não vazio e "equipando-o" com uma operação podemos combinar, de várias formas (geralmente em duas), os elementos desse conjunto $S$. Combinar os elementos de $S$ pode ser denominado como \textit{operações em $S$}. Uma coisa importante é saber que o comportamento dessas operações em $S$ podem ser condicionadas impondo certos axiomas, alterando a natureza de $S$. Os axiomas definem a particularidade da estrutura em $S$.
    \subsection{As estruturas abstratas}
       Se $S$ é um semigrupo de funções, então podemos considerar a função composta como um mapa
       \begin{alignat}{2}
@@ -9,22 +10,22 @@
       cujo domínio é o conjunto $S \times S$ dos pares ordenados $(g,f)$ dos elementos de $S$. Estar fechado sob a composição, isto é, $g\in S$ e $f\in S$ implica implica $g\circ f \in S$, garente que $S$ pode servir como o contradomínio do mapa acima.
 
       \begin{definition}[Magma]
-         Seja $M$ um conjunto com uma operacao $*$ que mapeia dois elementos $x,y \in M$ para $x * y$. Para termos um magma basta o conjunto $M$ e a operacao $*$ satisfazerem a propriedade de ser fechado. Com efeito, 
+         Seja $M$ um conjunto com uma operação $*$ que mapeia dois elementos $x,y \in M$ para $x * y$. Para termos um magma basta o conjunto $M$ e a operação $*$ satisfazerem a propriedade de ser fechado. Com efeito, 
          \begin{alignat}{2}
             &*: M \times M \to M \nonumber\\
             &\left(x,y\right)\ \mapsto\ x * y
             \nonumber
          \end{alignat}
-         onde $x*y \in M$. O conjunto $M$ eh fechado com respeito a operacao $*$.
+         onde $x*y \in M$. O conjunto $M$ é fechado com respeito a operação $*$.
       \end{definition}
       \begin{definition}[Semigrupos]
-         Seja $S$ um conjunto equipado com a operacao $*$.
+         Seja $S$ um conjunto equipado com a operação $*$.
          \begin{alignat}{2}
             &*:S \times S \to S \nonumber\\
             &\left(x,y\right)\ \mapsto\ g * f
             \nonumber
          \end{alignat}
-         $S$ eh fechado com respeito a operacao binaria $*$ em $S$. Isto eh, $S$ possui um magma. O par $\left(S,* \right)$ consistindo do conjunto $S$ com a operação $*$ é chamado de \emph{semigrupo} (ou \emph{semigrupo abstrato}) se a lei associativa $$x * (y * z) = (x * y) * z$$ é válida para todos os elementos $x,y$ e $z$ do conjunto $S$.
+         $S$ é fechado com respeito a operação binaria $*$ em $S$. Isto é, $S$ possui um magma. O par $\left(S,* \right)$ consistindo do conjunto $S$ com a operação $*$ é chamado de \emph{semigrupo} (ou \emph{semigrupo abstrato}) se a lei associativa $$x * (y * z) = (x * y) * z$$ é válida para todos os elementos $x,y$ e $z$ do conjunto $S$.
       \end{definition}
 
       \begin{definition}[Comutatividade]
@@ -41,7 +42,7 @@
             &\left(x_{1},x_{2}\right)\ \mapsto\ x_{1} - x_{2}.
             \nonumber
          \end{alignat}
-         $A$ não forma um semigrupo, pois a operacao em $A$ não é associativa. Isto eh, a subtracao nao eh associativa. De fato, $$3-(5-4)=3-1=2,$$ enquanto $$(3-5)-4=(-2)-4=-6.$$
+         $A$ não forma um semigrupo, pois a operação em $A$ não é associativa. Isto é, a subtração nao é associativa. De fato, $$3-(5-4)=3-1=2,$$ enquanto $$(3-5)-4=(-2)-4=-6.$$
       \end{exmp}
 
       \subsubsection{monoides}

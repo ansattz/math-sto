@@ -1,11 +1,5 @@
 \section{Mapeamento}
-   Vamos começar a entender o que é uma estrutura algébrica como introdução. Tome um conjunto $S$ e incorpore esse conjunto com uma estrutura algébrica assumindo que nós podemos combinar, de várias formas (geralmente em duas), os elementos desse conjunto $S$ para obter os elementos desse conjunto $S$. Isso que estamos fazendo aqui é combinar elementos do conjunto $S$, denominado de \textit{operações em $S$}. Uma coisa importante para saber agora é que o comportamento dessas operações em $S$ podem ser condicionadas impondo certos axiomas, alterando a natureza de $S$. Os axiomas definem a particularidade da estrutura em $S$. Se eu quiser pegar uma coleção de axiomas e testá-los na tentativa de definir novas estruturas seria algo possível. Repare nas palavras "testá-los" e "tentativa". Uma estrutura algébrica depende fortemente de \textbf{consistência} entre sua coleção de axiomas. Mesmo assim ainda não seria suficiente para evitar criar um sistema estranho. Daqui em diante trataremos os axiomas como regras que são validadas dentro de um sistema algébrico, não como verdades evidentes como é popularmente entendido.
    \subsection{Função Geral}
-      Sendo $X$ um conjunto de todos os objetos em venda num mercado e $Y$ ser o conjunto de todos os números reais. Definimos $f:X \to Y$ como $f(x) = \textrm{preço de x}$. Isso é um exemplo de mapeamento de $X$ para $Y$.
-      Um exemplo de função: Sendo $X$ um conjunto não vazio e definindo $i:X \to X$ como $i(x) = x$ para qualquer $x \in X$. Chamamos essa função, onde temos $X$ para $X$, de função identidade.\newline
-      Um mapeamento é uma função geral que associa um elemento de uma origem a um elemento \textbf{único} do destino. Chamaremos $f$ como um mapeamento de $X$ para $Y$ por $f:X \to Y$ e, para $y \in Y$, $y = f(x)$; $y$ é \textit{imagem} de $x$ sob $f$.
-      Assim, uma função é um mapa de um domínio $D$ para um contradomínio $CD$ tal que cada elemento de $D$ tem pelo menos uma imagem em $CD$.
-
       \begin{definition}
          Se $g:X \to Y$ e $f:Y \to Z$, então a \emph{composição}, denotada por $f \circ g$, é o mapameanto $f \circ g: X \to Z$ definido por $(f \circ g)(x) = f(g(x))$ para todo $x \in X$.
       \end{definition}
@@ -134,15 +128,12 @@
             Deixe $f: X \to Y$ injetiva, com o domínio não vazio. Então existe uma função $$r: Y \to X$$
             tal que $$r \circ f = id_{X}.$$
             \begin{proof}
-               Escolha um elemento $x_{0}$ de $X$. Para um elemento $y$ do contradomínio que
-               não está na imagem $f(X)$, defina $r(y) = x_{0}$. Agora considere um elemento $y$ da imagem de $f(X)$. Pela definição de imagem, a equação $f(x) = y$ tem um solução. Como $f$ é injetiva, a solução é única. 
-               
-               Defina $r(y)$ como este único elemento de solução $x_{y}$. 
-               
+               Escolha um elemento $x_{0}$ de $X$.\\
+               Para um elemento $y$ do contradomínio que não está na imagem $f(X)$, defina $r(y) = x_{0}$. Agora considere um elemento $y$ da imagem de $f(X)$. Pela definição de imagem, a equação $f(x) = y$ tem um solução. Como $f$ é injetiva, a solução é única.\\
+               Defina $r(y)$ como este único elemento de solução $x_{y}$.\\
                Obtemos uma função $r: Y \to X$. Agora $r \circ f: X \to X$. Então para cada elemento $x$ de $X$, temos $$r\circ f(x) = r \left(f(x)\right) = x_{f(x)} = x = id_{X}(x),$$ que verifica $r \circ f = id_{X}.$
             \end{proof}
          \end{stat}
-         
          \begin{definition}[Retração]
             Um mapeamento $r: Y \to X$ é cahamado de uma retração de uma função $f: X \to Y$ se $r\circ f = id_{X}.$
          \end{definition}
@@ -153,16 +144,13 @@
             Deixe $r: Y \to X$ ser uma retração para $f$. Então $$f(x) = f(x') \implies x=r\circ f(x) = r\circ f(x') = x'$$ para $x,x'$ em $X$.
          \end{proof}
          A proprosição anterior mostra que cada injeção com domínio não vazio tem uma retração. Note que um injeção $f$ pode ter muitas retrações, por causa da escolha arbitrária do elemento $x_{0}$ na prova da existência da retração. Também, note que a função identidade $id_{\varnothing}$ no conjunto vazio possui sua própria retração.
-
          \begin{definition}[Função Sobrejetiva]
             Uma função $f: X \to Y$ é dita ser sobrejetiva se o contradomínio e imagem coincidem: $Y = f(X)$.
          \end{definition}
          Maneiras para dizer que um mapeamento $f: X \to Y$ é sobrejetivo:
          $$f(X) = \{f(x) \in Y \mid x \in X\}$$
          $$f(X) = Y.$$
-         Ainda, a imagem inversa $$f^{-1}\{y\} = \left\{x \in X \mid f(x) = y\right\}$$
-         necessita ser não vazia para cada elemento $y$ de $Y$. Perceba que a única função sobrejetiva com um domínio vazio é a função identidade $id_{\varnothing}$ no conjunto vazio.
-
+         Ainda, a imagem inversa $$f^{-1}\{y\} = \left\{x \in X \mid f(x) = y\right\}$$ necessita ser não vazia para cada elemento $y$ de $Y$. Perceba que a única função sobrejetiva com um domínio vazio é a função identidade $id_{\varnothing}$ no conjunto vazio.
          Um exemplo trivial de uma função sobrejetiva seria a função do valor absoluto $abs: \Z \to \N; n \mapsto \mid n \mid$
          \begin{stat}[Seções de funções sobrejetivas]
             Deixe $f: X \to Y$ ser sobrejetiva. Então existe uma função $$s: Y \to X$$ tal que $$f \circ s = id_{y}.$$
@@ -218,10 +206,8 @@
 
    \subsection{Equivalência}
       Ao estudarmos uma estrutura precisamos filtrar o que não é relevante para o estudo dela. A equivalência é este filtro. Um exemplo inicial de sua necessidade surge no conceito de número. O que significa o número 3? Um conjunto $X$ tem 3 elementos se e somente se existe um isomorfismo de conjunto $$f: \{1,2,3\} \to X$$
-      contando os elementos de $X$ como $f(1), f(2)$ e $f(3)$. A função $f$ tem que ser injetiva, de modo que nenhum elemento de $X$ seja contado duas vezes. A função $f$ tem que ser sobrejetiva, para garantir que cada elemento de $X$ seja contado.
-
+      contando os elementos de $X$ como $f(1), f(2)$ e $f(3)$. A função $f$ tem que ser injetiva, de modo que nenhum elemento de $X$ seja contado duas vezes. A função $f$ tem que ser sobrejetiva, para garantir que cada elemento de $X$ seja contado.\\
       O único problema aqui é a circularidade. Para caracterizar o número 3, nós usamos esse número no domínio da função acima. Para escapar da circularidade nós podemos decidir considerar dois conjuntos como equivalentes para própositos de contagem sempre que eles forem isomórficos. O número 3 surge então como a propriedade que é comum a cada um dos conjuntos que são isomórficos a algum dado conjunto de 3 elementos (por exemplo $\{1,2,3\})$ ou $\{\varnothing , \{\varnothing\} , \{\{\varnothing\}\}\}$). Os detalhes particulares dos elementos nos conjuntos não são relevantes para o problema da contagem, Eles são filtrados pela equivalência.
-
       \subsubsection{Núcleo e relações de equivalência}
          Considere a função dos quadrados $sq: \Z \to \Z; n\mapsto n^{2}$. Para dois inteiros $n_{1}$ e $n_{2}$, $$sq(n_{1}) = sq(n_{2})\quad \textrm{iff}\quad n_{2} = \pm n_{1}.$$
          Isto é, os inteiros $n_{1}$ e $n_{2}$ são associados ao mesmo valor de saída (valor da função) se e somente se ambos estão na mesma classe de equivalência $\{r, -r\}$. Essas classes de equivalência dividem o conjunto de domínios $\Z$ de inteiros, o que significa que $\Z$ se decompõe como a união 
@@ -238,7 +224,6 @@
 
       \subsubsection{Classes de equivalência}
          O núcleo da função quadrática $sq: \Z \to \Z$ produziu a partição $ \Z = \{0\} \cup \{\pm 1\} \cup \{\pm 2\} \cup \{\pm 3\} \cup ...$ de $\Z$. Temos que cada relação de equivalência em um conjunto produz uma partição do conjunto.
-
          \begin{definition}
             Se $R$ é uma relação de equivalência em um conjunto $X$, define a classe de equivalência de $x$ sob $R$ sendo o conjunto $$ \left[x\right]_{R} = \left\{t \in X \mid x R t\right\}$$ de todos os elementos $t$ de $X$ que estão relacionados a $x$ por $R$.
          \end{definition}
@@ -246,8 +231,7 @@
          \begin{stat}[Classes de equivalência são disjuntas ou iguais]\label{PropLag1}
             Deixe $R$ ser uma relação de equivalência no conjunto $X$. Deixe $x_{1}$ e $x_{2}$ serem elementos de $X$. Então as duas classes equivalência $\left[x_{1}\right]_{R}$, $\left[x_{2}\right]_{R}$ são ambas disjuntas: $$\left[x_{1}\right]_{R} \cap \left[x_{2}\right]_{R} = \varnothing$$ ou iguais $$\left[x_{1}\right]_{R} = \left[x_{2}\right]_{R}.$$ Em último caso, $x_{1} R x_{2}$.
             \begin{proof}
-               Suponha que $\left[x_{1}\right]_{R}$ e $\left[x_{2}\right]_{R}$ não são disjuntos. Assim, eles possuem um elemento $x'$ em comum. Então $x_{1} R x'$ e $x_{2} R x'$ pela definição de classes de equivalência. Pela \emph{simetria}, $x' R x_{2}$. Então $x_{1} R x'$ e $x' R x_{2}$ implica em $x_{1} R x_{2}$ pela \emph{transitividade}.
-
+               Suponha que $\left[x_{1}\right]_{R}$ e $\left[x_{2}\right]_{R}$ não são disjuntos. Assim, eles possuem um elemento $x'$ em comum. Então $x_{1} R x'$ e $x_{2} R x'$ pela definição de classes de equivalência. Pela \emph{simetria}, $x' R x_{2}$. Então $x_{1} R x'$ e $x' R x_{2}$ implica em $x_{1} R x_{2}$ pela \emph{transitividade}.\\
                Suponha que $x''$ é um elemento de $\left[x_{1}\right]_{R}$, então $x_{1} R x''$. Então $$ x_{2} R x_{1} R x''$$ implica $x_{2} R x''$ pela transitividade, assim $x''$ é um elemento de $\left[x_{2}\right]_{R}$. Similarmente, cada elemento de $\left[x_{2}\right]_{R}$ é um elemento de $\left[x_{1}\right]_{R}$. Segue que as duas classes $\left[x_{1}\right]_{R}$ e $\left[x_{2}\right]_{R}$ são iguais.
             \end{proof}
          \end{stat}
@@ -267,16 +251,14 @@
             $\hookrightarrow$ denota um monomorfismo, ou morfismo injetivo. Como $\Q \subset \R$ , isto é, neste contexto, $\Q$ é uma subestrutura de $\R$, temos uma injeção natural, onde os elementos de $\Q$ são tratados como um elemento de $\R$.
          \end{mymdframed}
          Considere uma função $f: X\to Y$. Como a relação de núcleo $ker\ f$ é uma relação de equivalência, a proposição (a) anterior mostra que existe uma função sobrejetiva $$s: X\to X_{ker\ f};\ x\mapsto \left[x\right]_{ker\ f}.$$
-         Por outro lado, existe uma injeção $$j: f(X) \hookrightarrow Y;\ y\mapsto y$$ inserindo a imagem $f(X)$ como um subconjunto no contradomínio $Y$.
+         Por outro lado, existe uma injeção $$j: f(X) \hookrightarrow Y;\ y\mapsto y$$ inserindo a imagem $f(X)$ como um subconjunto no contradomínio $Y$.\\
          O ingrediente restante é um isomorfismo entre o conjunto $X_{ker\ f}$ das classes de núcleo e a imagem $f(X)$.
-
          \begin{stat}
             Deixe $f: X\to Y$ ser uma função. Então existe uma \emph{bijeção bem definida} $$ b: X_{ker\ f} \to f(X);\ \left[x\right]_{ker\ f} \mapsto f(x).$$
          \end{stat}
          \begin{theorem}[Primeiro Teorema de Isomorfismo para conjuntos]
             Deixe $f: X\to Y$ ser uma função. Então $f$ se decompõe como a composta $$f = j\circ b \circ s.$$ 
          \end{theorem}
-
          \begin{center}
             \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
             \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -360,15 +342,14 @@
          O domínio $X$ é o conjunto das cartas em mãos. O contradomínio $Y$ é o conjunto completo de naipes. A função $f$ mapeia cada carta na mão para o seu naipe, portanto duas cartas estão na relação $ker\ f$ se e somente se eles estão no mesmo naipe. A classe de equivalência $$ \left[Q\heartsuit\right]_{ker\ f} = \left\{J\heartsuit , Q\heartsuit , A\heartsuit \right\}$$ consiste de todas as copas na mão, a classe $$\left[K\diamondsuit \right]_{ker\ f} = \left\{10\diamondsuit , K\diamondsuit \right\}$$ consiste de todos os ouros na mão, e a classe $\left[3\clubsuit \right]_{ker\ f}$ contém o único de paus na mão. A imagem $$f(X) = \left\{\heartsuit , \diamondsuit , \clubsuit  \right\}$$ é conjunto dos naipes que estão na mão. O primeiro teorema de isomorfismo exibe esse conjunto como isomórfico ao conjunto $$X_{ker\ f} = \left\{\left[Q\heartsuit\right]_{ker\ f}, \left[K\diamondsuit\right]_{ker\ f}, \left[3\clubsuit\right]_{ker\ f}\right\}$$ das classes de equivalência. De fato, ambos $f(X)$ e $X_{ker\ f}$ possuem 3 elementos cada. O fato de que os 3 elementos do conjunto $X_{ker\ f}$ são conjuntos é irrelevante. Quando estamos lidando com conjuntos de classes de equivalência desconsidere os detalhes internos das classes por um momento, e apenas considere cada classe como um elemento.
 
    \subsection{Aritmética Modular}
-      Considere $a = dq + r$ ($0 \leq r < d$). Sendo $a$ o dividendo, $q$ o quociente, $d$ o divisor e o $r$ o resto.
-
-      Para cada inteiro $a$, define-se $(a mod b)$ por
+      Considere $a = dq + r$ ($0 \leq r < d$). Sendo $a$ o dividendo, $q$ o quociente, $d$ o divisor e o $r$ o resto.\\
+      Para cada inteiro $a$, define-se $(a\ mod\ b)$ por
       \begin{equation}\label{MOD}
-         a = qd + (a mod d).
+         a = qd + (a\ mod\ d).
       \end{equation}
-      Logicamente $(a mod d)$ representa o resto. Agora considere a função
+      Logicamente $(a\ mod\ d)$ representa o resto. Agora considere a função
       \begin{equation}\label{MODFUNCTION}
-         f: \Z \to \N;\quad a \mapsto a mod d.
+         f: \Z \to \N;\quad a \mapsto a\ mod\ d.
       \end{equation}
       As classes de núcleo $[a]_{mod\ d}$ dessa função são conhecidas como \emph{classes de congruência módulo d}. Dois inteiros $a$ e $d$ são ditos serem \emph{congruentes módulo} $d$, denotado por
       \begin{equation}\label{AMODB}
@@ -389,10 +370,8 @@
          &[a]_{mod\ d} \mapsto\ a\ mod\ d.
          \nonumber
       \end{alignat}
-      entre o conjunto das classes de congruência módulo $d$ e o conjunto $$\dfrac{\Z}{d} = \{0,1,2,... , d-1\}$$ dos restos ou inteiros módulo $d$, a imagem da função \ref{MODFUNCTION}. O isomorfismo é frequentemente usado para identificar uma classe de congruência com seu resto representativo, assim o conjunto das classes de congruência é então escrito como $\dfrac{\Z}{d}$.
-
+      entre o conjunto das classes de congruência módulo $d$ e o conjunto $$\dfrac{\Z}{d} = \{0,1,2,... , d-1\}$$ dos restos ou inteiros módulo $d$, a imagem da função \ref{MODFUNCTION}. O isomorfismo é frequentemente usado para identificar uma classe de congruência com seu resto representativo, assim o conjunto das classes de congruência é então escrito como $\dfrac{\Z}{d}$.\\
       Para $d=2$ o conjunto $\dfrac{\Z}{2} = \{0,1\}$ consiste de \emph{dois bits} ou \emph{digitos binários} $0$ e $1$.
-
       \begin{stat}
          Seja $d$ um inteiro positivo. Suponha que para inteiros $a_{i}$ e $b_{i}$ ($i = 1,2$), $$a_{1} \equiv b_{1}\ \ mod\ d\quad \&\quad a_{2} \equiv b_{2}\ \ mod\ d.$$ Então $$a_{1} + a_{2} \equiv b_{1} + b_{2}\ \ mod\ d\quad \&\quad a_{1}\cdot a_{2} \equiv b_{1} \cdot b_{2}\ \ mod\ d.$$
       \end{stat}
