@@ -1,0 +1,25 @@
+\documentclass[a4paper,11pt]{article}
+   \makeatletter
+   \def\input@path{{config/}{sections/}}
+   \makeatother
+   \input{preamble_analy.tex}
+
+   \begin{document}
+      \input{title_analy.tex}
+      \begin{center}
+         \tableofcontents 
+      \end{center}
+      \clearpage
+
+      \input{seq.tex}
+      \input{series_num.tex}
+      \input{series_fun.tex}
+      \input{metric_spaces.tex}
+      \input{topology.tex}
+
+
+      \pagebreak
+
+      \addcontentsline{toc}{section}{\protect{\refname}}
+      \printbibliography
+   \end{document}
