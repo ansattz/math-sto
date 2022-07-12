@@ -1,2 +1,10 @@
-# Study Projects
-## This is a repository of research and notes, particularly on mathematics.
+# locked_room
+
+### Notas em matemática:
+
+- Algebra
+- Teoria dos conjuntos
+- Análise
+
+
+
