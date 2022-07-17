@@ -1,72 +1,70 @@
 \section{Conjuntos}
-\subsection{Pertinência e Inclusão}
+   \subsection{Pertinência e Inclusão}
+      Quando um objeto (elemento) $x$ pertence a um conjunto $A$: $$x \in A$$
+      Dois conjuntos iguais, onde possuem exatamente os mesmos elementos (um dado conjunto está totalmente contido no outro) e dois conjuntos que possuem parcialmente os objetos do outro (um dado conjunto está parcialmente contido no outro): 
+      $$A \subseteq B\ \iff\ A=B\quad \quad \textrm{(1)}$$  
+      $$A \subset B\ \iff\ A \neq B\quad \quad \textrm{(2)}$$
+      (1)\ \ \ $\forall x; x \in A$ \& $x \in B$. \\
+      (2)\ \ \ $x,y; ((x \in A)\ \&\ (x,y \in B))\ \lor\ ((y \in A)\ \&\ (x,y \in B))$.
 
-Quando um objeto (elemento) $x$ pertence a um conjunto $A$: $$x \in A$$
-Dois conjuntos iguais, onde possuem exatamente os mesmos elementos (um dado conjunto está totalmente contido no outro) e dois conjuntos que possuem parcialmente os objetos do outro (um dado conjunto está parcialmente contido no outro): 
-$$A \subseteq B\ \iff\ A=B\quad \quad \textrm{(1)}$$  
-$$A \subset B\ \iff\ A \neq B\quad \quad \textrm{(2)}$$
-(1)\ \ \ $\forall x; x \in A$ \& $x \in B$. \\
-(2)\ \ \ $x,y; ((x \in A)\ \&\ (x,y \in B))\ \lor\ ((y \in A)\ \&\ (x,y \in B))$.
+   \subsection{União e Interseção}
+      A união $x \cup y$ dos conjuntos $x$ e $y$ é definida sendo o conjunto de todos os elementos de $x$ e $y$.\\
+      Logo,\quad $(x \cup x = x)$,\ \ \ $(x \cup y = y \cup x)$\ \ \ e\ \ \ $((x \cup y) \cup z = x \cup (y \cup z))$.
+      De modo geral, dados $n$ conjuntos $A_{1}, A_{2}, \dots, A_{n}$ a sua união é
+      \[
+         \bigcup_{i=1}^{n} A_{i} = \{x \in U \mid x \in A_{1}\quad ou\quad x \in A_{2}\quad ou\quad \dots \quad x \in A_{n}.\}
+      \]
+      \\
+      A interseção $x \cap y$ é o conjunto dos objetos que $x$ e $y$ possuem em comum.\\
+      Logo,\ \ $x \cap x = x$,\ \ \ $x \cap y = y \cap x$\ \ \ e\ \ \ $(x \cap y) \cap z = x \cap (y \cap z)$.
+      De modo geral, a interseção dos conjuntos $A_{1}, A_{2}, \dots, A_{n}$ é
+      \[
+         \bigcap_{i=1}^{n} A_{i} = \{x \in U \mid x \in A_{1},\ x \in A_{2},\  \dots\ , x \in A_{n}.\}
+      \]
+      \begin{stat}[Propriedade Associativa]
+         $(x \cup y) \cup z = x \cup (y \cup z)$.
+         \begin{proof}
+            Tomemos os conjuntos $A$, $B$ e $C$.
+            Provemos que $(A \cup B) \cup C = A \cup (B \cup C).$
+            $(A \cup B) \cup C = \{x \mid (P(x) \lor Q(x)) \lor R(x) \} = \{x \mid P(x) \lor (Q(x) \lor R(x)) \} = A \cup (B \cup C).$
+         \end{proof}
+      \end{stat}
+      \begin{stat}[Propriedade Comutativa]
+         $x \cup y = y \cup x$.
+         \begin{proof}
+            Tomemos os conjuntos $A$ e $B.$\\
+            Provemos que $A \cup B$ = $B \cup A.$\\
+            $A \cup B = \{x \mid x \in A\ \ \lor\ \ x \in B \} = B \cup A.$
+         \end{proof}
+      \end{stat}
+      \begin{stat}[Propriedade Distributiva]
+         $x \cup (y \cap z) = (x \cup y) \cap (x \cup z)$\ \ ou\ \ $x \cap (y \cup z) = (x \cap y) \cup (x \cap z)$.
+         \begin{proof}
+         Tomemos os conjuntos $A, B$ e $C.$\\
+         Provemos que $A \cup (B \cap C) = (A \cup B) \cap (A \cup C).$
+            \begin{alignat*}{3}
+            & A \cup (B \cap C) &=& \{x \mid P(x) \lor (Q(x) \land R(x))\}\\
+            & &=& \{x \mid (P(x) \lor Q(x)) \land (P(x) \lor R(x))\}\\
+            & &=& \{x \mid (P(x) \lor Q(x)) \cap (P(x) \lor R(x))\}\\
+            & &=& (A \cup B) \cap (A \cup C).
+            \end{alignat*}
+         \end{proof}
+      \end{stat}
 
-\subsection{União e Interseção}
-A união $x \cup y$ dos conjuntos $x$ e $y$ é definida sendo o conjunto de todos os elementos de $x$ e $y$.
-
-Logo,\quad $(x \cup x = x)$,\ \ \ $(x \cup y = y \cup x)$\ \ \ e\ \ \ $((x \cup y) \cup z = x \cup (y \cup z))$.
-
-De modo geral, dados $n$ conjuntos $A_{1}, A_{2}, \dots, A_{n}$ a sua união é
-\[
-\bigcup_{i=1}^{n} A_{i} = \{x \in U \mid x \in A_{1}\quad ou\quad x \in A_{2}\quad ou\quad \dots \quad x \in A_{n}.\}
-\]
-\\
-A interseção $x \cap y$ é o conjunto dos objetos que $x$ e $y$ possuem em comum.
-
-Logo,\ \ $x \cap x = x$,\ \ \ $x \cap y = y \cap x$\ \ \ e\ \ \ $(x \cap y) \cap z = x \cap (y \cap z)$.
-
-De modo geral, a interseção dos conjuntos $A_{1}, A_{2}, \dots, A_{n}$ é
-\[
-\bigcap_{i=1}^{n} A_{i} = \{x \in U \mid x \in A_{1},\ x \in A_{2},\  \dots\ , x \in A_{n}.\}
-\]
-
-\textit{Propriedade Associativa}: $(x \cup y) \cup z = x \cup (y \cup z)$.
-\begin{proof}
-  Tomemos os conjuntos $A$, $B$ e $C$.\\
-  Provemos que $(A \cup B) \cup C = A \cup (B \cup C).$\\
-  $(A \cup B) \cup C = \{x \mid (P(x) \lor Q(x)) \lor R(x) \} = \{x \mid P(x) \lor (Q(x) \lor R(x)) \} = A \cup (B \cup C).$
-\end{proof}
-
-\textit{Propriedade Comutativa}: $x \cup y = y \cup x$.
-\begin{proof}
-  Tomemos os conjuntos $A$ e $B.$\\
-  Provemos que $A \cup B$ = $B \cup A.$\\
-  $A \cup B = \{x \mid x \in A\ \ \lor\ \ x \in B \} = B \cup A.$
-\end{proof}
-
-\textit{Propriedade Distibutiva}: $x \cup (y \cap z) = (x \cup y) \cap (x \cup z)$\ \ ou\ \ $x \cap (y \cup z) = (x \cap y) \cup (x \cap z)$.
-\begin{proof}
-  Tomemos os conjuntos $A, B$ e $C.$\\
-  Provemos que $A \cup (B \cap C) = (A \cup B) \cap (A \cup C).$
-    \begin{alignat*}{3}
-    & A \cup (B \cap C) &=& \{x \mid P(x) \lor (Q(x) \land R(x))\}\\
-    & &=& \{x \mid (P(x) \lor Q(x)) \land (P(x) \lor R(x))\}\\
-    & &=& \{x \mid (P(x) \lor Q(x)) \cap (P(x) \lor R(x))\}\\
-    & &=& (A \cup B) \cap (A \cup C).
-    \end{alignat*}
-\end{proof}
-
-\subsection{Conjunto universal}
-\begin{stat}
-  Não existe o conjunto universal na Teoria Zermelo-Fraenkel
-\end{stat}
-\begin{theorem}
-  Não existe o conjunto universal.
-\end{theorem}
-\begin{proof}
-  Suponha por absurdo que $V$, um conjunto universal, exista. Isto é, $$\exists V \forall x (x \in V).$$
-  Pelo \textbf{axioma da separação} definimos $A$: $$A = \{x:x \in V\ \&\ x \notin x\}$$
-  Note que:
-    \begin{itemize}
-      \item  Se $A \in A$, então $A \in V\ \&\ A \notin A.$ \quad (contradição)
-      \item  Se $A \notin A$, então $A \notin V$\ ou $A \in A.$ Mas não podemos ter $A \in A.$
-    \end{itemize}
-Portanto, $A \notin V$, contrariando o fato de $V$ ser universal.
-\end{proof}
+   \subsection{Conjunto universal}
+      \begin{stat}
+         Não existe o conjunto universal na Teoria Zermelo-Fraenkel
+      \end{stat}
+      \begin{theorem}
+         Não existe o conjunto universal.
+      \end{theorem}
+      \begin{proof}
+         Suponha por absurdo que $V$, um conjunto universal, exista. Isto é, $$\exists V \forall x (x \in V).$$
+         Pelo \textbf{axioma da separação} definimos $A$: $$A = \{x:x \in V\ \&\ x \notin x\}$$
+         Note que:
+            \begin{itemize}
+            \item  Se $A \in A$, então $A \in V\ \&\ A \notin A.$ \quad (contradição)
+            \item  Se $A \notin A$, então $A \notin V$\ ou $A \in A.$ Mas não podemos ter $A \in A.$
+            \end{itemize}
+         Portanto, $A \notin V$, contrariando o fato de $V$ ser universal.
+      \end{proof}
