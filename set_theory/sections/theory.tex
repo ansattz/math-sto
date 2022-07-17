@@ -1,295 +1,293 @@
 \section{Teoria Axiomática [Conjuntos]}
-\subsection{Teoria ZF}
-Condições estabelecidas da teoria:
-\begin{enumerate}
-  \item Todos os objetos da teoria são conjutos. Dizemos que \textit{todos os elementos de conjuntos serão conjuntos}, e assim sucessivamente, mas paramos ao chegarmos no conjunto vazio.
-  \item Os objetos da teoria não comportarão átomos e nem conjuntos de todos os conjuntos (conjuntos universais), isto é, não comportarão \textit{urelementos}.
-\end{enumerate}
-A estrutura do método axiomático se estabelece da seguinte forma:
-\begin{enumerate}
-    \item Linguagem
-    \item Axiomas
-    \item Teorema - consequência dos axiomas
-    \item Regras de inferência da \textit{lógica clássica}
-\end{enumerate}
+   \subsection{Teoria ZF}
+      Condições estabelecidas da teoria:
+      \begin{enumerate}
+         \item Todos os objetos da teoria são conjutos. Dizemos que \textit{todos os elementos de conjuntos serão conjuntos}, e assim sucessivamente, mas paramos ao chegarmos no conjunto vazio.
+         \item Os objetos da teoria não comportarão átomos e nem conjuntos de todos os conjuntos (conjuntos universais), isto é, não comportarão \textit{urelementos}.
+      \end{enumerate}
+      A estrutura do método axiomático se estabelece da seguinte forma:
+      \begin{enumerate}
+         \item Linguagem
+         \item Axiomas
+         \item Teorema - consequência dos axiomas
+         \item Regras de inferência da \textit{lógica clássica}
+      \end{enumerate}
 
-\subsubsection*{1. Composição da linguagem}
-A linguagem é dividida em 3 segmentos
-\begin{center}
-  \textbf{Variáveis}\quad \textbf{Símbolos}\quad \textbf{Fórmulas} 
-\end{center}
-\begin{enumerate}[a)]
-    \item Variáveis: É utilizado tanto letras minúsculas quanto maiúsculas para denotar conjuntos.
-    \item Símbolos  
-      \subitem $\forall x$: para todo conjunto x...
-      \subitem $\exists x$: existe um conjunto x...
-      \subitem $\neg$: negação de...
-      \subitem $\&$: e
-      \subitem $\lor$: ou (acomete uma disjunção)
-      \subitem $\rightarrow$: se... então (condicional)
-      \subitem $\leftrightarrow$: se e somente se (bicondicional)
-    \item Fórmulas: Sequências de símbolos que satisfazem os seguintes itens
-        \subitem Se $x$ e $y$ são variáveis, então $x \in y$\ e\ $x = y$ são fórmulas. \textit{Fórmulas atômicas};
-        \subitem Se $A$ e $B$ são fórmulas, então $\neg(A), (A) \rightarrow (B), (A) \& (B), (A) \lor (B)$\ e\ $(A) \leftrightarrow (B)$ também são.
-        \subitem Se $A$ é uma fórmula e $x$ uma variável, então $\forall x(A)$\ e\ $\exists x(A)$ também são fórmulas;
-        \subitem Todas as fórmulas tem uma das formas descritas acima.
-\end{enumerate}
-\begin{exmp}
-    A análise da composição de fórmulas de
-    $$\exists B(\forall x(\neg(x \in B))$$
-    se da por
-\begin{enumerate}[I.]
-    \item Existência da fórmula atõmica\ $[(x \in B)]$.
-    \item Uma outra fórmula está sendo a negação da fórmula atõmica\ $[(\neg(x \in B)]$
-    \item Fórmula quantificando a variável $x$ em relação a negação da fórmula atômica\ $[\forall x()]$
-\end{enumerate}
-Portanto, temos 3 fórmulas que são $$\neg(x \in B)),\quad \forall x(\neg(x \in B)) \quad e\quad \exists B (\forall x(\neg(x \in B)).$$
-\textit{"Existe um objeto $B$ tal que para todo objeto $x$, não é verdade que $x$ pertence a $B$}."
-\end{exmp}
-\begin{mymdframed}{Observação (Fórmulas lógicas)}
-    \begin{itemize}
-        \item\textbf{\underline{Ocorrência de variável:}} cada aparecimento de uma variável.
-            Sendo $$x \in y\ \&\ \exists x (y = x)$$
-            temos duas ocorrências da variável $y$ e duas\footnote[1]{Alguns autores colocam o $x$, em $\exists x$, como uma ocorrência.} ocorrências da variável $x$.
-        \item \textbf{\underline{Escopo de uma variável:}} uma variável $y$ está no escopo de uma variável $x$ se $y$ aparece em uma fórmula do tipo $\forall x (\ \ )$\ ou \ $\exists x (\ \ )$.
-            Sendo $$x \in y\ \& \ \exists x (y = x)$$
-            $y$ está no escopo de $x$ e $x$ está no escopo de si mesmo.
-        \item \textbf{\underline{Variável livre:}} uma variável é livre se não está no escopo dela mesma.
-            Sendo $$x \in y\ \& \ \exists x (y = x)$$
-            $x$ e $y$ que estão fora da subfórmula são variáveis livres. $y$ que está dentro da subfórmula é uma variável livre, mas, dentro da subfórmula, $x$ não é uma variável livre por está dentro do próprio escopo.
-    \end{itemize}
-\end{mymdframed}
-\subsubsection*{2. Axiomas da teoria}  
-\begin{itemize}
-    \item \textbf{Axiomas que garantem a existência de certos conjuntos específicos}
-        \subitem Axioma do vazio
-        \subitem Axioma do infinito    
-    \item \textbf{Axiomas que nos permitem construir novos conjuntos}
-        \subitem Axioma do par
-        \subitem Axioma da união
-        \subitem Axioma das partes
-        \subitem Axioma da escolha
-        \subitem Axioma da separação
-        \subitem Axioma da substituição
-    \item \textbf{Axiomas que dizem respeito ao "comportamento" dos conjuntos}
-        \subitem Axioma da regularidade 
-        \subitem Axioma da extensão
-\end{itemize}
-Nas partes 3 e 4 da estrutura da Teoria ZF, que são, respectivamente, os teoremas e as regras de inferência da lógica clássica, surgem dos Axiomas que serão apresentados a seguir; não sendo necessário declará-los a priori.
+      \subsubsection*{1. Composição da linguagem}
+         A linguagem é dividida em 3 segmentos
+         \begin{center}
+            \textbf{Variáveis}\quad \textbf{Símbolos}\quad \textbf{Fórmulas} 
+         \end{center}
+         \begin{enumerate}[a)]
+            \item Variáveis: É utilizado tanto letras minúsculas quanto maiúsculas para denotar conjuntos.
+            \item Símbolos  
+               \subitem $\forall x$: para todo conjunto x...
+               \subitem $\exists x$: existe um conjunto x...
+               \subitem $\neg$: negação de...
+               \subitem $\&$: e
+               \subitem $\lor$: ou (acomete uma disjunção)
+               \subitem $\rightarrow$: se... então (condicional)
+               \subitem $\leftrightarrow$: se e somente se (bicondicional)
+            \item Fórmulas: Sequências de símbolos que satisfazem os seguintes itens
+               \subitem Se $x$ e $y$ são variáveis, então $x \in y$\ e\ $x = y$ são fórmulas. \textit{Fórmulas atômicas};
+               \subitem Se $A$ e $B$ são fórmulas, então $\neg(A), (A) \rightarrow (B), (A) \& (B), (A) \lor (B)$\ e\ $(A) \leftrightarrow (B)$ também são.
+               \subitem Se $A$ é uma fórmula e $x$ uma variável, então $\forall x(A)$\ e\ $\exists x(A)$ também são fórmulas;
+               \subitem Todas as fórmulas tem uma das formas descritas acima.
+         \end{enumerate}
+         \begin{exmp}
+            A análise da composição de fórmulas de
+            $$\exists B(\forall x(\neg(x \in B))$$
+            se da por
+            \begin{enumerate}[I.]
+               \item Existência da fórmula atõmica\ $[(x \in B)]$.
+               \item Uma outra fórmula está sendo a negação da fórmula atõmica\ $[(\neg(x \in B)]$
+               \item Fórmula quantificando a variável $x$ em relação a negação da fórmula atômica\ $[\forall x()]$
+            \end{enumerate}
+            Portanto, temos 3 fórmulas que são $$\neg(x \in B)),\quad \forall x(\neg(x \in B)) \quad e\quad \exists B (\forall x(\neg(x \in B)).$$
+            \textit{"Existe um objeto $B$ tal que para todo objeto $x$, não é verdade que $x$ pertence a $B$}."
+         \end{exmp}
+         \begin{mymdframed}{Observação (Fórmulas lógicas)}
+            \begin{itemize}
+               \item\textbf{\underline{Ocorrência de variável:}} cada aparecimento de uma variável.
+                  Sendo $$x \in y\ \&\ \exists x (y = x)$$
+                  temos duas ocorrências da variável $y$ e duas\footnote[1]{Alguns autores colocam o $x$, em $\exists x$, como uma ocorrência.} ocorrências da variável $x$.
+               \item \textbf{\underline{Escopo de uma variável:}} uma variável $y$ está no escopo de uma variável $x$ se $y$ aparece em uma fórmula do tipo $\forall x (\ \ )$\ ou \ $\exists x (\ \ )$.
+                  Sendo $$x \in y\ \& \ \exists x (y = x)$$
+                  $y$ está no escopo de $x$ e $x$ está no escopo de si mesmo.
+               \item \textbf{\underline{Variável livre:}} uma variável é livre se não está no escopo dela mesma.
+                  Sendo $$x \in y\ \& \ \exists x (y = x)$$
+                  $x$ e $y$ que estão fora da subfórmula são variáveis livres. $y$ que está dentro da subfórmula é uma variável livre, mas, dentro da subfórmula, $x$ não é uma variável livre por está dentro do próprio escopo.
+            \end{itemize}
+         \end{mymdframed}
 
-\subsection{Axiomas}
-\subsubsection{Axioma da extensão (ou da unicidade)}
-\begin{stat}
-    Se dois conjuntos $x$ e $y$ possuem exatamente os mesmos elementos, então eles são iguais.
-\end{stat}
-    $$\forall x\ \forall y (\forall z (z \in x\ \leftrightarrow \ z \in y)\ \rightarrow x = y)$$
-    \begin{exmp}
-        Se $x = \{1, 2, 3\}$, $y = \{3,1,2\}$ e $z = \{1,1,2,3,3,3\}$, então $x = y = z$.
-    \end{exmp}
-\subsubsection{Axioma do vazio}
-\begin{stat}
-    Existe um conjunto sem elemento algum.\footnote[2]{Posteriormente, surgirá a necessidade de verificar a dispensabilidade deste axioma.}
-\end{stat}    
-    $$\exists x \forall y\ \neg(y \in x)$$
-Utiliza-se $\varnothing$ para denotar este conjunto do Axioma do vazio. Para isto, devemos que assegurar que
-\begin{enumerate}
-    \item Existe um conjunto com tal propriedade
-    \item Esse conjunto é único (não pode-se atribuir o mesmo símbolo para duas coisas distintas)
-\end{enumerate}
-    \begin{definition}[1. Relação de inclusão]
-        Dizemos que $x$ está contido em $y$ e escrevemos $x \subseteq y$ se todo elemento de $x$ é um elemento de $y$. 
-        $$ x \subseteq y\ \ \leftrightarrow\ \ \forall z (z \in x\ \ \rightarrow\ \ z \in y)$$
-        Com essa notação, podemos reescrever o \textbf{axioma da extensão}: $$(A \subseteq B)\ \&\ (B \subseteq A)\ \ \rightarrow\ \ A = B$$
-        Também escrevemos $x \subset y$ para dizer que $x \subseteq y\ \ \&\ \ x \neq y$.
-    \end{definition}
-\begin{theorem}\label{T1}
-    O conjunto vazio está contido em qualquer conjunto.
-    $$\forall x (\varnothing \subseteq x)$$
-\end{theorem}
-\begin{proof}
-  Supondo que exista x tal que o conjunto vazio não esteja contido em x e que existe y tal que y pertence ao conjunto vazio mas não a x, temos, com efeito: 
-  $$\exists x(\varnothing \nsubseteq x)\ \ \&\ \ \exists y(y \in \varnothing\ \&\ y \notin x).$$
-Temos uma contradição à própria definição de conjunto vazio.
-\end{proof}
+      \subsubsection*{2. Axiomas da teoria}  
+         \begin{itemize}
+            \item \textbf{Axiomas que garantem a existência de certos conjuntos específicos}
+               \subitem Axioma do vazio
+               \subitem Axioma do infinito    
+            \item \textbf{Axiomas que nos permitem construir novos conjuntos}
+               \subitem Axioma do par
+               \subitem Axioma da união
+               \subitem Axioma das partes
+               \subitem Axioma da escolha
+               \subitem Axioma da separação
+               \subitem Axioma da substituição
+            \item \textbf{Axiomas que dizem respeito ao "comportamento" dos conjuntos}
+               \subitem Axioma da regularidade 
+               \subitem Axioma da extensão
+         \end{itemize}
+         Nas partes 3 e 4 da estrutura da Teoria ZF, que são, respectivamente, os teoremas e as regras de inferência da lógica clássica, surgem dos Axiomas que serão apresentados a seguir; não sendo necessário declará-los a priori.
 
-\begin{theorem}\label{T2}
-    Existe um único conjunto vazio.    
-\end{theorem}
-\begin{proof}
-A existência é garantida pelo Axioma do vazio. Com efeito, supondo que existam conjuntos vazios $x$ e $y$, com $x \neq y$. Pelo axioma da extensão deve então existir um elemento $z$ tal que
-\begin{alignat*}{3}
-    & z \in x  \quad & mas \quad & z \notin y\quad ou\\
-    & z \in y  \quad & mas \quad & z \notin x.
-\end{alignat*}
-Em qualquer caso temos uma contradição com o fato de que $x$ e $y$ são vazios.
-\end{proof}
+   \subsection{Axiomas}
+      \subsubsection{Axioma da extensão (ou da unicidade)}
+         \begin{stat}
+            Se dois conjuntos $x$ e $y$ possuem exatamente os mesmos elementos, então eles são iguais.
+         \end{stat}
+         $$\forall x\ \forall y (\forall z (z \in x\ \leftrightarrow \ z \in y)\ \rightarrow x = y)$$
+         \begin{exmp}
+            Se $x = \{1, 2, 3\}$, $y = \{3,1,2\}$ e $z = \{1,1,2,3,3,3\}$, então $x = y = z$.
+         \end{exmp}
+         
+      \subsubsection{Axioma do vazio}
+         \begin{stat}
+            Existe um conjunto sem elemento algum.\footnote[2]{Posteriormente, surgirá a necessidade de verificar a dispensabilidade deste axioma.}
+         \end{stat}    
+         $$\exists x \forall y\ \neg(y \in x)$$
+         Utiliza-se $\varnothing$ para denotar este conjunto do Axioma do vazio. Para isto, devemos que assegurar que
+         \begin{enumerate}
+            \item Existe um conjunto com tal propriedade
+            \item Esse conjunto é único (não pode-se atribuir o mesmo símbolo para duas coisas distintas)
+         \end{enumerate}
+         \begin{definition}[1. Relação de inclusão]
+            Dizemos que $x$ está contido em $y$ e escrevemos $x \subseteq y$ se todo elemento de $x$ é um elemento de $y$. 
+            $$ x \subseteq y\ \ \leftrightarrow\ \ \forall z (z \in x\ \ \rightarrow\ \ z \in y)$$
+            Com essa notação, podemos reescrever o \textbf{axioma da extensão}: $$(A \subseteq B)\ \&\ (B \subseteq A)\ \ \rightarrow\ \ A = B$$
+            Também escrevemos $x \subset y$ para dizer que $x \subseteq y\ \ \&\ \ x \neq y$.
+         \end{definition}
+         \begin{theorem}\label{T1}
+            O conjunto vazio está contido em qualquer conjunto.
+            $$\forall x (\varnothing \subseteq x)$$
+         \end{theorem}
+         \begin{proof}
+            Supondo que exista x tal que o conjunto vazio não esteja contido em x e que existe y tal que y pertence ao conjunto vazio mas não a x, temos, com efeito: 
+            $$\exists x(\varnothing \nsubseteq x)\ \ \&\ \ \exists y(y \in \varnothing\ \&\ y \notin x).$$
+            Temos uma contradição à própria definição de conjunto vazio.
+         \end{proof}
+         \begin{theorem}\label{T2}
+            Existe um único conjunto vazio.    
+         \end{theorem}
+         \begin{proof}
+            A existência é garantida pelo Axioma do vazio. Com efeito, supondo que existam conjuntos vazios $x$ e $y$, com $x \neq y$. Pelo axioma da extensão deve então existir um elemento $z$ tal que
+            \begin{alignat*}{3}
+               & z \in x  \quad & mas \quad & z \notin y\quad ou\\
+               & z \in y  \quad & mas \quad & z \notin x.
+            \end{alignat*}
+            Em qualquer caso temos uma contradição com o fato de que $x$ e $y$ são vazios.
+         \end{proof}
+         \begin{mymdframed}{Observação (Relação de inclusão)}
+            É comumente apresentado em escolas que a relação de inclusão se aplica apenas entre conjuntos, enquanto que a relação de pertinência se aplica entre elementos e conjuntos. Isso é impreciso diante da teoria, pois:
+            \begin{itemize}
+               \item Todos os objetos da nossa teoria são conjuntos. Portanto, nas expressões $x \in y$\ \ e\ \ $x \subseteq y$, tanto $x$ quanto $y$ são conjuntos;
+               \item Podem existir conjuntos cujos elementos são conjuntos.
+            \end{itemize}
+            Suponde que exista o conjunto $\{\varnothing\}$, ou seja, um conjunto cujo único elemento é $\varnothing$. Em consideração, temos
+            \begin{itemize}
+                  \item $\varnothing \in \{\varnothing\}$, isto é, $\varnothing$ é elemento do conjunto $\{\varnothing\}$
+                  \item $\varnothing \subseteq \{\varnothing\}$, de acordo com o Teorema\ref{T1}.
+            \end{itemize}
+         \end{mymdframed}
+      
+      \subsubsection{Axioma do Par}
+         \begin{stat}
+            Sejam $x$ e $y$ conjuntos quaisquer. Então existe um conjunto $x \in z$\ \ e\ \ $y \in z$.
+         \end{stat}
+            $$\forall x, y\ \exists z (x \in z\ \&\ y \in z)$$
+         \begin{center}
+            Aqui, dizemos que $z$ é um par não ordenado, pois, pelo axioma da extensão, \\
+            os conjuntos $\{x, y\}$\ e\ $\{y, x\}$\ são iguais.
+         \end{center}
+         \begin{exmp}
+            No caso em que $x=y$: \\
+            temos $\{x, x\} = \{x\}$, pelo axioma da extensão.
+         \end{exmp}
 
-\begin{mymdframed}{Observação (Relação de inclusão)}
-    É comumente apresentado em escolas que a relação de inclusão se aplica apenas entre conjuntos, enquanto que a relação de pertinência se aplica entre elementos e conjuntos. Isso é impreciso diante da teoria, pois:
-    \begin{itemize}
-        \item Todos os objetos da nossa teoria são conjuntos. Portanto, nas expressões $x \in y$\ \ e\ \ $x \subseteq y$, tanto $x$ quanto $y$ são conjuntos;
-        \item Podem existir conjuntos cujos elementos são conjuntos.
-    \end{itemize}
-    Suponde que exista o conjunto $\{\varnothing\}$, ou seja, um conjunto cujo único elemento é $\varnothing$. Em consideração, temos
-    \begin{itemize}
-        \item $\varnothing \in \{\varnothing\}$, isto é, $\varnothing$ é elemento do conjunto $\{\varnothing\}$
-        \item $\varnothing \subseteq \{\varnothing\}$, de acordo com o Teorema\ref{T1}.
-    \end{itemize}
-\end{mymdframed}
-\subsubsection{Axioma do Par}
-\begin{stat}
-    Sejam $x$ e $y$ conjuntos quaisquer. Então existe um conjunto $x \in z$\ \ e\ \ $y \in z$.
-\end{stat}
-    $$\forall x, y\ \exists z (x \in z\ \&\ y \in z)$$
-\begin{center}
-Aqui, dizemos que $z$ é um par não ordenado, pois, pelo axioma da extensão, \\
-os conjuntos $\{x, y\}$\ e\ $\{y, x\}$\ são iguais.
-\end{center}
-\begin{exmp}
-    No caso em que $x=y$: \\
-    temos $\{x, x\} = \{x\}$, pelo axioma da extensão.
-\end{exmp}
+      \subsubsection{Axioma da União}
+         \begin{stat}
+            Para todo conjunto $A$, existe um conjunto $B$ cujos elementos são exatamente os elementos dos elementos de $A$.
+         \end{stat}
+            B será denotado por $\bigcup\limits_{X \in A}^{} A$
+         \begin{itemize}
+            \item todo $X$, que é elemento de $A$, é subconjunto de $B$
+            \item todo $Y$, que é elemento de $B$, é elemento de algum elemento de $A$
+         \end{itemize}
+         Neste axioma, temos, também que
+         \begin{itemize}
+            \item Caso $A$ seja um vazio, $B$ será o conjunto vazio
+            \item Caso $A$ seja finito, $B$ será uma união finita
+            \item Caso $A$ seja infinito, $B$ será uma união infinita.
+         \end{itemize}
+         \begin{definition}
+            A \underline{união generalizada} de um conjunto $A$ é o conjunto formado pelos elementos dos elementos de $A$.
+            $$\forall A\,\exists B\,\forall x\,(x\in B\ \leftrightarrow\ \exists c\,(c\in A\ \&\ x\in c))$$
+         \end{definition}
+         \begin{exmp}
+            Seja um conjunto $A = \{\{1,\ 2\},\ \{3,\ 4\},\ \{5,\ 6\}\}$.\\
+            Então, a união generalizada se realiza como $\bigcup A = \{1,\ 2,\ 3,\ 4,\ 5,\ 6,\}$.\\
+            O conjunto $A$ possui 3 elementos que são conjuntos que possuem elementos que estão em $A$.
+         \end{exmp}
+         \begin{mymdframed}{Observação}
+            Não existe um axioma semelhante para interseções, pois não é possível definir uma interseção vazia. A redação de $\bigcap\limits_{X \in \varnothing}^{} X$ compreende o \textit{Universo de von Neumann}, o que nos levaria para caminhos desnecessários (por ora) ao estudo mais avançado da Teoria dos conjuntos.
+         \end{mymdframed}
 
-\subsubsection{Axioma da União}
-\begin{stat}
-    Para todo conjunto $A$, existe um conjunto $B$ cujos elementos são exatamente os elementos dos elementos de $A$.
-\end{stat}
-    B será denotado por $\bigcup\limits_{X \in A}^{} A$
-\begin{itemize}
-  \item todo $X$, que é elemento de $A$, é subconjunto de $B$
-  \item todo $Y$, que é elemento de $B$, é elemento de algum elemento de $A$
-\end{itemize}
-Neste axioma, temos, também que
-\begin{itemize}
-  \item Caso $A$ seja um vazio, $B$ será o conjunto vazio
-  \item Caso $A$ seja finito, $B$ será uma união finita
-  \item Caso $A$ seja infinito, $B$ será uma união infinita.
-\end{itemize}
+      \subsubsection{Axioma das partes} 
+         \begin{stat}
+            \textit{Para todo conjunto $x$, existe o conjunto $y$ dos subconjuntos de $x$:}
+         \end{stat}
+         $$\forall x \exists y \forall z [z \in y \leftrightarrow z \subseteq x]$$
+         O conjunto definido pelo axioma também é único. Sendo assim, podemos definir o seguinte:
+         \begin{definition}
+            Definimos o \textit{conjunto das partes}, ou simplesmente \textit{power set}, como o conjunto de todos os subconjuntos de $x$, e o denotamos por $\mathcal{P}(x)$.
+         \end{definition}
+         \begin{exmp}
+            Seja um conjunto $A = \{1,2\}.$\\
+            Pelo axioma das partes, $$(z \in  \mathcal{P}A\ \leftrightarrow\ z \subseteq A)$$
+            \begin{alignat*}{3}
+               & \varnothing \subseteq A\\
+               & \{1\} \subseteq A\\
+               & \{2\} \subseteq A\\
+               & \{1,2\} \subseteq A.
+            \end{alignat*}
+            Logo,\quad $\mathcal{P}A = \{\varnothing,\ \{1\},\ \{2\},\ \{1,\ 2\}\}$
+         \end{exmp}
 
-\begin{definition}
-    A \underline{união generalizada} de um conjunto $A$ é o conjunto formado pelos elementos dos elementos de $A$.
-$$\forall A\,\exists B\,\forall x\,(x\in B\ \leftrightarrow\ \exists c\,(c\in A\ \&\ x\in c))$$
-\end{definition}
-\begin{exmp}
-    Seja um conjunto $A = \{\{1,\ 2\},\ \{3,\ 4\},\ \{5,\ 6\}\}$.\\
-    Então, a união generalizada se realiza como $\bigcup A = \{1,\ 2,\ 3,\ 4,\ 5,\ 6,\}$.\\
-    O conjunto $A$ possui 3 elementos que são conjuntos que possuem elementos que estão em $A$.
-\end{exmp}
+      \subsubsection{Axioma da separação}
+         Queremos ser capazes de definir um conjunto através de uma fórmula lógica. Para evitar paradoxos, como o paradoxo de Russel, temos que especificar o conjunto sobre qual nossa fórmula será elaborada.
+         \begin{stat}
+            Portanto, para cada fórmula $P(x)$, para todo conjunto $y$, existe o conjunto daqueles elementos que pertencem a $y$ e satisfazem a fórmula $P$.
+         \end{stat}
+         \begin{exmp}
+            Seja um conjunto $y = \{1,2,3,4,5,6,7,8,9\}$.
 
-\begin{mymdframed}{Observação}
-Não existe um axioma semelhante para interseções, pois não é possível definir uma interseção vazia. A redação de $\bigcap\limits_{X \in \varnothing}^{} X$ compreende o \textit{Universo de von Neumann}, o que nos levaria para caminhos desnecessários (por ora) ao estudo mais avançado da Teoria dos conjuntos.
-\end{mymdframed}
+            $P(x): x$ é par.
 
-\subsubsection{Axioma das partes} 
-\begin{stat}
-    \textit{Para todo conjunto $x$, existe o conjunto $y$ dos subconjuntos de $x$:}
-\end{stat}
-    $$\forall x \exists y \forall z [z \in y \leftrightarrow z \subseteq x]$$
-O conjunto definido pelo axioma também é único. Sendo assim, podemos definir o seguinte:
-\begin{definition}
-    Definimos o \textit{conjunto das partes}, ou simplesmente \textit{power set}, como o conjunto de todos os subconjuntos de $x$, e o denotamos por $\mathcal{P}(x)$.
-\end{definition}
-\begin{exmp}
-    Seja um conjunto $A = \{1,2\}.$\\
-    Pelo axioma das partes, $$(z \in  \mathcal{P}A\ \leftrightarrow\ z \subseteq A)$$
-\begin{alignat*}{3}
-    & \varnothing \subseteq A\\
-    & \{1\} \subseteq A\\
-    & \{2\} \subseteq A\\
-    & \{1,2\} \subseteq A.
-\end{alignat*}
-Logo,\quad $\mathcal{P}A = \{\varnothing,\ \{1\},\ \{2\},\ \{1,\ 2\}\}$
-\end{exmp}
+            $Z = \{x; x \in y\ \&\ P(x)\} = \{2,4,6,8\}$
+         \end{exmp}
+         \begin{definition}
+            Para cada fórmula $P$ tal que $z$ não ocorre livre, a seguinte fórmula é um axioma:
+            $$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ P(x)]$$    
+         \end{definition}
+         \textit{"para todo $y$ existe $z$ tal que para todo $x$, $x$ pertence a $z$ iff $x$ pertence a $y$ e vale a fórmula $P(x)$."}\\
+         O conjunto $z$ será denotado assim:
+         $$z = \{x: x \in y\ \&\ P(x)\}.$$
+         Ou assim:
+         $$z = \{x \in y: P(x)\}.$$
+         Por que $z$ não pode ocorrer \underline{livre} em $P$ na fórmula
+         $$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ P(x)] ?$$
+         Se permitirmos que a variável que \underline{define} o conjunto ocorra livre em $P$, poderíamos tomar \\ $P(x) = \highl{x \notin z}$:
+         $$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ \highl{x \notin z}\color{black}].$$
+         Tomando $y = \{\varnothing\}$\ e\ $x = \varnothing$, temos que $x \in y$ é verdadeiro. Assim,
+         $$(x \in z\ \leftrightarrow\ \highl{x \notin z} \color{black})$$
+         é uma \underline{contradição}. 
 
-\subsubsection{Axioma da separação}
-Queremos ser capazes de definir um conjunto através de uma fórmula lógica. Para evitar paradoxos, como o paradoxo de Russel, temos que especificar o conjunto sobre qual nossa fórmula será elaborada.
-\begin{stat}
-    Portanto, para cada fórmula $P(x)$, para todo conjunto $y$, existe o conjunto daqueles elementos que pertencem a $y$ e satisfazem a fórmula $P$.
-\end{stat}
-\begin{exmp}
-    Seja um conjunto $y = \{1,2,3,4,5,6,7,8,9\}$.
+      \subsubsection*{Interseção}
+         Podemos utilizar o axioma da separação para definir a interseção de dois conjuntos.
 
-    $P(x): x$ é par.
+         Sejam $A$ e $B$ dois conjuntos.
 
-    $Z = \{x; x \in y\ \&\ P(x)\} = \{2,4,6,8\}$
-\end{exmp}
-\begin{definition}
-    Para cada fórmula $P$ tal que $z$ não ocorre livre, a seguinte fórmula é um axioma:
-    $$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ P(x)]$$    
-\end{definition}
-\textit{"para todo $y$ existe $z$ tal que para todo $x$, $x$ pertence a $z$ iff $x$ pertence a $y$ e vale a fórmula $P(x)$."}\\
-O conjunto $z$ será denotado assim:
-$$z = \{x: x \in y\ \&\ P(x)\}.$$
-Ou assim:
-$$z = \{x \in y: P(x)\}.$$
-Por que $z$ não pode ocorrer \underline{livre} em $P$ na fórmula
-$$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ P(x)] ?$$
-Se permitirmos que a variável que \underline{define} o conjunto ocorra livre em $P$, poderíamos tomar \\ $P(x) = \highl{x \notin z}$:
-$$\forall y \exists z \forall x [x \in z\ \leftrightarrow\ x \in y\ \&\ \highl{x \notin z}\color{black}].$$
-Tomando $y = \{\varnothing\}$\ e\ $x = \varnothing$, temos que $x \in y$ é verdadeiro. Assim,
-$$(x \in z\ \leftrightarrow\ \highl{x \notin z} \color{black})$$
-é uma \underline{contradição}. 
+         Então, pelo axioma da separação, existe $z = \{x: x \in A\ \&\ P(x)\}$
 
-\subsubsection*{Interseção}
-Podemos utilizar o axioma da separação para definir a interseção de dois conjuntos.
+         Tomando $\color{brown}{P(x) = x \in B}$, temos
+         $$\color{violet}{z = \{x: x \in A\ \&\ x \in B \} = A \cap B}$$
 
-Sejam $A$ e $B$ dois conjuntos.
+         \subsubsection*{Diferença e conjuntos vazios}
+         Da mesma forma, podemos definir a diferença entre dois conjuntos.
 
-Então, pelo axioma da separação, existe $z = \{x: x \in A\ \&\ P(x)\}$
+         Sejam $A$ e $B$ dois conjuntos.
 
-Tomando $\color{brown}{P(x) = x \in B}$, temos
-$$\color{violet}{z = \{x: x \in A\ \&\ x \in B \} = A \cap B}$$
+         Então, pelo axioma da separação, existe $z = \{x: x \in A\ \&\ P(x)\}$
 
-\subsubsection*{Diferença e conjuntos vazios}
-Da mesma forma, podemos definir a diferença entre dois conjuntos.
+         Tomando $\color{brown}{P(x) = x \notin B}$, temos
+         $$\color{violet}{z = \{x: x \in A\ \&\ x \notin B \} = A - B}$$
+         Se tomarmos $\color{brown}{P(x) = x \neq x}$, obtemos o conjunto vazio.
 
-Sejam $A$ e $B$ dois conjuntos.
+      \subsubsection*{Interseção arbitrária de conjuntos}
+         \begin{theorem}
+            Dado um conjunto não vazio $x$, existe o conjunto $y = \bigcap x$, formado por todos os elementos que pertencem simultaneamente a todos os elementos de $x$.
+         $$\bigcap x = \{v: v\ \textrm{pertence a todos os elementos de}\ x\}.$$
+         \end{theorem}
+         \begin{exmp}
+            Seja um conjunto $x = \{\{1,2,3\},\ \{2,3,4\},\ \{2,3,4,5\}\}.$\\
+            Existe o conjunto interseção: $\bigcap x = \{2,3\}.$
+            Formalmente, temos $$y = \{v: v \in z\ \&\ \forall w (w \in x\ \rightarrow\ v \in w)\}.$$
+         \end{exmp}
 
-Então, pelo axioma da separação, existe $z = \{x: x \in A\ \&\ P(x)\}$
+      \subsubsection{Axioma da regularidade}
+         \begin{stat}
+            Para todo conjunto $x$ não vazio existe $y \in x$ tal que $x \cap y = \varnothing$.
+         \end{stat}
+         $$ \forall x [x \neq \varnothing\ \rightarrow\ \exists y (y \in x\ \&\ x \cap y = \varnothing)]$$
+         Ou seja, esse axioma garante que não exista uma sequência infinita descrescente na relação de pertinência. Não há como ficar preso numa sequência infinita decrescente, pois certa hora irá encontrar o conjunto vazio.
+         \begin{theorem}
+            Não existem conjuntos $x$ e $y$ tais que $x \in y$\ e\ $y \in x$.
+         \end{theorem}
+         \begin{proof}
+            Sejam $x$ e $y$ conjuntos quaisquer.    
+            
+            Vamos demosntrar que ou $x \notin y$\ ou\ $y \notin x$. Pelo \textbf{axioma do par}, existe $B = \{x,y\}$ não vazio.
+            
+            Pelo \textbf{axioma da regularidade}, $B \neq \varnothing\ \rightarrow\ \exists z (z \in B\ \&\ z \cap B = \varnothing).$
+            
+            Mas $z \in B$ implica que $z = x$\ ou \ $z = y$.
+            
+            Se $z=x$, então $z \cap B\ =\ x \cap B\ =\ \varnothing$, logo, $y \notin x$,
 
-Tomando $\color{brown}{P(x) = x \notin B}$, temos
-$$\color{violet}{z = \{x: x \in A\ \&\ x \notin B \} = A - B}$$
-Se tomarmos $\color{brown}{P(x) = x \neq x}$, obtemos o conjunto vazio.
+            (pois caso contrário, o resultado da interseção conteria o $y$).
 
-\subsubsection*{Interseção arbitrária de conjuntos}
-\begin{theorem}
-    Dado um conjunto não vazio $x$, existe o conjunto $y = \bigcap x$, formado por todos os elementos que pertencem simultaneamente a todos os elementos de $x$.
-$$\bigcap x = \{v: v\ \textrm{pertence a todos os elementos de}\ x\}.$$
-\end{theorem}
-\begin{exmp}
-    Seja um conjunto $x = \{\{1,2,3\},\ \{2,3,4\},\ \{2,3,4,5\}\}.$\\
-    Existe o conjunto interseção: $\bigcap x = \{2,3\}.$
-
-    Formalmente, temos $$y = \{v: v \in z\ \&\ \forall w (w \in x\ \rightarrow\ v \in w)\}.$$
-\end{exmp}
-\subsubsection{Axioma da regularidade}
-    \begin{stat}
-        Para todo conjunto $x$ não vazio existe $y \in x$ tal que $x \cap y = \varnothing$.
-    \end{stat}
-        $$ \forall x [x \neq \varnothing\ \rightarrow\ \exists y (y \in x\ \&\ x \cap y = \varnothing)]$$
-Ou seja, esse axioma garante que não exista uma sequência infinita descrescente na relação de pertinência. Não há como ficar preso numa sequência infinita decrescente, pois certa hora irá encontrar o conjunto vazio.
-\newpage
-\begin{theorem}
-    Não existem conjuntos $x$ e $y$ tais que $x \in y$\ e\ $y \in x$.
-\end{theorem}
-\begin{proof}
-    Sejam $x$ e $y$ conjuntos quaisquer.    
-    
-    Vamos demosntrar que ou $x \notin y$\ ou\ $y \notin x$. Pelo \textbf{axioma do par}, existe $B = \{x,y\}$ não vazio.
-    
-    Pelo \textbf{axioma da regularidade}, $B \neq \varnothing\ \rightarrow\ \exists z (z \in B\ \&\ z \cap B = \varnothing).$
-    
-    Mas $z \in B$ implica que $z = x$\ ou \ $z = y$.
-    
-    Se $z=x$, então $z \cap B\ =\ x \cap B\ =\ \varnothing$, logo, $y \notin x$,
-
-    (pois caso contrário, o resultado da interseção conteria o $y$).
-
-    Se $z=y$, então $z \cap B\ =\ y \cap B\ =\ \varnothing$, logo, $x \notin y$.
-\end{proof}
-\begin{mymdframed}{Nota}
-A formulação, dada por von Neumann (1925), em lógica de primeira ordem, é seguida por
-$$\forall A(\exists B(B\in A)\rightarrow \exists B(B\in A\land \neg \exists C(C\in A\land C\in B)))$$
-\textit{Todo conjunto diferente do conjunto vazio possui um elemento que é totalmente disjunto dele.}\\
-Sem esse axioma, o comportamento possível de infundados conjuntos surgem. São denominados \textbf{hiperconjuntos}. Um comportamento típico seria $y \in y$, então $y$ é um hiperconjunto. Em particular, não é adequado ter a violação desse axioma, apenas para versões da teoria dos conjuntos que possam se beneficiar de tal comportamento.
-\end{mymdframed}
+            Se $z=y$, então $z \cap B\ =\ y \cap B\ =\ \varnothing$, logo, $x \notin y$.
+         \end{proof}
+         \begin{mymdframed}{Nota}
+            A formulação, dada por von Neumann (1925), em lógica de primeira ordem, é seguida por
+            $$\forall A(\exists B(B\in A)\rightarrow \exists B(B\in A\land \neg \exists C(C\in A\land C\in B)))$$
+            \textit{Todo conjunto diferente do conjunto vazio possui um elemento que é totalmente disjunto dele.}\\
+            Sem esse axioma, o comportamento possível de infundados conjuntos surgem. São denominados \textbf{hiperconjuntos}. Um comportamento típico seria $y \in y$, então $y$ é um hiperconjunto. Em particular, não é adequado ter a violação desse axioma, apenas para versões da teoria dos conjuntos que possam se beneficiar de tal comportamento.
+         \end{mymdframed}
