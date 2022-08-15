@@ -17,21 +17,52 @@
    \subsection{Sequências monótonas}
       Sequências monótonas são sempre crescentes ou decrescentes. 
          \subsubsection{Sequências monotonicamente crescentes}
-               A sequência $\left\{a_{n}\right\}^{\infty}_{n=1}$ é monotonicamente crescente se e somente se $a_{n+1} \geq a_{n}$, para todo $n \in N$. 
+                  A sequência $\left\{a_{n}\right\}^{\infty}_{n=1}$ é monotonicamente crescente se e somente se $a_{n+1} \geq a_{n}$, para todo $n \in \N$. 
                Se cada termo consecutivo é estritamente maior que o anterior, então a sequência é \emph{estritamente monotonicamente crescente}.
             \subsubsection{Sequências monotonicamente decrescentes}
                Analogamente, uma sequência é monotonicamente decrescente se a cada termo consecutivo for menor que o anterior. A sequência será \emph{estritamente monotonicamente decrescente} se cada termo for estritamente menor que o anterior.
       
    \subsection{Sequências limitadas}
       \begin{definition}
-         Uma sequência $\left\{a_{n}\right\}^{\infty}_{n \in \N}$ é limitada quando o conjunto de seus termos é limitado, ou seja, existem $K$ e $M$ contidos em $A$ tais que $K \leq a_{n} \leq M, \forall n \in N$.
+         Uma sequência $\left\{a_{n}\right\}^{\infty}_{n \in A}$ é limitada quando o conjunto de seus termos é limitado, ou seja, existem $K$ e $M$ contidos em $A$ tais que $K \leq a_{n} \leq M, \forall n \in A$.
          \begin{enumerate}[i.]
-            \item Se $\left\{a_{n}\right\}$ é limitada superiormente temos $$a_{n} \leq M, M \subseteq A,\forall n \in \N.$$
-            \item Se $\left\{a_{n}\right\}$ é limitada inferiormente temos $$K \leq a_{n}, K \subseteq A, \forall n \in N.$$
-            \item Se $\left\{a_{n}\right\}$ é inferiormente e superiormente limitada então $\left\{a_{n}\right\}$ é uma sequência limitada.
+            \item Se $\left\{a_{n}\right\}$ é limitada superiormente temos $$a_{n} \leq M,\forall n \in A.$$
+            \item Se $\left\{a_{n}\right\}$ é limitada inferiormente temos $$K \leq a_{n}, \forall n \in A.$$
+            \item Se $\left\{a_{n}\right\}$ é inferiormente e superiormente
+               limitada então $\left\{a_{n}\right\}$ é uma sequência limitada.
+               Isto é, ${a_{n}}$ é limitada se existir um $L > 0$, $L \subseteq A$, tal que
+               $|a_{n}| \leq L, \forall n \in A$.
          \end{enumerate}
       \end{definition}
    \subsection{Limite de uma sequência}
+      Sequências são tipos especiais de funções e com isso podemos investigar seus
+      limites. No entanto, temos uma restrição: ${a_{n}}$ está definida para
+      valores inteiros de $n$. O único limite que usado será de $a_{n} \to
+      +\infty.$
+      \begin{definition}[Intuitiva]
+         Dada uma sequência ${a_{n}}$ dizemos que o limite de uma sequência é
+         $L$ se, equanto $n$ se torna grande, $a_{n}$ comeca a estar
+         arbitrariamente perto de $L$. Se enquanto $n \to +\infty$ $a_{n}$ nao
+         se aproxima de $L$, então dizemos que o limite nao existe.
+      \end{definition}
+      \begin{definition}
+         Dada uma sequência ${a_{n}}$ dizemos que $\lim_{n\to\infty} a_{n} = L$
+         se para todo $\epsilon > 0$ existir um inteiro $k$, tal que $| a_{n} -
+         L | < \epsilon$ para todo $n \geq k$.
+      \end{definition}
+      \begin{theorem}
+         Seja ${a_{n}}_{n=n_{0}}$ uma sequência e suponha que $f(x)$ é uma
+         função real para a qual $f(n) = a_{n}$ para todos os inteiros $n \geq k$,
+         onde $k \geq n_{0}$. Se $$\lim_{x\to\infty} f(x) = L,\quad
+         \lim_{n\to\infty} a_{n} = L.$$
+      \end{theorem}
+      \begin{exmp}
+         Seja $a_{n} = \dfrac{5n+1}{6n+7}$. Determine se a sequência
+         ${a_{n}}_{n=1}$ tem um limite.
+         \begin{proof}
+            Como $$\lim_{x\to\infty} \dfrac{5x+1}{6x+7} = \dfrac{5}{6},\quad \textrm{então}\ \lim_{x\to\infty} \dfrac{5n+1}{6n+7} = \dfrac{5}{6}.$$
+         \end{proof}
+      \end{exmp}
    \subsection{Propriedades de limites de sequências}
    \subsection{Subsequências}
    \subsection{Sequência de Cauchy}
