@@ -63,6 +63,47 @@
             Como $$\lim_{x\to\infty} \dfrac{5x+1}{6x+7} = \dfrac{5}{6},\quad \textrm{então}\ \lim_{x\to\infty} \dfrac{5n+1}{6n+7} = \dfrac{5}{6}.$$
          \end{proof}
       \end{exmp}
+      \begin{mymdframed}{Observação}
+         Se $\lim_{x\to\infty} f(x)$ nao existe, $\lim_{n\to\infty} a_{n}$ pode nao existir.
+      \end{mymdframed}
+      \begin{exmp}
+         Considere $a_{n} = \sin(n\pi)$ e $f(x) = \sin(x\pi)$.
+         \begin{proof}
+            Analisando a sequencia $a_{n}$ vemos que ela resulta em uma lista ordenada de zeros:
+            $$\cancelto{0}{\sin(0\pi)}, \cancelto{0}{\sin(1\pi)}, \cancelto{0}{\sin(2\pi)}, \cancelto{0}{\sin(3\pi)}, ...$$
+            Como os termos da sequencia sao zeros temos que $\lim_{n\to\infty} a_{n} = 0.$ Mas avaliando para valores reais, i.e, quando consideramos $f(x)$ temos que $\lim_{x\to\infty} f(x)$ nao existe.
+            Os valores de $\sin(x\pi)$ para $x\to\infty$ oscilam entre $-1$ e $1$.
+         \end{proof}
+      \end{exmp}
+      \begin{definition}
+         Dada duas sequencias ${a_{n}}$ e ${b_{n}}$, a notacao $a_{n} \ll b_{n}$ significa que
+         $$\lim_{n\to\infty}\dfrac{a_{n}}{b_{n}} = 0\quad\textrm{e}\quad \lim_{n\to\infty}\dfrac{b_{n}}{a_{n}} = \infty.$$
+      \end{definition}
+      \begin{theorem}
+         Sejam $p$,$q$ reais positivos, com $b>1$. Temos a seguinte relacao:
+         $$\ln^{p}(n) \ll n^{q} \ll b^{n} \ll n! \ll n^{n}.$$
+      \end{theorem}
+      Qualquer potencia de $\ln(n)$ cresce mais \emph{lentamente} do que qualquer potencia de $n$.
+      \begin{exmp}
+         Seja $a_{n} = \dfrac{\ln^{9}(n)}{n^{1/2}}$. Ache o limite da sequencia $a_{n}$.
+         \begin{proof}
+            O teorema anterior indica que $\ln^{p}(n) \ll n^{q}$, i.e, $\lim_{n\to\infty}\dfrac{\ln^{p}(n)}{n^{q}} = 0$, para qualquer real positivo $p$ e $q$. Portanto, $\lim_{n\to\infty}\dfrac{\ln^{9}(n)}{n^{1/2}} = 0.$
+         \end{proof}
+      \end{exmp}
+      \begin{exmp}
+         Seja $a_{n} = \dfrac{n^{100}+n^{n}}{n!+5^{n}}.$Ache o limite da sequencia $a_{n}$.
+         \begin{proof}
+            Vamos comecar analisando o numerador. Pelo teorema, temos que $n^{n} \gg n^{q}$, que nesse caso eh $n^{n} \gg n^{100}$. No denominador, novamente pelo teorema, temos que $n! \gg b^{n}$, que nesse caso eh $n! \gg 5^{n}$. Entao, iremos saber da existencia de $\lim_{n\to\infty}a_{n}$ considerando $\lim_{n\to\infty} \dfrac{n^{n}}{n!}.$
+            Novamente pelo teorema temos que $n^{n} \gg n!$, assim $\lim_{n\to\infty} a_{n} = \infty.$
+            
+            Mais precisamente, 
+            $$\lim_{n\to\infty}\dfrac{n^{100}+n^{n}}{n!+5^{n}} = \lim_{n\to\infty}\dfrac{n^{n}\left(\cancelto{0}{\lim_{n\to\infty}\left(\dfrac{n^{100}}{n^{n}}\right)}+1\right)}{n!\left(1+\cancelto{0}{\lim_{n\to\infty}\left(\dfrac{5^{n}}{n!}\right)}\right)} = \lim_{n\to\infty} \dfrac{n^{n}}{n!}.$$
+         \end{proof}
+      \end{exmp}
+      \begin{theorem}
+         Suponha que $a_{n}$,$b_{n}$ e $c_{n}$ sao sequencias com $$a_{n} \leq b_{n} \leq c_{n}.$$ Se $$\lim_{n\to\infty}a_{n} = L = \lim_{n\to\infty}c_{n}$$, entao $\lim_{n\to\infty}b_{n} = L.$
+      \end{theorem}
+
    \subsection{Propriedades de limites de sequências}
    \subsection{Subsequências}
    \subsection{Sequência de Cauchy}
