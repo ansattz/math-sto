@@ -1,0 +1,53 @@
+\section{Construção}
+   Há duas maneiras de introduzir novos objetos em matemática:
+   \begin{itemize}
+      \item Axiomaticamente
+      \item Construtivamente
+   \end{itemize}
+   O primeiro diz respeito a tomarmos o conceito conjunto como primitivo e importamos axiomas para tratar deste conceito. O segundo definimos o novo objeto em termos de objetos ja estabelecidos. Pela forma construtiva, lidaremos com numeros como conjuntos.
+   \subsection{Construção de von Neumann}
+      A Construção de von Neumann para os numeros naturais \emph{considera um numero natural como o conjunto dos numeros menores a esse numero}.
+      Essa forma construtiva concebe um numero natural como um conjunto dos numeros menores a esse numero:
+      \begin{alignat}{3}
+         \nonumber 0 &:=& \varnothing\\
+         \nonumber 1 &:=& {0} &:= {\varnothing}\\
+         \nonumber 2 &:=& {0,1}& := {\varnothing, {\varnothing}}\\
+         \nonumber 3 &:=& {0,1,2} &:= {\varnothing, {\varnothing}, {\varnothing, {\varnothing}}}\\
+         \nonumber &\vdots
+      \end{alignat}
+      Com isso temos: $0 \in 1 \in 2 \in 3 \in ...$, assim como $ 0 \subset 1 \subset \subset 3 \subset ...$. Usando a ideia de pertinencia da teoria dos conjuntos podemos estabelecer uma nocao de ordem.
+      \subsubsection{Sucessor de um conjunto}
+         Vamos buscar uma definição geral para dizer que algo é um número natural.
+         Da construção de von Neumann temos o seguinte:
+         $$3 = \{0,1,2\} = \{0,1\} \cup \{2\} = 2 \cup \{2\}$$
+         $$2 = \{0,1\} = \{0\} \cup \{1\} = 1 \cup \{1\}$$
+         Isso significa que o número natural seguinte a $n$ pode ser obtido pela união de $n$ com $\{n\}$.
+         \begin{definition}
+            Para qualquer conjunto $n$, o \emph{sucessor} de $n$, denotado por $n++$, é o conjunto $$n++ = n \cup \{n\}$$
+            i.e, $$\forall y(y \in n++ \leftrightarrow y \in n \lor y = n).$$
+         \end{definition}
+         \begin{exmp}
+            $$2 \cup \{2\} = 2++ = 3.$$
+         \end{exmp}
+         \begin{definition}[Conjunto indutivo]
+            Um conjunto $A$ é dito \emph{indutivo} se e somente se
+            \begin{itemize}
+               \item $\varnothing \in A$
+               \item $A$ é fechado sob a operação sucessor, i.e, $\forall x (x \in A \rightarrow x++ \in A).$
+            \end{itemize}
+         \end{definition}
+         Em outras palavras, o conjunto indutivo é um conjunto que possui como elemento o conjunto vazio e para qualquer objeto que pertence a esse conjunto o sucessor também pertence ao conjunto.
+
+         Nesse sentido podemos escrever os números naturais em termos de conjunto vazio e da operação de sucessor:
+         \begin{alignat}{3}
+            \nonumber 0 &=& \varnothing ++\\
+            \nonumber 1 &=& 0++\\
+            \nonumber 2 &=& 1++\\
+            \nonumber 3 &=& 2++
+         \end{alignat}
+         Temos que cada número é distinto (satisfazendo o axioma da extensão). O importante dessa exposição é que apesar de termos infinitos números (conjuntos), todos os números naturais são conjuntos finitos. Ainda não temos um axioma que nos permite dizer que existe algum conjunto infinito (ideia intuitiva sobre os naturais), assim, não podemos estabelecer a existência de um conjunto intuitivo.
+      \subsubsection{Axioma do infinito e os números naturais}
+         \begin{stat}[Axioma do Infinito]
+            Existe um conjunto indutivo, i.e:
+            $$\exists A\left(\varnothing \in A\ &\ \forall n(n \in A \rightarrow n ++ \in A)\right).$$
+            \emph{Existe um conjunto $A$ tal que o conjunto vazio pertence ao conjunto $A$ e para todo $n$ que pertence a $A$ o sucessor de $n$ pertence a $A$.}
