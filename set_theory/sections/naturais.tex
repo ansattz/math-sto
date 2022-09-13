@@ -4,9 +4,11 @@
       \item Axiomaticamente
       \item Construtivamente
    \end{itemize}
-   O primeiro diz respeito a tomarmos o conceito conjunto como primitivo e importamos axiomas 
-   para tratar deste conceito. O segundo definimos o novo objeto em termos de objetos ja 
-   estabelecidos. Pela forma construtiva, lidaremos com numeros como conjuntos.
+   O primeiro diz respeito a tomarmos o conceito conjunto como 
+   primitivo e importamos axiomas para tratar deste conceito. 
+   O segundo definimos o novo objeto em termos de objetos ja estabelecidos.
+   Pela forma construtiva, lidaremos com numeros como conjuntos.
+
    \subsection{Construção de von Neumann}
       A construção de von Neumann para os numeros naturais 
       \emph{considera um numero natural como o conjunto dos numeros 
@@ -23,7 +25,9 @@
       \end{alignat}
       Com isso temos: $0 \in 1 \in 2 \in 3 \in ...$, assim 
       como $ 0 \subseteq 1 \subseteq 2 \subseteq 3 \subseteq ...$. 
-      Usando a ideia de pertinencia da teoria dos conjuntos podemos estabelecer uma noção de ordem.
+      Usando a ideia de pertinencia da teoria dos conjuntos podemos 
+      estabelecer uma noção de ordem.
+
       \subsubsection{Sucessor de um conjunto}
          Vamos buscar uma definição geral para dizer que algo é um número natural.
          Da construção de von Neumann temos o seguinte:
@@ -47,11 +51,11 @@
                   $\forall n (n \in A \rightarrow n++ \in A).$
             \end{itemize}
          \end{definition}
-         Em outras palavras, o conjunto indutivo é um conjunto que possui como elemento o 
-         conjunto vazio e para qualquer objeto que pertence a esse conjunto o sucessor também 
-         pertence ao conjunto.\\
-         Nesse sentido podemos escrever os números naturais em termos de conjunto vazio e 
-         da operação de sucessor:
+         Em outras palavras, o conjunto indutivo é um conjunto que possui 
+         como elemento o conjunto vazio e para qualquer objeto que 
+         pertence a esse conjunto o sucessor também pertence ao conjunto.\\
+         Nesse sentido podemos escrever os números naturais em termos 
+         de conjunto vazio e da operação de sucessor:
          \begin{alignat}{3}
             \nonumber 0 &=& \varnothing ++\\
             \nonumber 1 &=& 0++\\
@@ -59,37 +63,44 @@
             \nonumber 3 &=& 2++
          \end{alignat}
          Temos que cada número é distinto (satisfazendo o axioma da extensão). 
-         O importante dessa exposição é que apesar de termos infinitos números (conjuntos), 
-         todos os números naturais são conjuntos finitos. Ainda não temos um axioma que nos 
-         permite dizer que existe algum conjunto infinito (ideia intuitiva sobre os naturais), 
-         assim, não podemos estabelecer a existência de um conjunto indutivo.
-      \subsubsection{Axioma do infinito e os números naturais}
-         \begin{stat}[Axioma do Infinito]
-            Existe um conjunto indutivo, i.e:
-            $$\exists A\left(\varnothing \in A\ \&\ 
-            \forall n(n \in A \rightarrow n ++ \in A)\right).$$
-         \end{stat}
-         \emph{Existe um conjunto $A$ tal que o conjunto vazio pertence ao conjunto $A$ e 
-         para todo $n$ que pertence a $A$ o sucessor de $n$ pertence a $A$.}\\
-         Obviamente que um conjunto indutivo contém necessariamente todos os números naturais. 
-         Outra noção é que ele pode conter outros conjuntos. 
-         E é através dessa noção que intuitivamente temos que o conjunto dos números naturais 
-         é o menor conjunto indutivo.
+         O importante dessa exposição é que apesar de termos infinitos 
+         números (conjuntos), todos os números naturais são conjuntos finitos. 
+         Ainda não temos um axioma que nos permite dizer que existe algum conjunto
+         infinito (ideia intuitiva sobre os naturais), assim, não podemos 
+         estabelecer a existência de um conjunto indutivo.
+
+   \subsection{Axioma do infinito e os números naturais}
+      \begin{stat}[Axioma do Infinito]
+         Existe um conjunto indutivo, i.e:
+         $$\exists A\left(\varnothing \in A\ \&\ 
+         \forall n(n \in A \rightarrow n ++ \in A)\right).$$
+      \end{stat}
+      \emph{Existe um conjunto $A$ tal que o conjunto vazio pertence ao 
+         conjunto $A$ e para todo $n$ que pertence a $A$ o sucessor de $n$
+      pertence a $A$.}\\
+      Obviamente que um conjunto indutivo contém necessariamente todos os
+      números naturais. Outra noção é que ele pode conter outros conjuntos. 
+      E é através dessa noção que intuitivamente temos que o conjunto dos 
+      números naturais é o menor conjunto indutivo.
+
       \subsubsection{Conjunto dos números naturais}
          A coleção de todos os números naturais é um conjunto.
          \begin{theorem}
-            Existe um conjunto $\omega$ cujos elementos são exatamente os números naturais.
+            Existe um conjunto $\omega$ cujos elementos são 
+            exatamente os números naturais.
             \begin{proof}
                Seja $A$ um conjunto indutivo assegurado pelo axioma do infinito.
                Pelo axioma da separação existe o conjunto
-               $$\omega = \{n:n \in A\ \&\ n\ \textrm{pertence a todo conjunto indutivo}\}$$
-               Como $n$ pertence a todo conjunto indutivo então ele pertence a $A$ e, portanto,
-               $$\omega = \{n: n\ \textrm{pertence a todo conjunto indutivo}\}$$
+               $$\omega = \{n:n \in A\ \&\ n\ 
+               \textrm{pertence a todo conjunto indutivo}\}$$
+               Como $n$ pertence a todo conjunto indutivo então ele pertence a 
+               $A$ e, portanto, $$\omega = \{n: n\ 
+               \textrm{pertence a todo conjunto indutivo}\}$$
                Pela definição de número natural, segue então que
                $$\omega = \{n: n\ \textrm{é um número natural}\}$$
             \end{proof}
          \end{theorem}
-         \begin{theorem}
+         \begin{theorem}[Unicidade do conjunto omega]
             Seja $\omega = \{n: n\ \textrm{é um natural}\} = 
             \{n: n\ \textrm{pertence a todo conjunto indutivo}\}$
             \begin{enumerate}[i.]
@@ -106,10 +117,94 @@
             \end{proof}
             \begin{proof}
                 ii. - iii. Seja $A$ um conjunto indutivo. Considere $n\in \omega$.\\
-                Pela definição, $n$ pertence a todo conjunto indutivo, em particular, $n \in A$.\\
-                Mostramos que $n \in \omega \rightarrow n \in A$. Logo, ii. é válido.\\
-                Suponha que exista outro conjunto $B$ além de $\omega$ que satisfaz i. e ii.\\
-                Assim, devemos ter, por ii., $B\subseteq \omega\ \&\ \omega \subseteq B$. 
-                Pelo axioma da extensão, $B = \omega$.
+                Pela definição, $n$ pertence a todo conjunto indutivo, 
+                em particular, $n \in A$.\\ 
+                Mostramos que $n \in \omega \rightarrow n \in A$. 
+                Logo, ii. é válido.\\
+                Suponha que exista outro conjunto $B$ além de $\omega$
+                que satisfaz i. e ii.\\
+                Assim, devemos ter, por ii., $B\subseteq \omega\ \&\
+                \omega \subseteq B$. Pelo axioma da extensão, $B = \omega$.
             \end{proof}
          \end{theorem}
+         O teorema anterior nos diz que o conjunto $\omega$ é o menor conjunto indutivo.
+         Qualquer subconjunto indutivo de $\omega$ coincide com $\omega$.
+         \begin{theorem}
+            Todo número natural, exceto $0$, é sucessor de algum número natural.
+            \begin{proof}
+               Pelo axioma da separação, definimos um subconjunto de $\omega$
+               cujos elementos satisfazem a hipótese do teorema. O subconjunto possui
+               a seguinte configuração
+               $$A = \{n \in \omega: n = 0 \lor \exists s \in \omega (n = s++)\}.$$
+               Queremos mostrar que $A = \omega$, i.e, que 
+               todos os números satisfazem o teorema.\\
+               Basta mostrar que $A$ é indutivo:
+               \begin{enumerate}[i.]
+                  \item $0 \in A$. Isso é imediato porque $0 \in \omega$.
+                  \item $k \in A \rightarrow k++ \in A$.
+               \end{enumerate}
+               Para $k \in A$ significa que $k \in \omega$, $k = 0$ ou que 
+               $\exists s \in \omega(k = s++)$.\\
+               Se $k = 0$: caso base.\\
+               Como provamos que $\omega$ é indutivo, segue que $s++$ 
+               pertence a $\omega$.\\
+               Por hipótese se $k$ pertence a $\omega$ o sucessor de 
+               $k$ também pertence a $\omega$.\\
+               Assim, $k++ = (s++)++$ e segue que $k++ \in A$. 
+               Logo, $A$ é indutivo.\\
+               Portanto, pelo princípio da indução, $A = \omega$.
+            \end{proof}
+         \end{theorem}
+   
+   \subsection{Axiomas de Peano}
+      \begin{enumerate}[1.]
+         \item Zero é um número.
+         \item O sucessor de um número é um número.
+         \item Números distintos nunca têm o mesmo sucessor.
+         \item Zero não é sucessor de qualquer número.
+         \item Se uma propriedade vale para zero, e, valendo para um
+            número $n$ também vale para seu sucessor, então, essa
+            propriedade vale para todos os números.
+      \end{enumerate}
+      \begin{theorem}
+         O conjunto $\omega$ satisfaz os axiomas de Peano.
+         A correspondência é o número como elemento de $\omega$, zero
+         como o conjunto vazio de $\omega$ e sucessor como o conjunto 
+         $\delta$ para $\omega$ definido como 
+         $$\delta = \{(n, n++): n \in \omega\}.$$
+         \emph{O conjunto delta é o conjunto dos pares ordenados 
+         n e o sucessor de n tal que n está em $\omega$}.
+         \begin{proof}
+            1. e 2.\\
+            Estes dois axiomas são satisfeitos porque $\omega$ é indutivo.
+         \end{proof}
+         \begin{proof}
+            3.\\
+            Vamos supor que $n \neq s$, mas $n++ = s++$.
+            Como $n \in n++$ segue que $n \in s++$, o que é o mesmo que
+            dizer que $n \in (s \cup \{s\}).$\\
+            Ou seja, $n\in s \lor n = s$. Por hipótese $n \neq s$.
+            Portanto $n \in s$. Analogamente para $s \in n$.\\
+            Isso contradiz o Teorema 4 do Axioma da Regularidade:\\
+            \emph{Não existem conjuntos $x$ e $y$ tais que 
+            $x \in y$ e $y \in x$.}
+         \end{proof}
+         \begin{proof}
+            4.\\
+            Temos a informação de que $\forall n (n \in n++).$ Logo, não
+            podemos ter $n++ = 0 = \varnothing$, já que o conjunto vazio
+            não possui elementos.
+         \end{proof}
+      \end{theorem}
+         \begin{proof}
+            5.\\
+            Princípio da indução. Para $\omega$ obtivemos a indução
+            considerando um subconjunto $A$ e descobrindo que se $A$
+            é indutivo, então $A$ é igual ao conjunto $\omega$.
+         \end{proof}
+      \subsubsection{Sistema de Peano}
+         $$(N, S, i)$$
+         $N$ o conjunto indutivo, $S$ a operação sucessora e $i$ o objeto que
+         pertence ao conjunto $N$. Esse sistema é isomórfico ao sistema
+         $$(\omega,\delta,0).$$ Existe uma função bijetora $$h: \omega \to N$$
+         que preserva a operação de sucessor e o primeiro elemento.
