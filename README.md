@@ -2,5 +2,4 @@
 
 - Algebra
 - Análise
-- Cálculo
 - Teoria dos conjuntos
