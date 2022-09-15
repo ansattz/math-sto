@@ -1,10 +1,6 @@
-# locked_room
-
-### Notas em matemática:
+# Notas em matemática:
 
 - Algebra
-- Teoria dos conjuntos
 - Análise
-
-
-
+- Cálculo
+- Teoria dos conjuntos
