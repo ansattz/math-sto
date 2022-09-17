@@ -275,5 +275,7 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
-# Java class file
+# Java files
 *.class
+*.mf
+*.jar
