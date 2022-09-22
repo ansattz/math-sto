@@ -1,53 +1,99 @@
 \section{Sequências}
    \subsection{Sequências infinitas}
-      Sequências são um tipo de especial de função. Considere uma função de variável inteira, ou seja $$a_{n} := a(n): \Z \to A; n\ \mapsto\ a_{n}.$$
-      O domínio de uma sequência é sempre o conjunto dos inteiros. A imagem da sequência depende do contexto, pois o contradomínio pode ser um subconjunto do conjunto $\R$, $\C$ ou um espaço topológico. 
+      Sequências são um tipo de especial de função. 
+      Considere uma função de variável inteira, ou seja, 
+      $$a_{n} := a(n): \Z \to A; n\ \mapsto\ a_{n}.$$
+      O domínio de uma sequência é sempre o conjunto dos inteiros. 
+      A imagem da sequência depende do contexto, pois o 
+      contradomínio pode ser um subconjunto do conjunto 
+      $\R$, $\C$ ou um espaço topológico. 
       De qualquer forma, a imagem é geralmente denotada por $a_{n}$.
       \subsubsection{Sequências infinitas unilaterais}
-          São sequências onde o domínio pode ser sempre o conjunto $\N$. Considere a aplicação $f: N \to A; n \mapsto f(n).$ Uma sequência infinita unilateral seria algo do tipo $$\left\{a_{n}\right\}^{\infty}_{n \in \N}.$$
+          São sequências onde o domínio pode ser sempre o conjunto $\N$. 
+          Considere a aplicação $f: N \to A; n \mapsto f(n).$ 
+          Uma sequência infinita unilateral seria algo do tipo 
+          $$\left\{a_{n}\right\}^{\infty}_{n \in \N}.$$
          \begin{exmp}
-            Considere a sequência $\left\{\cos{\dfrac{n\pi}{6}}\right\}^{\infty}_{n=0}$. Então, a imagem é $\left\{1,\dfrac{\sqrt[]{3}}{2}, \dfrac{1}{2}, ...\right\}.$
+            Considere a sequência $\left\{\cos{\dfrac{n\pi}{6}}\right\}
+            ^{\infty}_{n=0}$. Então, a imagem é $\left\{1,
+            \dfrac{\sqrt[]{3}}{2}, \dfrac{1}{2}, ...\right\}.$
          \end{exmp}
       
       \subsubsection{Sequências bi-infinitas}
-         Sequências bi-infinitas são sequências do tipo $$\left\{a_{n}\right\}^{\infty}_{n=-\infty}.$$
+         Sequências bi-infinitas são sequências do tipo 
+         $$\left\{a_{n}\right\}^{\infty}_{n=-\infty}.$$
          \begin{exmp}
-            Considere $\left\{4n\right\}^{\infty}_{n=-\infty}$. Então, temos $$(..., -16,-12,-8,-4,0,4,8,12,16,...).$$
+            Considere $\left\{4n\right\}^{\infty}_{n=-\infty}$. 
+            Então, temos $$(..., -16,-12,-8,-4,0,4,8,12,16,...).$$
          \end{exmp}
    \subsection{Sequências monótonas}
       Sequências monótonas são sempre crescentes ou decrescentes. 
          \subsubsection{Sequências monotonicamente crescentes}
-                  A sequência $\left\{a_{n}\right\}^{\infty}_{n=1}$ é monotonicamente crescente se e somente se $a_{n+1} \geq a_{n}$, para todo $n \in \N$. 
-               Se cada termo consecutivo é estritamente maior que o anterior, então a sequência é \emph{estritamente monotonicamente crescente}.
+               A sequência $\left\{a_{n}\right\}^{\infty}_{n=1}$ 
+               é monotonicamente crescente se e somente se 
+               $a_{n+1} \geq a_{n}$, para todo $n \in \N$. 
+               Se cada termo consecutivo é estritamente maior que o 
+               anterior, então a sequência é \emph{estritamente 
+               monotonicamente crescente}.
             \subsubsection{Sequências monotonicamente decrescentes}
-               Analogamente, uma sequência é monotonicamente decrescente se a cada termo consecutivo for menor que o anterior. A sequência será \emph{estritamente monotonicamente decrescente} se cada termo for estritamente menor que o anterior.
+               Analogamente, uma sequência é monotonicamente decrescente 
+               se a cada termo consecutivo for menor que o anterior. 
+               A sequência será \emph{estritamente monotonicamente 
+               decrescente} se cada termo for estritamente menor que o anterior.
       
    \subsection{Sequências limitadas}
       \begin{definition}
-         Uma sequência $\left\{a_{n}\right\}^{\infty}_{n \in A}$ é limitada quando o conjunto de seus termos é limitado, ou seja, existem $K$ e $M$ contidos em $A$ tais que $K \leq a_{n} \leq M, \forall n \in A$.
+         Uma sequência $\left\{a_{n}\right\}^{\infty}_{n \in A}$
+         é limitada quando o conjunto de seus termos é limitado, 
+         ou seja, existem $K$ e $M$ contidos em $A$ tais que 
+         $K \leq a_{n} \leq M, \forall n \in A$.
          \begin{enumerate}[i.]
-            \item Se $\left\{a_{n}\right\}$ é limitada superiormente temos $$a_{n} \leq M,\forall n \in A.$$
-            \item Se $\left\{a_{n}\right\}$ é limitada inferiormente temos $$K \leq a_{n}, \forall n \in A.$$
+            \item Se $\left\{a_{n}\right\}$ é limitada superiormente 
+               temos $$a_{n} \leq M,\forall n \in A.$$
+            \item Se $\left\{a_{n}\right\}$ é limitada inferiormente 
+               temos $$K \leq a_{n}, \forall n \in A.$$
             \item Se $\left\{a_{n}\right\}$ é inferiormente e superiormente
                limitada então $\left\{a_{n}\right\}$ é uma sequência limitada.
-               Isto é, ${a_{n}}$ é limitada se existir um $L > 0$, $L \subseteq A$, tal que
+               Isto é, ${a_{n}}$ é limitada se existir um 
+               $L > 0$, $L \subseteq A$, tal que 
                $|a_{n}| \leq L, \forall n \in A$.
          \end{enumerate}
       \end{definition}
+      \begin{lemma}[Sequências finitas são limitadas]
+         Toda sequência finita $a_{1},a_{2},...,a_{n}$ é limitada.
+         \begin{proof}
+            Por indução, primeiramente, temos que quando $n=1$ a 
+            sequência $\{a_{1}\}$ é claramente limitada, pois se 
+            escolhermos $M := |a_{1}|$ então temos 
+            $|a_{i}| \leq M$ para todo $1 \leq i \leq n$. Agora 
+            suponha que ja provamos o lema para algum $n \geq 1$; 
+            agora temos que provar isso para $n++$, i.e, nos temos 
+            que provar que toda sequência $\{a_{i}\}^{n++}_{i=1}$ 
+            é limitada. Pela hipótese da indução temos que 
+            $a_{1},a_{2}, ...,a_{n}$ é limitada por algum $M \geq 0$.
+            Em particular, queremos a limitação por 
+            $M + |a_{n++}|$. Por outro lado, $\{a_{n++}\}$ 
+            tambem é limitada por $M + |a_{n++}|$.
+            Assim $a_{1},a_{2},...,a_{n},a_{n++}$ é limitada 
+            por $M + |a_{n++}|$. Isso termina a indução em $n$.
+         \end{proof}
+      \end{lemma}
    \subsection{Limite de uma sequência}
-      Sequências são tipos especiais de funções e com isso podemos investigar seus
-      limites. No entanto, temos uma restrição: ${a_{n}}$ está definida para
-      valores inteiros de $n$. O único limite que usado será de $a_{n} \to
-      +\infty.$
+      Sequências são tipos especiais de funções e com isso podemos 
+      investigar seus limites. No entanto, temos uma restrição: 
+      ${a_{n}}$ está definida para valores inteiros de $n$. 
+      O único limite que usado será de $a_{n} \to +\infty.$
       \begin{definition}[Intuitiva]
          Dada uma sequência ${a_{n}}$ dizemos que o limite de uma sequência é
-         $L$ se, equanto $n$ se torna grande, $a_{n}$ comeca a estar
-         arbitrariamente perto de $L$. Se enquanto $n \to +\infty$ $a_{n}$ nao
-         se aproxima de $L$, então dizemos que o limite nao existe.
+         $L$ se, enquanto $n$ se torna grande, $a_{n}$ começa a estar
+         arbitrariamente perto de $L$. Se enquanto 
+         $n \to +\infty$ $a_{n}$ não
+         se aproxima de $L$, então dizemos que o limite não existe.
       \end{definition}
       \begin{definition}
-         Dada uma sequência ${a_{n}}$ dizemos que $\lim_{n\to\infty} a_{n} = L$
-         se para todo $\epsilon > 0$ existir um inteiro $k$, tal que $| a_{n} -
+         Dada uma sequência ${a_{n}}$ dizemos que 
+         $\lim_{n\to\infty} a_{n} = L$ se para todo 
+         $\epsilon > 0$ existir um inteiro $k$, tal que $| a_{n} -
          L | < \epsilon$ para todo $n \geq k$.
       \end{definition}
       \begin{theorem}
@@ -60,52 +106,88 @@
          Seja $a_{n} = \dfrac{5n+1}{6n+7}$. Determine se a sequência
          ${a_{n}}_{n=1}$ tem um limite.
          \begin{proof}
-            Como $$\lim_{x\to\infty} \dfrac{5x+1}{6x+7} = \dfrac{5}{6},\quad \textrm{então}\ \lim_{x\to\infty} \dfrac{5n+1}{6n+7} = \dfrac{5}{6}.$$
+            Como $$\lim_{x\to\infty} \dfrac{5x+1}{6x+7} = 
+            \dfrac{5}{6},\quad \textrm{então}\ \lim_{x\to\infty} 
+            \dfrac{5n+1}{6n+7} = \dfrac{5}{6}.$$
          \end{proof}
       \end{exmp}
       \begin{mymdframed}{Observação}
-         Se $\lim_{x\to\infty} f(x)$ nao existe, $\lim_{n\to\infty} a_{n}$ pode nao existir.
+         Se $\lim_{x\to\infty} f(x)$ não existe, 
+         $\lim_{n\to\infty} a_{n}$ pode não existir.
       \end{mymdframed}
       \begin{exmp}
          Considere $a_{n} = \sin(n\pi)$ e $f(x) = \sin(x\pi)$.
          \begin{proof}
-            Analisando a sequencia $a_{n}$ vemos que ela resulta em uma lista ordenada de zeros:
-            $$\cancelto{0}{\sin(0\pi)}, \cancelto{0}{\sin(1\pi)}, \cancelto{0}{\sin(2\pi)}, \cancelto{0}{\sin(3\pi)}, ...$$
-            Como os termos da sequencia sao zeros temos que $\lim_{n\to\infty} a_{n} = 0.$ Mas avaliando para valores reais, i.e, quando consideramos $f(x)$ temos que $\lim_{x\to\infty} f(x)$ nao existe.
-            Os valores de $\sin(x\pi)$ para $x\to\infty$ oscilam entre $-1$ e $1$.
+            Analisando a sequência $a_{n}$ vemos que ela 
+            resulta em uma lista ordenada de zeros:
+            $$\cancelto{0}{\sin(0\pi)}, \cancelto{0}{\sin(1\pi)}, 
+            \cancelto{0}{\sin(2\pi)}, \cancelto{0}{\sin(3\pi)}, ...$$
+            Como os termos da sequência são zeros temos que 
+            $\lim_{n\to\infty} a_{n} = 0.$ Mas avaliando para 
+            valores reais, i.e, quando consideramos $f(x)$ temos 
+            que $\lim_{x\to\infty} f(x)$ não existe.
+            Os valores de $\sin(x\pi)$ para $x\to\infty$ 
+            oscilam entre $-1$ e $1$.
          \end{proof}
       \end{exmp}
       \begin{definition}
-         Dada duas sequencias ${a_{n}}$ e ${b_{n}}$, a notacao $a_{n} \ll b_{n}$ significa que
-         $$\lim_{n\to\infty}\dfrac{a_{n}}{b_{n}} = 0\quad\textrm{e}\quad \lim_{n\to\infty}\dfrac{b_{n}}{a_{n}} = \infty.$$
+         Dada duas sequências ${a_{n}}$ e ${b_{n}}$, a notação 
+         $a_{n} \ll b_{n}$ significa que
+         $$\lim_{n\to\infty}\dfrac{a_{n}}{b_{n}} = 
+         0\quad\textrm{e}\quad \lim_{n\to\infty}
+         \dfrac{b_{n}}{a_{n}} = \infty.$$
       \end{definition}
       \begin{theorem}
-         Sejam $p$,$q$ reais positivos, com $b>1$. Temos a seguinte relacao:
+         Sejam $p$,$q$ reais positivos, com $b>1$. Temos a 
+         seguinte relação:
          $$\ln^{p}(n) \ll n^{q} \ll b^{n} \ll n! \ll n^{n}.$$
       \end{theorem}
-      Qualquer potencia de $\ln(n)$ cresce mais \emph{lentamente} do que qualquer potencia de $n$.
+      Qualquer potencia de $\ln(n)$ cresce mais \emph{lentamente} 
+      do que qualquer potencia de $n$.
       \begin{exmp}
-         Seja $a_{n} = \dfrac{\ln^{9}(n)}{n^{1/2}}$. Ache o limite da sequencia $a_{n}$.
+         Seja $a_{n} = \dfrac{\ln^{9}(n)}{n^{1/2}}$. Ache o 
+         limite da sequência $a_{n}$.
          \begin{proof}
-            O teorema anterior indica que $\ln^{p}(n) \ll n^{q}$, i.e, $\lim_{n\to\infty}\dfrac{\ln^{p}(n)}{n^{q}} = 0$, para qualquer real positivo $p$ e $q$. Portanto, $\lim_{n\to\infty}\dfrac{\ln^{9}(n)}{n^{1/2}} = 0.$
+            O teorema anterior indica que $\ln^{p}(n) \ll n^{q}$, i.e,
+            $\lim_{n\to\infty}\dfrac{\ln^{p}(n)}{n^{q}} = 0$, 
+            para qualquer real positivo $p$ e $q$. Portanto, 
+            $\lim_{n\to\infty}\dfrac{\ln^{9}(n)}{n^{1/2}} = 0.$
          \end{proof}
       \end{exmp}
       \begin{exmp}
-         Seja $a_{n} = \dfrac{n^{100}+n^{n}}{n!+5^{n}}.$Ache o limite da sequencia $a_{n}$.
+         Seja $a_{n} = \dfrac{n^{100}+n^{n}}{n!+5^{n}}.$Ache o 
+         limite da sequência $a_{n}$.
          \begin{proof}
-            Vamos comecar analisando o numerador. Pelo teorema, temos que $n^{n} \gg n^{q}$, que nesse caso eh $n^{n} \gg n^{100}$. No denominador, novamente pelo teorema, temos que $n! \gg b^{n}$, que nesse caso eh $n! \gg 5^{n}$. Entao, iremos saber da existencia de $\lim_{n\to\infty}a_{n}$ considerando $\lim_{n\to\infty} \dfrac{n^{n}}{n!}.$
-            Novamente pelo teorema temos que $n^{n} \gg n!$, assim $\lim_{n\to\infty} a_{n} = \infty.$
+            Vamos começar analisando o numerador. Pelo teorema, 
+            temos que $n^{n} \gg n^{q}$, que nesse caso é 
+            $n^{n} \gg n^{100}$. No denominador, novamente pelo teorema, 
+            temos que $n! \gg b^{n}$, que nesse caso é $n! \gg 5^{n}$. 
+            Então, iremos saber da existência de $\lim_{n\to\infty}a_{n}$ 
+            considerando $\lim_{n\to\infty} \dfrac{n^{n}}{n!}.$
+            Novamente pelo teorema temos que $n^{n} \gg n!$, assim 
+            $\lim_{n\to\infty} a_{n} = \infty.$
             
             Mais precisamente, 
-            $$\lim_{n\to\infty}\dfrac{n^{100}+n^{n}}{n!+5^{n}} = \lim_{n\to\infty}\dfrac{n^{n}\left(\cancelto{0}{\lim_{n\to\infty}\left(\dfrac{n^{100}}{n^{n}}\right)}+1\right)}{n!\left(1+\cancelto{0}{\lim_{n\to\infty}\left(\dfrac{5^{n}}{n!}\right)}\right)} = \lim_{n\to\infty} \dfrac{n^{n}}{n!}.$$
+            $$\lim_{n\to\infty}\dfrac{n^{100}+n^{n}}{n!+5^{n}} = 
+            \lim_{n\to\infty}\dfrac{n^{n}\left(
+            \cancelto{0}{\lim_{n\to\infty}
+            \left(\dfrac{n^{100}}{n^{n}}\right)}
+            +1\right)}{n!\left(1+\cancelto{0}{\lim_{n\to\infty}
+            \left(\dfrac{5^{n}}{n!}\right)}\right)} = 
+            \lim_{n\to\infty} \dfrac{n^{n}}{n!}.$$
          \end{proof}
       \end{exmp}
       \begin{theorem}
-         Suponha que $a_{n}$,$b_{n}$ e $c_{n}$ sao sequencias com $$a_{n} \leq b_{n} \leq c_{n}.$$ Se $$\lim_{n\to\infty}a_{n} = L = \lim_{n\to\infty}c_{n}$$, entao $\lim_{n\to\infty}b_{n} = L.$
+         Suponha que $a_{n}$,$b_{n}$ e $c_{n}$ são sequências com 
+         $$a_{n} \leq b_{n} \leq c_{n}.$$ 
+         Se $$\lim_{n\to\infty}a_{n} = L = \lim_{n\to\infty}c_{n}$$, 
+         então $\lim_{n\to\infty}b_{n} = L.$
       \end{theorem}
    \subsection{Propriedades de limites de sequências}
-   \begin{stat}[Propriedades aritmeticas]
-      Considere duas sequencias ${a_{n}}$ e ${b_{n}}$ tais que $\lim_{n\to\infty} a_{n} = L$ e $\lim_{n\to\infty} b_{n} = M$, então
+   \begin{stat}[Propriedades aritméticas]
+      Considere duas sequências ${a_{n}}$ e ${b_{n}}$ 
+      tais que $\lim_{n\to\infty} a_{n} = 
+      L$ e $\lim_{n\to\infty} b_{n} = M$, então
       \begin{enumerate}[i.]
          \item $\lim_{n\to\infty} (a_{n} + b_{n}) = L + M$;
          \item $\lim_{n\to\infty} (a_{n} - b_{n}) = L - M$;
@@ -114,6 +196,78 @@
       \end{enumerate}
    \end{stat}
    \subsection{Subsequências}
-   \subsection{Sequência de Cauchy}
+      \begin{definition}[Subsequências]
+         Sejam $\left\{a_{n}\right\}^{\infty}_{n=0}$ e 
+         $\left\{b_{n}\right\}^{\infty}_{n=0}$ sequências de 
+         números reais. Dizemos que $\left\{b_{n}\right\}^{\infty}_{n=0}$ 
+         é uma subsequência de $\left\{a_{n}\right\}^{\infty}_{n=0}$ 
+         se e somente se existe uma função $f: \N \to N$ 
+         sendo $f$ estritamente crescente (ou seja, 
+         $f(n+1) > f(n), \forall n \in \N$) tal que 
+         $$b_{n} = a_{f(n)}, \forall n \in \N.$$
+      \end{definition}
+      Vale notar que essa aplicação $f$ é necessariamente injetiva.
+      Do contrario $f$ não seria estritamente crescente, o que violaria 
+      a definição.
+      \begin{exmp}
+         Se $\left\{a_{n}\right\}^{\infty}_{n=0}$ é uma sequência, então 
+         $\left\{a_{2n}\right\}^{\infty}_{n=0}$ é a subsequência de 
+         $\left\{a_{n}\right\}^{\infty}_{n=0}$, pois a função 
+         $f: \N \to \N$ definida por $f(n):=2n$ é uma função 
+         estritamente crescente de $\N$ para $\N$.
+      \end{exmp}
+      \begin{exmp}
+         Mais informalmente, as sequências $$1.1,1.01,1.001,...$$ 
+         e $$ 0.1,0.01,0.001,...$$ são subsequências de 
+         $$1.1,0.1,1.01,0.01,1.001,1.0001,...$$
+      \end{exmp}
 
-   \subsection{Convergência de sequências}
+   \subsection{Sequência de Cauchy}
+      \begin{definition}[Eventual estabilidade de $\epsilon$]
+         Seja $\epsilon > 0$. A sequência $\left\{a_{n}\right\}^{\infty}_{n=0}$ 
+         é dita ser \emph{eventualmente $\epsilon$-estável} se e somente se
+         a sequência $a_{N},a_{N+1},a_{N+2},...$ é $\epsilon$-estável
+         para algum número natural $N \geq 0$.
+      \end{definition}
+      Parafraseando, a sequência $a_{0}, a_{1},a_{2},...$ é
+      eventualmente $\epsilon$-estável se existir um $N > 0$
+      tal que a distancia entre dois termos for menor que $\epsilon$
+      para todo $j,k \geq N$. Com efeito:
+      $$d(a_{j},a_{k}) \leq \epsilon \Leftrightarrow
+      |a_{j} - a_{k} | \leq \epsilon, \forall j,k \geq N.$$
+      \begin{exmp}
+         A sequência $a_{1},a_{2},...$ definida por $a_{n} := 1/n$,
+         não é $0.1$-estável, mas é eventualmente $0.1$-estável,
+         porque a sequência $a_{10},a_{11},a_{12},...$, isto é,
+         ($1/10,1/11,1/12,...)$ é $0.1$-estável.
+      \end{exmp}
+      \begin{exmp}
+         A sequência $10,0,0,0,0,...$ não é $\epsilon$-estável
+         para qualquer $\epsilon$ menor do que $10$, mas é
+         eventualmente $\epsilon$-estável para qualquer $\epsilon > 0.$
+      \end{exmp}
+      \begin{definition}[Sequências de Cauchy]
+         A sequência $\left\{a_{n}\right\}^{\infty}_{n=0}$
+         de números racionais é uma \emph{sequência de Cauchy}
+         se e somente se para todo racional $\epsilon > 0$, 
+         a sequência $\left\{a_{n}\right\}^{\infty}_{n=0}$ é 
+         eventualmente $\epsilon$-estável. 
+      \end{definition} 
+      Parafraseando... sequência $a_{0},a_{1},a_{2},...$ 
+      é uma sequência de Cauchy se para todo $\epsilon$ 
+      positivo a distancia entre dois termos dessa 
+      sequência seja menor ou igual a épsilon.
+      \begin{proof}[Sequência Cauchy $a_{n}:=1/n$]
+         Seja $\epsilon > 0$ um número arbitrário. Vamos encontrar 
+         um número $N \geq 1$ tal que a sequência $a_{N},a_{N+1},...$ 
+         é $\epsilon$-estável. Isso significa que 
+         $d(a_{j},a_{k}) \leq \epsilon$ para todo $j,k \geq N$, i.e,
+         $$ |1/j - 1/k| \leq \epsilon, \forall j,k \geq N.$$
+         Como $j,k \geq N$, sabemos que $0 < 1/j, 1/k \leq 1/N$, 
+         seguindo que $ |1/j - 1/k| \leq 1/N$. Então para termos 
+         $|1/j - 1/k|$ menor ou igual a $\epsilon$ é suficiente 
+         que tenhamos $1/N$ menor que $\epsilon$. Portanto, 
+         devemos escolher um $N$ tal que $1/N$ é menor do 
+         que $\epsilon$, ou, equivalentemente, que $N$ 
+         seja maior do que $1/\epsilon$.
+      \end{proof}
