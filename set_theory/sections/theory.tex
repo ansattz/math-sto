@@ -1,9 +1,24 @@
 \section{Teoria Axiomática [Conjuntos]}
+   A teoria dos tipos resolve o paradoxo de Russell. No entanto, faz isso 
+   com algum custo... a teoria de Russell nos dá múltiplas noções de conjuntos.
+   Então, você teria problemas ao perguntar algo do tipo... "O que é um 
+   conjunto?" A resposta então seria que existem tipos de conjuntos... 
+   tipo zero, tipo um, ...\newline
+
+   Eis que surge a abordagem axiomática para responder aos paradoxos da teoria 
+   dos conjuntos ingênua. A abordagem foi iniciada por Ernst Zermelo em 1908 e 
+   desenvolvida por Abraham Fraenkel em 1922. O que resulta é o sistema de 
+   axiomas mais comum: a teoria dos conjuntos de Zermelo-Fraenkel. (Teoria 
+   ZF).
    \subsection{Teoria ZF}
       Condições estabelecidas da teoria:
       \begin{enumerate}
-         \item Todos os objetos da teoria são conjutos. Dizemos que \emph{todos os elementos de conjuntos serão conjuntos}, e assim sucessivamente, mas paramos ao chegarmos no conjunto vazio.
-         \item Os objetos da teoria não comportarão átomos e nem conjuntos de todos os conjuntos (conjuntos universais), isto é, não comportarão \emph{urelementos}.
+         \item Todos os objetos da teoria são conjuntos. Dizemos que \emph{todos os 
+            elementos de conjuntos serão conjuntos}, e assim sucessivamente, mas paramos 
+            ao chegarmos no conjunto vazio.
+        \item Os objetos da teoria não comportarão átomos e nem conjuntos de todos 
+           os conjuntos (conjuntos universais), isto é, não comportarão 
+           \emph{urelementos}.
       \end{enumerate}
       A estrutura do método axiomático se estabelece da seguinte forma:
       \begin{enumerate}
@@ -39,8 +54,8 @@
             $$\exists B(\forall x(\neg(x \in B))$$
             se da por
             \begin{enumerate}[I.]
-               \item Existência da fórmula atõmica\ $[(x \in B)]$.
-               \item Uma outra fórmula está sendo a negação da fórmula atõmica\ $[(\neg(x \in B)]$
+               \item Existência da fórmula atômica\ $[(x \in B)]$.
+               \item Uma outra fórmula está sendo a negação da fórmula atômica\ $[(\neg(x \in B)]$
                \item Fórmula quantificando a variável $x$ em relação a negação da fórmula atômica\ $[\forall x()]$
             \end{enumerate}
             Portanto, temos 3 fórmulas que são $$\neg(x \in B)),\quad \forall x(\neg(x \in B)) \quad e\quad \exists B (\forall x(\neg(x \in B)).$$
@@ -56,7 +71,7 @@
                   $y$ está no escopo de $x$ e $x$ está no escopo de si mesmo.
                \item \textbf{\underline{Variável livre:}} uma variável é livre se não está no escopo dela mesma.
                   Sendo $$x \in y\ \& \ \exists x (y = x)$$
-                  $x$ e $y$ que estão fora da subfórmula são variáveis livres. $y$ que está dentro da subfórmula é uma variável livre, mas, dentro da subfórmula, $x$ não é uma variável livre por está dentro do próprio escopo.
+                  $x$ e $y$ que estão fora da sub-fórmula são variáveis livres. $y$ que está dentro da sub-fórmula é uma variável livre, mas, dentro da sub-fórmula, $x$ não é uma variável livre por está dentro do próprio escopo.
             \end{itemize}
          \end{mymdframed}
 
@@ -255,13 +270,13 @@
             Para todo conjunto $x$ não vazio existe $y \in x$ tal que $x \cap y = \varnothing$.
             $$ \forall x [x \neq \varnothing\ \rightarrow\ \exists y (y \in x\ \&\ x \cap y = \varnothing)].$$
          \end{stat}
-         Ou seja, esse axioma garante que não exista uma sequência infinita descrescente na relação de pertinência. Não há como ficar preso numa sequência infinita decrescente, pois certa hora irá encontrar o conjunto vazio.
+         Ou seja, esse axioma garante que não exista uma sequência infinita decrescente na relação de pertinência. Não há como ficar preso numa sequência infinita decrescente, pois certa hora irá encontrar o conjunto vazio.
          \begin{theorem}
             Não existem conjuntos $x$ e $y$ tais que $x \in y$\ e\ $y \in x$.
          \end{theorem}
          \begin{proof}
             Sejam $x$ e $y$ conjuntos quaisquer.
-            Vamos demosntrar que ou $x \notin y$\ ou\ $y \notin x$.\\
+            Vamos demonstrar que ou $x \notin y$\ ou\ $y \notin x$.\\
             Pelo \textbf{axioma do par}, existe $B = \{x,y\}$ não vazio.\\
             Pelo \textbf{axioma da regularidade}, $B \neq \varnothing\ \rightarrow\ \exists z (z \in B\ \&\ z \cap B = \varnothing).$\\
             Mas $z \in B$ implica que $z = x$\ ou \ $z = y$.\\            
@@ -273,5 +288,5 @@
             A formulação dada por von Neumann (1925) em lógica de primeira ordem é seguida por
             $$\forall A(\exists B(B\in A)\rightarrow \exists B(B\in A\land \neg \exists C(C\in A\land C\in B)))$$
             \emph{Todo conjunto diferente do conjunto vazio possui um elemento que é totalmente disjunto dele.}\\
-            Sem esse axioma o comportamento possível de infundados conjuntos surgem. São denominados \textbf{hiperconjuntos}. Um comportamento típico seria $y \in y$, então $y$ é um hiperconjunto. Em particular, não é adequado ter a violação desse axioma, apenas para versões da teoria dos conjuntos que possam se beneficiar disso.
+            Sem esse axioma o comportamento possível de infundados conjuntos surgem. São denominados \textbf{hiper-conjuntos}. Um comportamento típico seria $y \in y$, então $y$ é um hiper-conjunto. Em particular, não é adequado ter a violação desse axioma, apenas para versões da teoria dos conjuntos que possam se beneficiar disso.
          \end{mymdframed}
